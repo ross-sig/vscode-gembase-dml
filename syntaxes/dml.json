@@ -17,7 +17,8 @@
     "repository": {
         "source": {
             "patterns": [
-                { "include": "#titles" }          
+                { "include": "#titles" },
+                { "include": "#strings" }          
             ]
         },
         
@@ -26,6 +27,25 @@
                 {
                     "name": "markup.heading.dml",
                     "match": "TITLE"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+					"name": "string.dml",
+					"begin": "(\"|\\')",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.dml"
+						}
+					},
+					"end": "(\"|\\')",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.dml"
+						}
+					}
                 }
             ]
         }
