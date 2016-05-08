@@ -26,7 +26,7 @@
             "patterns": [
                 {
                     "name": "markup.heading.dml",
-                    "match": "TITLE"
+                    "match": "\\bTITLE\\b"
                 }
             ]
         },
