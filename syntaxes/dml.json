@@ -36,7 +36,10 @@
 				},
 				{				
 					"include": "#blocks"
-				}
+				},
+				{				
+					"include": "#statements"
+				}				
 			]
 		},
 		
@@ -108,7 +111,63 @@
 					"match": "(?i)(\/ABSOLUTE_POSITION|\/ATTRIBUTES|\/AUDIT|\/BACK|\/BREAK|\/COL|\/DATETIME|\/DISPLAY_LENGTH|\/DISPLAY_ONLY|\/DOMAIN|\/DOUBLE|\/ERASE|\/EXIT|\/FACILITY|\/FAILURE|\/GRID_COL|\/GRID_MODE|\/GRID_TOTAL|\/GRID_HEADING|\/HEADING|\/HEIGHT|\/INPUT_MASK|\/ITEM|\/ITEM_IF|\/LEN|\/LOV|\/LOV_AUTO_SELECT|\/LOV_COL|/LOV_DATA|\/LOV_FIRST|\/LOV_HEIGHT|\/LOV_NOHEADING|\/LOV_NOSEARCH|\/LOV_REDUCED_TO|\/LOV_ROW|\/LOV_SECONDARY|\/LOV_SELECTION|\/LOV_SORTED_BY|\/LOV_WIDTH|/LOV_WITH|\/NEW|\/NOAUDIT|\/NOCLEAR_BUFFER|\/NODOMAIN|\/NOHEADING|\/NOLOV_DATA|\/NOREPEAT|\/NOUNDERLINES|\/OPT|\/OPTIONS|\/OUTPUT_MASK|\/PDF|\/PROMPT|/PROTECT|\/PURPOSE|\/RECALL|\/ROW|\/SAVE|\/SOURCE|\/SOURCE_IF|\/SUCCESS|\/TAG|\/TAG_LENGTH|\/TARGET|\/TITLE|\/TOTAL|\/URL|\/USE_IF|\/USER|\/USER_KEY|\/USERNAME1|\/USERNAME2|\/USING|\/VALIDATION_FORM)"
 				}
 			]
-		}
+		},
+		"statements": {
+			"patterns": [
+				{
+					"comment": "program flow",
+					"name": "constant.language.dml",
+					"match": "(?i)\\b(BEGIN_CASE|CASE|BEGIN_DISABLE_TRIGGER|BEGIN_SIGNAL_TO_STATUS|CALL|CALL_WEB_SERVICE|CLEAR_ARRAY|CONTINUE|ELSE|ELSE_IF|END_GTID|END_DISABLE_TRIGGER|END_IF|END_SIGNAL_TO_STATUS|END_WHILE|EXIT|GOTO|IF|END_IF|PERFORM|SWITCH|SWITCH_BASE|ADD TO|ARCHIVE|CHECK_DOMAIN|CLEAR_BUFFER|CLOSE|COMMIT|DELETE|FETCH|FIND IN|FINISH|INVOKE|LOAD|ROLLBACK)\\b"
+				},
+				{
+					"comment": "data access",
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(SET CAT_FILTER|START_STREAM|START_TRANSACTION|UNLOAD)\\b"
+				},
+				{
+					"comment": "data integrity checking",
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(VERIFY)\\b"
+				},
+				{
+					"comment": "Text file management",
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(CLOSE_TABS|OPEN_TAB|CLOSE_TEXT|OPEN_TEXT|READ_LINE|REWIND_TEXT|WRITE|WRITE_LINE)\\b"
+				},
+				{
+					"comment": "screen i/o",
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(DISPLAY|ERASE|ERROR|ERROR_TEXT|LINE|MENU|MESSAGE|PRINT|TABLE_SEARCH|SSET ACCESS|SET DATE_FORMAT|SET ENTRY_MENU|SET HELP ON|SET HELP OFF|SET ICON_NAME|SET INPUT BACKGROUND|SET INPUT FOREGROUND)\\b"
+				},
+				{
+					"comment": "System Settings",
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(SET INTERRUPT|SET KEY|SET KEYBOARD|SET LOCK|SET LOCK_TIMEOUT|SET PERFORM|SET PRECISION|SET PROMPT|SET SCREEN|SET STATUS_FREQUENCY|SET TIMEOUT|SET TITLE_FORM|SET TITLE_BAR|SET VERIFY|SET NOVERIFY|SHOW DATABASE|SHOW DATE_FORMAT|SHOW ENTRY_MENU|SHOW HELP|SHOW INPUT|SHOW INTERRUPT|SHOW KEYBOARD|SHOW LOCK|SHOW LOCK TIMEOUT|SHOW PERFORM|SHOW PRECISION|SHOW PROMPT|SHOW SHADOWS|SHOW STATUS FREQUENCY|SHOW SYSTEM|SHOW TIMEOUT|SHOW TITLE_BAR|SHOW TITLE_FORM|SHOW VERIFY|SIGNATURE|START_GRID|XML_RECEIVE_TABLES|XML_SEND_TABLE)\\b"
+				},
+				{
+					"comment": "Inter-Process Communication",
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(MAIL|RECEIVE|RELEASE|SEND)\\b"
+				},
+				{
+					"comment": "Client/Server Env",
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(CONNECT|DISCONNECT|END_EXECUTE|EXECUTE|RECEIVE_DATA|RECEIVE_TABLE|SEND_DATA|SEND_MESSAGE)\\b"
+				},
+				{
+					"comment": "Misc",
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(EDIT|EXTERNAL|License|PWD|RANDOMIZE|REPOSITION BY|REPOSITION TO|SEARCH|SET DEFAULT|SHOW CAT FILTER|SET WD|SHOW DEFAULT|SHOW HOST ID|SHOW PLATFORM|SHOW TARGETID|SHOW WD|TRANSFER)\\b"
+				},
+				{
+					"comment": "OS Command",
+					"name": "keyword.control.dml",
+					"match": "\\$([a-zA-Z]|\\_|\\$)*"
+				}
+
+			
+			]
+		}		
 	}
 }
 
