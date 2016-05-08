@@ -30,6 +30,9 @@
 				},
 				{
 					"include": "#forms"
+				},
+				{
+					"include": "#declarations"
 				}
 			]
 		},
@@ -79,6 +82,14 @@
 					"comment": "Form Qualifiers",
 					"name": "entity.other.attribute-name",
 					"match": "(?i)(\/ADD_FORM|\/ALTERNATE_FORM|\/ADD_FORM|\/ALTERNATE_FORM|\/ATTRIBUTES|\/BASE|\/BEGIN_ROW|\/BREAK|\/BREAK0|\/COL|\/COLUMN_HEADINGS|\/COLUMN_HEADING_ROW|\/COLUMN_SPACING|\/COMMIT_RATE|\/DEFAULT_TAG|\/DELETE_FORM|\/END_ROW|\/FIND_FORM|\/FIRST|\/FOOTING|\/FOOTING_FORM|\/GRID|\/GROUPED_BY|\/HEADING|\/HEADING_FORM|\/HEIGHT|\/INPUT_ROW_HEIGHT|\/JOINED_TO|\/LFOOTING|\/LHEADING|\/LINES_AFTER|\/LINES_BEFORE|\/LOCK|\/MODIFY_FORM|\/NOERROR|\/NOEXIT_FORWARD|\/NOGRID|\/NOSTATUS|\/OPTIONS|\/OUTPUT|\/PDF|\/READ_ONLY|\/REDUCED_TO|\/REMAIN|\/REPEAT|\/RFOOTING|\/RHEADING|\/ROW|\/ROW_HEIGHT|\/SECONDARY|\/SELECTION|\/SEQUENCE|\/SEQUENCE_INCREMENT|\/SORTED_BY|\/STATISTIC|\/STATUS|\/STREAM_NAME|\/SYSTEM|\/TABLE|\/TAG_LENGTH|\/TITLE|\/WIDTH|\/WITH)"
+				}
+			]
+		},
+		"declarations": {
+			"patterns": [
+				{
+					"name": "keyword.control.dml",
+					"match": "(?i)\\b(TEXT|LINE)\\b"
 				}
 			]
 		}
