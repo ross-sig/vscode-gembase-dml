@@ -1,38 +1,50 @@
 {
-    "scopeName" :"source.dml",
-    "name":"DML",
-    "comment": "Gembase DML Language",
-    "fileTypes": [
-        "dml"
-    ],
-    "patterns": [
-        {
-            "comment": "Comment",
-            "begin": "!",
-            "end": "$",
-            "name": "comment.line.dml"
-        },
-        { "include": "#source" }
-    ],
-    "repository": {
-        "source": {
-            "patterns": [
-                { "include": "#titles" },
-                { "include": "#strings" }          
-            ]
-        },
-        
-        "titles": {
-            "patterns": [
-                {
-                    "name": "markup.heading.dml",
-                    "match": "\\bTITLE\\b"
-                }
-            ]
-        },
-        "strings": {
-            "patterns": [
-                {
+	"scopeName": "source.dml",
+	"name": "DML",
+	"comment": "Gembase DML Language",
+	"fileTypes": [
+		"dml"
+	],
+	"patterns": [
+		{
+			"comment": "Comment",
+			"begin": "!",
+			"end": "$",
+			"name": "comment.line.dml"
+		},
+		{
+			"include": "#source"
+		}
+	],
+	"repository": {
+		"source": {
+			"patterns": [
+				{
+					"include": "#titles"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#variables"
+				},
+				{
+					"include": "#forms"
+				}
+			]
+		},
+		
+		"titles": {
+			"patterns": [
+				{
+					"name": "markup.heading.dml",
+					"match": "(?i)\\bTITLE\\b"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
 					"name": "string.dml",
 					"begin": "(\"|\\')",
 					"beginCaptures": {
@@ -46,8 +58,30 @@
 							"name": "punctuation.definition.string.end.dml"
 						}
 					}
-                }
-            ]
-        }
-    }
+				}
+			]
+		},
+		"variables" : {
+			"patterns": [				
+				{
+					"name": "variable.parameter.dml",
+					"match": "\\#([a-zA-Z]|\\_|\\$)*"
+				}	
+			]		
+		},
+		"forms": {
+			"patterns": [
+				{
+					"name": "entity.name.class.dml",
+					"match": "(?i)\\b(PROCEDURE_FORM|PERFORM|MENU_FORM|FORM|QUERY_FORM|REPORT_FORM|TABLE_FORM|TABLE_EDIT|END_FORM)\\b"
+				},
+				{
+					"comment": "Form Qualifiers",
+					"name": "entity.other.attribute-name",
+					"match": "(?i)(\/ADD_FORM|\/ALTERNATE_FORM|\/ADD_FORM|\/ALTERNATE_FORM|\/ATTRIBUTES|\/BASE|\/BEGIN_ROW|\/BREAK|\/BREAK0|\/COL|\/COLUMN_HEADINGS|\/COLUMN_HEADING_ROW|\/COLUMN_SPACING|\/COMMIT_RATE|\/DEFAULT_TAG|\/DELETE_FORM|\/END_ROW|\/FIND_FORM|\/FIRST|\/FOOTING|\/FOOTING_FORM|\/GRID|\/GROUPED_BY|\/HEADING|\/HEADING_FORM|\/HEIGHT|\/INPUT_ROW_HEIGHT|\/JOINED_TO|\/LFOOTING|\/LHEADING|\/LINES_AFTER|\/LINES_BEFORE|\/LOCK|\/MODIFY_FORM|\/NOERROR|\/NOEXIT_FORWARD|\/NOGRID|\/NOSTATUS|\/OPTIONS|\/OUTPUT|\/PDF|\/READ_ONLY|\/REDUCED_TO|\/REMAIN|\/REPEAT|\/RFOOTING|\/RHEADING|\/ROW|\/ROW_HEIGHT|\/SECONDARY|\/SELECTION|\/SEQUENCE|\/SEQUENCE_INCREMENT|\/SORTED_BY|\/STATISTIC|\/STATUS|\/STREAM_NAME|\/SYSTEM|\/TABLE|\/TAG_LENGTH|\/TITLE|\/WIDTH|\/WITH)"
+				}
+			]
+		}
+	}
 }
+
