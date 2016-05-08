@@ -33,6 +33,9 @@
 				},
 				{
 					"include": "#declarations"
+				},
+				{				
+					"include": "#blocks"
 				}
 			]
 		},
@@ -92,7 +95,22 @@
 					"match": "(?i)\\b(TEXT|LINE)\\b"
 				}
 			]
+		},
+		"blocks": {
+			"patterns": [
+				{
+					"name": "entity.name.function.dml",
+					"match": "(?i)\\b(BEGIN_BLOCK|INPUT_BLOCK|ITEM_BLOCK|MENU_BLOCK|OUTPUT_BLCOK|PAUSE_BLOCK|END_BLOCK|SIGNATURE_BLOCK|YESNO_BLOCK)\\b"
+				},
+				{
+					"comment": "Block Qualifiers",
+					"name": "entity.other.attribute-name",
+					"match": "(?i)(\/ABSOLUTE_POSITION|\/ATTRIBUTES|\/AUDIT|\/BACK|\/BREAK|\/COL|\/DATETIME|\/DISPLAY_LENGTH|\/DISPLAY_ONLY|\/DOMAIN|\/DOUBLE|\/ERASE|\/EXIT|\/FACILITY|\/FAILURE|\/GRID_COL|\/GRID_MODE|\/GRID_TOTAL|\/GRID_HEADING|\/HEADING|\/HEIGHT|\/INPUT_MASK|\/ITEM|\/ITEM_IF|\/LEN|\/LOV|\/LOV_AUTO_SELECT|\/LOV_COL|/LOV_DATA|\/LOV_FIRST|\/LOV_HEIGHT|\/LOV_NOHEADING|\/LOV_NOSEARCH|\/LOV_REDUCED_TO|\/LOV_ROW|\/LOV_SECONDARY|\/LOV_SELECTION|\/LOV_SORTED_BY|\/LOV_WIDTH|/LOV_WITH|\/NEW|\/NOAUDIT|\/NOCLEAR_BUFFER|\/NODOMAIN|\/NOHEADING|\/NOLOV_DATA|\/NOREPEAT|\/NOUNDERLINES|\/OPT|\/OPTIONS|\/OUTPUT_MASK|\/PDF|\/PROMPT|/PROTECT|\/PURPOSE|\/RECALL|\/ROW|\/SAVE|\/SOURCE|\/SOURCE_IF|\/SUCCESS|\/TAG|\/TAG_LENGTH|\/TARGET|\/TITLE|\/TOTAL|\/URL|\/USE_IF|\/USER|\/USER_KEY|\/USERNAME1|\/USERNAME2|\/USING|\/VALIDATION_FORM)"
+				}
+			]
 		}
 	}
 }
+
+
 
