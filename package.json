@@ -1,0 +1,46 @@
+{
+	"name": "dml",
+	"version": "0.0.1",
+	"publisher": "ahnooie",
+		"engines": {
+		"vscode": "1.0.0"
+	},
+	"license": "TODO",
+	"displayName": "Gembase DML",
+	"description": "GEMBASE DML language support for Visual Studio Code",	
+	"categories": [
+		"Languages"
+	],
+	"keywords": [
+		"dml",
+		"iaf",
+		"gembase",
+		"ross",
+		"erp",
+		"data",
+		"manupulation",
+		"language",
+		"aptean",
+		"renaissance"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "dml",
+				"extensions": [
+					".dml"
+				],
+				"aliases": [
+					"dml"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "dml",
+				"scopeName": "source.dml",
+				"path": "./syntaxes/dml.json"
+			}
+		]
+	}
+}

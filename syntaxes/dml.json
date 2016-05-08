@@ -1,0 +1,32 @@
+{
+    "scopeName" :"source.dml",
+    "name":"DML",
+    "comment": "Gembase DML Language",
+    "fileTypes": [
+        "dml"
+    ],
+    "repository": {
+        "source": {
+            "patterns": [
+                { "include": "#titles"},
+                { "include": "#forms"},
+                { "include": "#formQualifiers"},
+                { "include": "#declarations"},
+                { "include": "#blocks"},
+                { "include": "#blockQualifiers"},
+                { "include": "#statements"},
+                { "include": "#expressions"},
+                { "include": "#specialVariables"},
+                { "include": "#valueSymbols"},
+                { "include": "#securitySymbols"},                                
+                { "include": "#functions"},  
+                { "include": "#metadata"},  
+                { "include": "#securitySymbols"},  
+                { "include": "#securitySymbols"},  
+                { "include": "#securitySymbols"},
+                { "include": "#storedProcedures"}
+                
+            ]
+        }
+    }
+}
