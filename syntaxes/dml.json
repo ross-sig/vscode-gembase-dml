@@ -26,7 +26,7 @@
 					"include": "#strings"
 				},
 				{
-					"include": "#variables"
+					"include": "#expressions"
 				},
 				{
 					"include": "#forms"
@@ -39,6 +39,9 @@
 				},
 				{				
 					"include": "#statements"
+				},
+				{
+					"include": "#functions"
 				}				
 			]
 		},
@@ -70,12 +73,38 @@
 				}
 			]
 		},
-		"variables" : {
+		"expressions" : {
 			"patterns": [				
 				{
+					"comment": "Variables",
 					"name": "variable.parameter.dml",
 					"match": "\\#([a-zA-Z]|\\_|\\$)*"
-				}	
+				},
+				{
+					"comment": "Integer Constants",
+					"name": "constant.numeric.dml",
+					"match": "(-?\\d)"
+				},
+				{
+					"comment": "Operators",
+					"name": "constant.numeric.dml",
+					"match": "(?i)(-| NOT | NOT_B |\\^|\\*|\\/|\\+|&|=|<|>|<>|<=|>=| AND_B | OR_B | AND | OR )"
+				},
+				{
+					"comment": "Special Variables",
+					"name": "keyword.control.dml",
+					"match": "(?i)%(ADVANCED_USER|APPLICATION|ARCHIVE|BITMAP|CAT_FILTER|CLIENT_COMPUTER_NAME|CLIENT_OS_USERNAME|CURRENT_BREAK|DATABASE|DEFAULT_ENGINE|DELETE|E|EDIT_MODE|ENTRY_MENU|ENVIRONMENT|EXIT_FORM_ACTIVE|EXIT_FORM_ENABLED|EXIT_FORM_FORMNAME|EXIT_FORWARD|FACILITY|FACILITY_DATABASE|FACILITY_NAME|FACILITY_SYSTEM|FIND|FORM_FILE|GEM_INIT|GTID|GTID_LEVEL|HARDWARE|HELP_LIBRARY|HOSTID|INPUT_BACKGROUND|INPUT_DATE_FORMAT|INPUT_FOREGROUND|INPUT_PROMPT|INPUT_TIMEOUT|INPUT_UPDATE|INTERRUPT|INTERRUPT_COMMAND|IS_ADMIN|KEYBOARD_FILE|LANGUAGE|LOCALE|LOCK_OPTIONS|LOG_FILE|LOGGING_DEBUG|LOGGING_ERROR|LOGGING_INFO|LOGGING_WARNING|MASK_CURRENCY_SIGN|MASK DIGIT_SEPARATOR|MASK_RADIX_POINT|MODE|MODIFY|NODENAME|NOW|OPERATING_SYSTEM|PAGE|PERFORM|PI|PID|PLATFORM|PRECISION|PRINT_MODE|QUERY_CUR_REC|QUERY_MAX_REC|QUERY_MODE|REPORT_DATE|REPORT_FORM_FEEDS|REPORT_PAGE_SIZE|REPORT_MODE|REPORT_NAME|ROW_NUMBER|SCREEN_MODE|SCREEN_WIDTH|SERVER|SHADOW_LEVEL|SIGNATURE_ID|STATUS|STATUS_FREQUENCY|SYSTEM|TARGETID|TEMPORARY_DIRECTORY|TERMINAL|TEXTFILE_MODE|TITLE_FORM|TODAY|TRANS_LEVEL|UIC|UIC_GRP|UIC_MEM|UNIX|USERNAME|VERSION|WD|XPID)"
+				},
+				{
+					"comment": "Value Symbols",
+					"name": "keyword.control.dml",
+					"match": "(?i)%(ASSERT_FAILURE|BACK|DATA|DEADLOCK|EMPTY|EXIT|FAILURE|NORMAL|SUCCESS)"
+				},
+				{
+					"comment": "Security Symbols",
+					"name": "keyword.control.dml",
+					"match": "(?i)%(ADMIN_ACCESS|CHANGE_ACCESS|CONTROL_ACCESS|DEFINE_ACCESS|DELETE_ACCESS|ERASE_ACCESS|MODIFY_ACCESS|OPERATOR_ACCESS|READ_ACCESS|SHOW_ACCESS|WRITE_ACCESS)"
+				}
 			]		
 		},
 		"forms": {
@@ -167,7 +196,26 @@
 
 			
 			]
-		}		
+		},
+		"functions": {
+			"patterns": [
+				{
+					"comment": "String Functions",
+					"name": "entity.name.function.dml",
+					"match": "\\b(?i)(AMONG|ASCII|BASE64_DECODE|BASE64_ENCODE|CHR|COMPRESS|COMPRESS_ALL|count|CSV_SPLIT|CSV_MERGE|DATA_COMPRESS|DATA_UNCOMPRESS|ELEMENT|EXPAND|IS_TRUE|LEFT|LEN|LOWERCASE|LPAD|LTRIM|MATCHING|MERGE|POS|QUOTE|RANGE_MERGE|RANGE_SPLIT|REPLACE|RIGHT|RMD160|RPAD|RTRIM|SCRAMBLE|SEG|SPLIT|STARTING_WITH|STRING|TRANSLATE|TRIM|UNQUOTE|UNSCRAMBLE|UPPERCASE|VALIDATE_DML)"
+				},
+				{
+					"comment": "Numeric Functions",
+					"name": "entity.name.function.dml",
+					"match": "\\b(?i)(ABS|ACOS|ACOSD|ACOSH|ACOT|ACOTD|ACOTH|ACSC|ACSCD|ACSCH|ASEC|ASECD|ASECH|ASIND|ASINH|ATAND|ATAND2|ATANDH|ASIN|ATAN|ATAN2|BINARY_TO_POLY|CEIL|COS|COSD|COSH|COT|COTD|COTH|CSC|CSCD|CSCH|DEG|EXP|EXP2|EXP10|FAC|FIX|FRAC|FLOOR|GCD|INT|LOG2|LOG|LOG10|MAX|MIN|MOD|MROUND|POLY_TO_BINARY|RAD|RANDOM|ROUND|SEC|SECD|SECH|SIGN|SIN|SIND|SINH|SQRT|TAN|TAND|TANH)"
+				},
+				{
+					"comment": "Date Functions",
+					"name": "entity.name.function.dml",
+					"match": "\\b(?i)(DATE|DATE_SECONDS|DATE_TIME|DAYS|DAY_OF_WEEK|DAYS_IN_MONTH|NEXT_MONTH|SECONDS)"
+				}
+			]
+		}	
 	}
 }
 
