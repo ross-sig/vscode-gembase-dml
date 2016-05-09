@@ -24,6 +24,13 @@
 		"renaissance"
 	],
 	"contributes": {
+		"snippets": [
+			{
+				"language": "dml",
+				"path": "./snippets/dml-snippets.json"
+			}
+			
+		],
 		"languages": [
 			{
 				"id": "dml",
@@ -31,9 +38,9 @@
 					".dml"
 				],
 				"aliases": [
-					"dml"
+					"DML / Gembase"
 				]
-			}
+			}	
 		],
 		"grammars": [
 			{

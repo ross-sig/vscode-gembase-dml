@@ -1,0 +1,45 @@
+{
+    // Titles
+    "TITLE facility_name, \"title_text\"": {
+        "prefix": "TITLE",
+        "body": [
+            "TITLE ${facility_name}, \"${title_text}\""
+        ]
+    },
+    // Strings
+    // Expressions
+    // Forms        
+    "PERFORM": {
+        "prefix": "PERFORM",
+        "body": [
+            "PERFORM ${PROCEDURE_NAME}"
+        ],
+        "description": "PERFORM procedure_name - Runs Procedure Form"
+    },
+    // Declarations
+    // Blocks
+    "BEGIN_BLOCK": {
+        "prefix": "BEGIN_BLOCK",
+        "body": [
+            "BEGIN_BLOCK ${BLOCK_NAME}",
+            "\t",
+            "END_BLOCK"
+        ]
+    },
+    // Statements    
+    // Functions
+    "ABS": {
+        "prefix": "ABS",
+        "body": [
+            "ABS(${x})"
+        ],
+        "description": "Returns the absolute value"
+    },
+    "MAX": {
+        "prefix": "MAX",
+        "body": [
+            "MAX(${value1},${value2})"
+        ],
+        "description": "Returns the maximum value of 2 to 255 numeric values"
+    }
+}
