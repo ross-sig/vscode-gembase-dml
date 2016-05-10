@@ -329,13 +329,27 @@
     // Declarations
     // Blocks
     "BEGIN_BLOCK": {
-        "prefix": "BEGIN_BLOCK",
+        "prefix": "BEGIN_BLOCK (Generate)",
         "body": [
             "BEGIN_BLOCK ${block_name}",
             "\t",
             "END_BLOCK"
-        ]
+        ],
+        "description": "Generate Begin Block"
     },
+        "BEGIN_BLOCK DISPLAY_ONLY": {
+        "prefix": "BEGIN_BLOCK /DISPLAY_ONLY (Generate)",
+        "body": [
+            "BEGIN_BLOCK /DISPLAY_ONLY ${block_name}",
+            "\t",
+            "END_BLOCK"
+        ],
+        "description": "Generate Begin Block with /DISPLAY_ONLY"
+    },
+    
+    
+    
+    
     // Statements    
     // Functions
     "ABS": {
