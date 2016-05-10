@@ -332,7 +332,7 @@
         "prefix": "BEGIN_BLOCK (Generate)",
         "body": [
             "BEGIN_BLOCK ${block_name}",
-            "\t",
+                "\t",
             "END_BLOCK"
         ],
         "description": "Generate Begin Block"
@@ -341,7 +341,7 @@
         "prefix": "BEGIN_BLOCK /DISPLAY_ONLY (Generate)",
         "body": [
             "BEGIN_BLOCK /DISPLAY_ONLY ${block_name}",
-            "\t",
+                "\t",
             "END_BLOCK"
         ],
         "description": "Generate Begin Block with /DISPLAY_ONLY"
@@ -350,23 +350,95 @@
         "prefix": "INPUT_BLOCK (Generate)",
         "body": [
             "INPUT_BLOCK ${block_name}",
-            "\t/ROW=${row_num} &",
-            "\t/COL=${col_num} &",
-            "\t/TARGET=${target}",
-            "\t",
-            "END_BLOCK"
+                "\t/ROW=${row_num} &",
+                "\t/COL=${col_num} &",
+                "\t/TARGET=${target}",
+                "\t"
         ],
-        "description": [            
-        "Generate Input Block\n\n",
-            "INPUT_BLOCK ${block_name}\n",
-            "\t/ROW=${row_num} &\n",
-            "\t/COL=${col_num} &\n",
-            "\t/TARGET=${target}\n",
-            "\t",
-            "END_BLOCK"
-        ]
+        "description": "Generate Input Block"        
+    },    
+    "INPUT_BLOCK ALL": {
+        "prefix": "INPUT_BLOCK (Generate ALL Qualifiers)",
+        "body": [
+            "INPUT_BLOCK ${block_name}",
+                "\t/ABSOLUTE_POSITION &",
+                "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE",
+                "\t/BACK=(${back_dml}) &",
+                "\t/COL=${col} & ! CENTER, LEFT, RIGHT",
+                "\t/DISPLAY_LENGTH=${display_number}",
+                "\t/DOMAIN=${domain_table} &",
+                "\t/EXIT=(${exit_dml}) &",
+                "\t/EXIT_FORWARD=(${exit_forward}) &",
+                "\t/HEADING=${heading} &",
+                "\t/HEIGHT=${height_num} &",
+                "\t/INPUT_MASK=${input_mask} &",
+                "\t/LEN=${len_num} &",
+                "\t/LOV=${lov_table}(${lov_fields}) &",
+                "\t/LOV_AUTO_SELECT &",
+                "\t/LOV_COL=${lov_col} &",
+                "\t/LOV_DATA=${lov_data_field} &",
+                "\t/LOV_FIRST=${lov_first} &",
+                "\t/LOV_HEIGHT=${lov_height} &",
+                "\t/LOV_NOHEADING &",
+                "\t/LOV_NOSEARCH &",
+                "\t/LOV_REDUCED_TO=${lov_reduced_to} &",
+                "\t/LOV_ROW=${lov_row_num} &",
+                "\t/LOV_SECONDARY &",
+                "\t/LOV_SELECTION=${lov_selection} &",
+                "\t/LOV_SORTED_BY=${lov_sorted_by} &",
+                "\t/LOV_WIDTH=${lov_width} &",
+                "\t/LOV_WITH=${lov_with} &",
+                "\t/NEW &",
+                "\t/NOCLEAR_BUFFER &",
+                "\t/NO_DOMAIN &",
+                "\t/NOLOV_DATA &",
+                "\t/NOUNDERLINES &",
+                "\t/OPTIONS=${options} & ! DOCUMENTARY_AT_END, DOMAIN_LOCK_NONE, DOMAIN_LOCK_WRITE, DOCUMENTARY_RO, NOLOV_ALLOWED",
+                "\t/PROMPT=${prompt} &",
+                "\t/PROTECT &",
+                "\t/ROW=${row_num} &",
+                "\t/SOURCE=${source} &",
+                "\t/SOURCE_IF=(${source_if_condition}), ${source_if_default} &",
+                "\t/TARGET=${target} &",
+                "\t/TITLE=\"${title}\" &",
+                "\t/USE_IF=(${use_if_condition}) &",
+                "\t/USER_KEY n=(${user_key}) &",
+                "\t/USING=${using_keywords}",
+                "\t"
+            
+        ],
+        "description": "Generate Input Block with ALL Qualifiers"        
     },    
     
+     "ITEM_BLOCK": {
+        "prefix": "ITEM_BLOCK (Generate)",
+        "body": [
+            "ITEM_BLOCK ${block_name}",
+                "\t/ROW=${row_num} &",
+                "\t/COL=${col_num} &",
+                "\t/FACILITY=${facility}",
+                "\t"
+        ],
+        "description": "Generate Item Block"        
+    },    
+    
+    "ITEM_BLOCK ALL": {
+        "prefix": "ITEM_BLOCK (Generate ALL Qualifiers)",
+        "body": [
+            "ITEM_BLOCK ${block_name}",
+                "\t/ATTRIBUTES=${attributes} ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE &",
+                "\t/COL=${col} &",
+                "\t/FACILITY=${facility} &",
+                "\t/PROMPT=${prompt} &",
+                "\t/ROW=${row_num} &",
+                "\t/SOURCE=${source} &",
+                "\t/TAG=${tag} &",
+                "\t/TAG_LENGTH=$tag_length} &",
+                "\t/USE_IF=(${use_if_condition}) &",
+                "\t"
+        ],
+        "description": "Generate Item Block with ALL Qualifiers"        
+    },    
     
     
     // Statements    
