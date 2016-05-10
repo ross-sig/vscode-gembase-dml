@@ -28,14 +28,14 @@
 				{
 					"include": "#forms"
 				},
+				{				
+					"include": "#blocks"
+				},
 				{
 					"include": "#expressions"
 				},
 				{
 					"include": "#declarations"
-				},
-				{				
-					"include": "#blocks"
 				},
 				{				
 					"include": "#statements"
