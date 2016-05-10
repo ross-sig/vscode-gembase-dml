@@ -337,7 +337,7 @@
         ],
         "description": "Generate Begin Block"
     },
-        "BEGIN_BLOCK DISPLAY_ONLY": {
+    "BEGIN_BLOCK DISPLAY_ONLY": {
         "prefix": "BEGIN_BLOCK /DISPLAY_ONLY (Generate)",
         "body": [
             "BEGIN_BLOCK /DISPLAY_ONLY ${block_name}",
@@ -346,7 +346,26 @@
         ],
         "description": "Generate Begin Block with /DISPLAY_ONLY"
     },
-    
+    "INPUT_BLOCK": {
+        "prefix": "INPUT_BLOCK (Generate)",
+        "body": [
+            "INPUT_BLOCK ${block_name}",
+            "\t/ROW=${row_num} &",
+            "\t/COL=${col_num} &",
+            "\t/TARGET=${target}",
+            "\t",
+            "END_BLOCK"
+        ],
+        "description": [            
+        "Generate Input Block\n\n",
+            "INPUT_BLOCK ${block_name}\n",
+            "\t/ROW=${row_num} &\n",
+            "\t/COL=${col_num} &\n",
+            "\t/TARGET=${target}\n",
+            "\t",
+            "END_BLOCK"
+        ]
+    },    
     
     
     
