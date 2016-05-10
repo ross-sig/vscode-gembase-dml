@@ -8,20 +8,272 @@
     },
     // Strings
     // Expressions
-    // Forms        
+    // Forms
+    "MENU_FORM": {
+        "prefix": "MENU_FORM",
+        "body": [
+            "MENU_FORM ${form_name} &",                           
+                "\t/COL=${col_num} & ",        
+                "\t/HEIGHT=${height_num} & ",                        
+                "\t/ROW=${row_num} & ",             
+                "\t/WIDTH=${width_num}",
+                "",            
+                "\tITEM_BLOCK ${block_name1} /ROW=${item1_row_num} /COL=${item_col_num} /FACILITY=${facility_name1}",
+                "",
+                "\tITEM_BLOCK ${block_name2} /ROW=${item2_row_num} /COL=${item_col_num} /FACILITY=${facility_name2}",            
+                "",
+            "END_FORM "
+            
+        ],
+        "description": "Menu Form"
+    },
+    
+        "MENU_FORM ALL": {
+        "prefix": "MENU_FORM ALL QUALIFIERS",
+        "body": [
+            "MENU_FORM ${form_name} &",            
+                "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, NOBORDER, REVERSE, UNDERLINE",
+                "\t/COL=${col_num} & ",
+                "\t/DEFAULT_TAG=${menu_item} & ",
+                "\t/HEIGHT=${height_num} & ",            
+                "\t/READ_ONLY & ",
+                "\t/ROW=${row_num} & ",
+                "\t/SYSTEM=${database}.${system} & ",
+                "\t/TAG_LENGTH=${tag_length} &",
+                "\t/TITLE=\"${title}\" & ",
+                "\t/WIDTH=${width_num}",
+                "",            
+                "\tITEM_BLOCK ${block_name1} /ROW=${item1_row_num} /COL=${item_col_num} /FACILITY=${facility_name1}",
+                "",
+                "\tITEM_BLOCK ${block_name2} /ROW=${item2_row_num} /COL=${item_col_num} /FACILITY=${facility_name2}",            
+                "",
+            "END_FORM "
+            
+        ],
+        "description": "Menu Form with all Qualifiers"
+    },
+
+    "NORMAL_FORM": {
+        "prefix": "FORM",
+        "body": [
+            "FORM ${form_name} &",                          
+                "\t/COL=${col_num} &",              
+                "\t/HEIGHT=${height_num} &",             
+                "\t/WIDTH=${width} &",
+                "\t/TITLE=\"${title}\"",
+                "\t",
+            "END_FORM"
+            
+        ],
+        "description": " Normal Form"
+    },
+
+    "NORMAL_FORM ALL": {
+        "prefix": "FORM ALL QUALIFIERS",
+        "body": [
+            "FORM ${form_name} &",            
+                "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, NOBORDER, REVERSE, UNDERLINE",
+                "\t/BASE &",
+                "\t/BREAK=${start_form},${end_form},${expression} & ",
+                "\t/BREAK0=${pre_form},${post_form} &",
+                "\t/COL=${col_num} &",
+                "\t/FIRST=${max_records} &",
+                "\t/GROUPED_BY=${grouped_by} &",
+                "\t/HEIGHT=${height_num} &",
+                "\t/JOINED_TO=${joined_to_table} &",
+                "\t/LOCK=${lock_type} & ! NONE, READ, WRITE",
+                "\t/NOEXIT_FORWARD &",
+                "\t/READ_ONLY &",
+                "\t/REDUCED_TO=${reduced_to} &", 
+                "\t/REMAIN &",
+                "\t/REPEAT[=NOCLEAN]  & ! repeat repeatedly",
+                "\t/ROW=row_num &",
+                "\t/SECONDARY &",
+                "\t/SELECTION=${selection} &",
+                "\t/SORTED_BY=(${sorted_by}) &",
+                "\t/STATISTIC=${var}=${statistic_function} &",
+                "\t/STREAM_NAME=${stream_name} &",
+                "\t/TABLE=${table} &",
+                "\t/TITLE=\"${title}\" &",
+                "\t/WIDTH=${width} &",
+                "\t/WITH=${with_field_expression}",
+                "\t",
+            "END_FORM"
+            
+        ],
+        "description": "Normal Form with all Qualifiers"
+    },
+
+
+    "PROCEDURE_FORM": {
+        "prefix": "PROCEDURE_FORM",
+        "body": [
+            "PROCEDURE_FORM ${form_name}",
+                "\t",
+            "END_FORM"            
+        ],
+        "description": "Procedure Form"
+    },
+
+    
+    "PROCEDURE_FORM ALL": {
+        "prefix": "PROCEDURE_FORM ALL QUALIFIERS",
+        "body": [
+            "PROCEDURE_FORM ${form_name} ${[arguments]} &",            
+                "\t/BASE",
+                "\t/BREAK=${start_form},${end_form},${expression} & ",                           
+                "\t/BREAK0=${pre_form},${post_form} &",
+                "\t/COMMIT_RATE=${commit_rate}",
+                "\t/FIRST=${max_records} &",
+                "\t/GROUPED_BY=${grouped_by} &",
+                "\t/JOINED_TO=${joined_to_table} &",
+                "\t/LOCK=${lock_type} & ! NONE, READ, WRITE",               
+                "\t/NOEXIT_FORWARD",
+                "\t/READ_ONLY",
+                "\t/REDUCED_TO=${reduced_to} &",
+                "\t/SECONDARY",                
+                "\t/SELECTION=${selection} &",
+                "\t/SORTED_BY=(${sorted_by}) &",
+                "\t/STATISTIC=${var}=${statistic_function} &",
+                "\t/STREAM_NAME=${stream_name} &",               
+                "\t/STATUS",
+                "\t/STREAM_NAME=${stream_name} &",
+                "\t/TABLE=${table} &",
+                "\t/WITH=${with_field_expression}",
+                "\t",
+            "END_FORM"            
+        ],
+        "description": "Procedure Form with all Qualifiers"
+    },
+    
+    "QUERY_FORM": {
+        "prefix": "QUERY_FORM",
+        "body": [
+            "QUERY_FORM ${form_name} &",                         
+                "\t/COL=${col_num} &",         
+                "\t/HEIGHT=${height_num} &",      
+                "\t/ROW=row_num &",          
+                "\t/WIDTH=${width} &",
+                "\t/TABLE=${table}",
+                "\t",
+            "END_FORM"            
+        ],
+        "description": "Query Form"
+    },    
+    
+    
+    "QUERY_FORM_ALL": {
+        "prefix": "QUERY_FORM ALL QUALIFIERS",
+        "body": [
+            "QUERY_FORM ${form_name} ${[arguments]} &",                         
+                "\t/ADD_FORM=${add_form_name} &",
+                "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, NOBORDER, REVERSE, UNDERLINE",
+                "\t/BASE &",            
+                "\t/COL=${col_num} &",
+                "\t/DELETE_FORM=${delete_form} &",
+                "\t/FIND_FORM=${find_form} &",
+                "\t/FIRST=${max_records} &",                
+                "\t/HEIGHT=${height_num} &",
+                "\t/JOINED_TO=${joined_to_table} &",
+                "\t/LOCK=${lock_type} & ! NONE, READ, WRITE",
+                "\t/MODIFY_FORM=${modify_form} &",
+                "\t/NOEXIT_FORWARD &",
+                "\t/OPTIONS=${options} & ! EXECUTE, EXIT_EMPTY, NODELETE, NOFIND, NOINSERT, NOMODIFY, START_INSERT" ,
+                "\t/READ_ONLY &",
+                "\t/REDUCED_TO=${reduced_to} &", 
+                "\t/REMAIN &",
+                "\t/REPEAT[=NOCLEAN]  & ! repeat repeatedly",
+                "\t/ROW=row_num &",
+                "\t/SELECTION=${selection} &",
+                "\t/SORTED_BY=(${sorted_by}) &",
+                "\t/TABLE=${table} &",
+                "\t/TITLE=\"${title}\" &",
+                "\t/WIDTH=${width} &",
+                "\t/WITH=${with_field_expression}",
+                "\t",
+            "END_FORM"
+        ],
+        "description": "Query Form with all Qualifiers"
+    },    
+    
+    "REPORT_FORM": {
+        "prefix": "REPORT_FORM",
+        "body": [
+            "REPORT_FORM ${form_name} &",
+                "\t/TABLE=${table}",
+                "\t",
+                "\tOUTPUT_BLOCK ${block_name} /ROW=${output_row_num} /COL=${output_col_num} &",
+                "\t\t/SOURCE=${source}",
+                "\t",
+            "END_FORM"
+        ],
+        "description": "Report Form"
+    },  
+    
+        "REPORT_FORM ALL": {
+        "prefix": "REPORT_FORM ALL QUALIFIERS",
+        "body": [
+            "REPORT_FORM ${form_name} &",              
+                "\t/BASE &",
+                "\t/BEGIN_ROW=${begin_row_num} &",
+                "\t/BREAK=${start_form},${end_form},${expression} &",                           
+                "\t/BREAK0=${pre_form},${post_form} &",
+                "\t/COLUMN_HEADINGS=${col_heading_form} &",
+                "\t/COLUMN_SPACING=${col_spacing_num} &",
+                "\t/END_ROW=${end_row_num} &",
+                "\t/FIND_FORM=${find_form} &",
+                "\t/FIRST=${max_records} &",
+                "\t/FOOTING=${footing} &",
+                "\t/FOOTING_FORM=${footing_form} &",               
+                "\t/GROUPED_BY=${grouped_by} &",
+                "\t/HEADING=${heading} &",
+                "\t/HEADING_FORM=${heading_form} &",
+                "\t/HEIGHT=${height_num} &",
+                "\t/JOINED_TO=${joined_to_table} &",
+                "\t/LFOOTING=${lfooting} &",
+                "\t/LHEADING=${lheading} &",
+                "\t/LINES_AFTER=${lines_after} & ! number or \"TOP_OF_PAGE\"", 
+                "\t/LINES_BEFORE=${lines_before} & ! number or \"TOP_OF_PAGE\"",
+                "\t/LOCK=${lock_type} & ! NONE, READ, WRITE",
+                "\t/NOSTATUS &",
+                "\t/OPTIONS=${options} & ! COMPLETE, CONTINUE, INFINITE, MERGED, NOUNDERLINES, OVERLAID, PAGE_BREAK_REPRINT, PRINT, SUMMARY, ZEROSUPPRESS",
+                "\t/OUTPUT=${output} &",
+                "\t/PDF(${pdf_option}=${value}) &",
+                "\t/READ_ONLY &",
+                "\t/REDUCED_TO=\"${reduced_to}\" &",
+                "\t/RFOOTING=${rfooting} &",
+                "\t/RHEADING=${rheading} &",
+                "\t/SECONDARY &",
+                "\t/SELECTION=${selection} &",
+                "\t/SORTED_BY=${sorted_by} &",
+                "\t/STATISTIC=${variable}=${statistic_function} &",
+                "\t/STATUS &",
+                "\t/STREAM_NAME=${stream} &",
+                "\t/TABLE=${table} &",
+                "\t/WIDTH=${width} &",
+                "\t/WITH=${with} &",
+                "",
+            "END_FORM"
+        ],
+        "description": "Report Form with all Qualifiers"
+    },  
+
+        
+    
+    // TODO move this            
     "PERFORM": {
         "prefix": "PERFORM",
         "body": [
             "PERFORM ${PROCEDURE_NAME}"
         ],
-        "description": "PERFORM procedure_name - Runs Procedure Form"
+        "description": "Perform Procedure"
     },
     // Declarations
     // Blocks
     "BEGIN_BLOCK": {
         "prefix": "BEGIN_BLOCK",
         "body": [
-            "BEGIN_BLOCK ${BLOCK_NAME}",
+            "BEGIN_BLOCK ${block_name}",
             "\t",
             "END_BLOCK"
         ]
