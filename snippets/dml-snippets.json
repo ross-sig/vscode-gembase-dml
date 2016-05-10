@@ -257,6 +257,64 @@
         ],
         "description": "Report Form with all Qualifiers"
     },  
+    
+   "TABLE_FORM": {
+        "prefix": "TABLE_FORM",
+        "body": [
+            "TABLE_FORM ${form_name} &",
+                "\t/TABLE=${table} &",
+                "\t/ROW=${row_num} &",                
+                "\t/COL=${col_num} &",
+                "\t/HEIGHT=${height_num} &",
+                "\t/WIDTH=${width}",
+                "\t",
+            "END_FORM"
+        ],
+        "description": "Generate Table Form"
+    },  
+
+
+   "TABLE_FORM ALL": {
+        "prefix": "TABLE_FORM ALL QUALIFIERS",
+        "body": [
+            "TABLE_FORM ${form_name} &",
+                "\t/ALTERNATE_FORM=${alt_form} &",
+                "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, NOBORDER, REVERSE, UNDERLINE",
+                "\t/BASE &",
+                "\t/BEGIN_ROW=${begin_row_num} &",
+                "\t/COL=${col_num} &",
+                "\t/COLUMN_HEADING_ROW=${col_heading_row_num} &",
+                "\t/DELETE_FORM=${delete_form} &",
+                "\t/END_ROW=${end_row_num} &",
+                "\t/FIND_FORM=${find_form} &",
+                "\t/FIRST=${max_records} &",
+                "\t/HEIGHT=${height_num} &",
+                "\t/INPUT_ROW_HEIGHT=${input_row_height} &",
+                "\t/JOINED_TO=${joined_to} &",
+                "\t/LOCK=${lock_type} & ! NONE, READ, WRITE &",
+                "\t/NOERROR &",
+                "\t/NOEXIT_FORWARD &",
+                "\t/OPTIONS=${options} & ! DISPLAY_RO, EXIT_EMPTY, FAST_INSERT, INSERT_FIRST, INSERT_END, MENU, NODELETE, NOEDIT, tNOINSERT, NOMODIFY, POSITION_AT_END, SELECT_ALL, SELECT_ONE, START_FIND",              
+                "\t/READ_ONLY &",
+                "\t/REDUCED_TO=${reduced_to} &",
+                "\t/REMAIN &",
+                "\t/ROW=${row_num} &",
+                "\t/ROW_HEIGHT=${row_height} &",
+                "\t/SECONDARY &",
+                "\t/SELECTION=${selection} &",
+                "\t/SEQUENCE=${seq_field_name} &",
+                "\t/SEQUENCE_INCREMENT=${seq_increment} &",
+                "\t/SORTED_BY=${sorted_by} &",
+                "\t/TABLE=${table} &",
+                "\t/TITLE=\"${title}\" &",
+                "\t/WIDTH=${width_num} &",
+                "\t/WITH=${with}",
+                "\t",
+            "END_FORM"
+        ],
+        "description": "Generate Table Form with ALL Qualifiers"
+    },  
+
 
         
     
