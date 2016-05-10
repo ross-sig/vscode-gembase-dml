@@ -132,7 +132,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.function.dml",
-					"match": "(?i)\\b(BEGIN_BLOCK|INPUT_BLOCK|ITEM_BLOCK|MENU_BLOCK|OUTPUT_BLCOK|PAUSE_BLOCK|END_BLOCK|SIGNATURE_BLOCK|YESNO_BLOCK)\\b"
+					"match": "(?i)\\b(BEGIN_BLOCK|INPUT_BLOCK|ITEM_BLOCK|MENU_BLOCK|OUTPUT_BLOCK|PAUSE_BLOCK|END_BLOCK|SIGNATURE_BLOCK|YESNO_BLOCK)\\b"
 				},
 				{
 					"comment": "Block Qualifiers",
