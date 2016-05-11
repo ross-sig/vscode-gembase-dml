@@ -91,7 +91,7 @@
 				{
 					"comment": "Variables",
 					"name": "variable.parameter.dml",
-					"match": "\\#([a-zA-Z]|\\_|\\$)*"
+					"match": "\\#([a-zA-Z0-9]|\\_|\\$)*"
 				},
 				{
 					"comment": "Integer Constants",
