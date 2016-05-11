@@ -238,7 +238,7 @@
                 "\t/NOSTATUS &",
                 "\t/OPTIONS=${options} & ! COMPLETE, CONTINUE, INFINITE, MERGED, NOUNDERLINES, OVERLAID, PAGE_BREAK_REPRINT, PRINT, SUMMARY, ZEROSUPPRESS",
                 "\t/OUTPUT=${output} &",
-                "\t/PDF(${pdf_option}=${value}) &",
+                "\t/PDF(${pdf_options}=${value}) &",
                 "\t/READ_ONLY &",
                 "\t/REDUCED_TO=\"${reduced_to}\" &",
                 "\t/RFOOTING=${rfooting} &",
@@ -439,6 +439,109 @@
         ],
         "description": "Generate Item Block with ALL Qualifiers"        
     },    
+    
+    "MENU_BLOCK": {
+        "prefix": "MENU_BLOCK (Generate)",
+        "body": [
+            "MENU_BLOCK ${block_name}",
+                "\t/ROW=${row_num} &",
+                "\t/COL=${col_num} &",
+                "\t/FACILITY=${facility}",
+                "\t"
+        ],
+        "description": "Generate Menu Block"        
+    },    
+    "MENU_BLOCK ALL": {
+        "prefix": "MENU_BLOCK (Generate ALL Qualifiers)",
+        "body": [
+            "MENU_BLOCK ${block_name}",
+                "\t/BACK=(${back_dml}) &",
+                "\t/COL=${col} &",
+                "\t/EXIT=(${exit_dml}) &",
+                "\t/EXIT_FORWARD=(${exit_forward_dml}) &",
+                "\t/HEIGHT=${height_num} &",
+                "\t/ITEM=${item} &",
+                "\t/ITEM_IF=${item_if} &",
+                "\t/NOREPEAT &",             
+                "\t/ROW=${row_num} & ",
+                "\t/SOURCE=${source} &",
+                "\t/SOURCE_IF=${source_if} &",
+                "\t/TARGET=${target} &",
+                "\t/TITLE=\"${title}\" &",
+                "\t/USE_IF=(${use_if_condition})",
+                "\t"
+        ],
+        "description": "Generate Menu Block with ALL Qualifiers"        
+    },    
+    "OUTPUT_BLOCK": {
+        "prefix": "OUTPUT_BLOCK (Generate)",
+        "body": [
+            "OUTPUT_BLOCK ${block_name} &",
+                "\t/ROW=numeric_expression &",
+                "\t/COL=numeric_expression &",
+                "\t/SOURCE=${source}",
+                "\t"
+        ],
+        "description": "Generate Output Block"        
+    },    
+    "OUTPUT_BLOCK ALL": {
+        "prefix": "OUTPUT_BLOCK (Generate ALL Qualifiers)",
+        "body": [
+            "OUTPUT_BLOCK ${block_name} &",
+                "\t/ABSOLUTE_POSITION &",
+                "\t/ATTRIBUTES=${attributes} ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE &",
+                "\t/BREAK=${break_int} &",
+                "\t/COL=${col} &",
+                "\t/DOMAIN=${domain_table} &",
+                "\t/HEADING=${heading} &",
+                "\t/HEIGHT=${height_num} &",
+                "\t/LEN=${len} &",
+                "\t/NOHEADING &",
+                "\t/NOUNDERLINES &",
+                "\t/OUTPUT_MASK=${output_mask} &",
+                "\t/PDF(${pdf_options}=${value}) &",
+                "\t/PROMPT=${prompt} &",
+                "\t/ROW=${row}",
+                "\t/SOURCE=${source} &",
+                "\t/SOURCE_IF=${source_if} &",
+                "\t/TARGET=${target} &",
+                "\t/TOTAL &",
+                "\t/USE_IF=(${use_if_condition})",
+                "\t/USING=${usings}",
+                "\t",
+                "\t",
+                ""
+                    ],
+        "description": "Generate Pause Block"        
+    },    
+    "PAUSE_BLOCK": {
+        "prefix": "PAUSE_BLOCK (Generate)",
+        "body": [
+            "PAUSE_BLOCK ${block_name}",              
+                "\t",
+            ""
+                
+        ],
+        "description": "Generate Pause Block"        
+    },  
+    "PAUSE_BLOCK ALL": {
+        "prefix": "PAUSE_BLOCK (Generate ALL Qualifiers)",
+        "body": [
+            "PAUSE_BLOCK ${block_name} &",              
+                "\t/BACK=(${back_dml}) &",
+                "\t/COL=${col_num} &",
+                "\t/EXIT=(${exit_dml}) &",
+                "\t/EXIT_FORWARD=(${exit_forward_dml}) &",
+                "\t/PROMPT=${prompt} &",
+                "\t/ROW=${row_num} &",
+                "\t/USE_IF=(${use_if_condition})",
+            "",    
+            ""
+                
+        ],
+        "description": "Generate Pause Block with ALL Qualifiers"        
+    },  
+    
     
     
     // Statements    
