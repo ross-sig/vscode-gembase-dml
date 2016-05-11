@@ -26,6 +26,9 @@
 					"include": "#strings"
 				},
 				{
+					"include": "ampersands"
+				},
+				{
 					"include": "#forms"
 				},
 				{				
@@ -53,6 +56,22 @@
 					"match": "(?i)\\bTITLE\\b"
 				}
 			]
+		},
+		"ampersands": {
+			"patterns": [
+				{
+					/* TODO this isn't working. . Should match a mising ambersand...
+					
+	MENU_BLOCK block_name
+	/ROW=row_num &
+	/COL=col_num &
+	/FACILITY=facility
+					
+					*/
+					"name": "invalid.illegal.dml",
+					"match": "^(.(?!(&)))*$\\n.*\\\/"					
+				}
+			]	
 		},
 		"strings": {
 			"patterns": [
