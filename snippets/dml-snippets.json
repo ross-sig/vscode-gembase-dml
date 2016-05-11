@@ -541,8 +541,80 @@
         ],
         "description": "Generate Pause Block with ALL Qualifiers"        
     },  
+    "SIGNATURE_BLOCK": {
+        "prefix": "SIGNATURE_BLOCK (Generate)",
+        "body": [
+            "SIGNATURE_BLOCK",              
+                "\t",
+            ""
+                
+        ],
+        "description": "Generate Signature Block"        
+    },      
+    "SIGNATURE_BLOCK ALL": {
+        "prefix": "SIGNATURE_BLOCK (Generate with ALL Qualifiers)",
+        "body": [
+            "SIGNATURE_BLOCK &",              
+                "\t/AUDIT=${audit_file_spec} &",
+                "\t/DATETIME=${datetime} &",
+                "\t/FACILITY=${facility} &",
+                "\t/FAILURE=(${failure}) &",
+                "\t/NOAUDIT &",
+                "\t/PASSWORD1=${password1} &",
+                "\t/PASSWORD2=${password2} &",
+                "\t/PURPOSE=${purpose} &",
+                "\t/SUCCESS=(${success_dml}) &",
+                "\t/USERNAME1=${username1} &",
+                "\t/USERNAME2=${username2} &",
+                "\t/USER1=${user_defined1} &",
+                "\t/USER2=${user_defined2} &",
+                "\t/USER3=${user_defined3} &",
+                "\t/USER4=${user_defined4} &",
+                "\t/USER5=${user_defined5} &",
+                "\t/VALIDATION_FORM=${validation_form} &",
+                "\t",
+                ""                            
+        ],
+        "description": "Generate YesNo Block with ALL Qualifiers"        
+    },
+    "YESNO_BLOCK": {
+        "prefix": "YESNO_BLOCK (Generate)",
+        "body": [
+            "YESNO_BLOCK ${block_name} /ROW=${row_num} /COL=${col}",                               
+                "\t",
+                "\t",
+            ""
+                
+        ],
+        "description": "Generate YESNO Block"        
+    },       
+    "YESNO_BLOCK ALL": {
+        "prefix": "YESNO_BLOCK (Generate ALL Qualifiers)",
+        "body": [
+            "YESNO_BLOCK ${block_name} &",   
+                "\t/BACK=(dml_statement) &",
+                "\t/COL=${col} &",
+                "\t/EXIT=(${exit_dml}) &",
+                "\t/EXIT_FORWARD=(${exit_forward_dml}) &",
+                "\t/FAILURE=(${failure}) &",
+                "\t/HEADING=${heading} &",
+                "\t/NOUNDERLINES &",
+                "\t/PROMPT=${prompt} &",
+                "\t/ROW=${row_num} &",
+                "\t/SOURCE=${source} &",
+                "\t/SOURCE_IF=${source_if} &",
+                "\t/SUCCESS=(${success_dml}) &",
+                "\t/TARGET=${target}",
+                "\t/USE_IF=(${use_if_condition})",                            
+                "\t",
+                "\t",
+            ""
+                
+        ],
+        "description": "Generate YESNO Block with ALL Qualifiers"        
+    },       
     
-    
+        
     
     // Statements    
     // Functions
