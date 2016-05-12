@@ -1,11 +1,5 @@
 {
-    // Titles
-    "TITLE facility_name, \"title_text\"": {
-        "prefix": "TITLE",
-        "body": [
-            "TITLE ${facility_name}, \"${title_text}\""
-        ]
-    },
+
     // Strings
     // Expressions
     // Forms
@@ -327,6 +321,15 @@
         "description": "Perform Procedure"
     },
     // Declarations
+        
+    "TITLE facility_name, \"title_text\"": {
+        "prefix": "TITLE",
+        "body": [
+            "TITLE ${facility_name}, \"${title_text}\""
+        ]
+    },
+    
+    
     // Blocks
     "BEGIN_BLOCK": {
         "prefix": "BEGIN_BLOCK (Generate)",
