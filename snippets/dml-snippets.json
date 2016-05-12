@@ -1055,7 +1055,7 @@
                 "\t/CHARACTER_SET=${character_set} &",
                 "\t/DOUBLE_QUOTE &",
                 "\t/ESCAPE_CHARACTER=${escape_char} &",
-                "\t/FAILURE=($failure_dml) &",
+                "\t/FAILURE=(${failure_dml}) &",
                 "\t/FIELD_SEPARATOR=${field_separator} &",
                 "\t/FIELDS=${field_list} &",
                 "\t/FROM=${db_handle}.${table} &",
@@ -1069,7 +1069,7 @@
                 ""
                 
         ],
-        "descripion": "Generate EXPORT/CSV with all Qualifers"        
+        "description": "Generate EXPORT/CSV with all Qualifers"        
     },
    "EXPORT_XML": {
         "prefix": "EXPORT/XML [Generate Qualifiers)",
@@ -1082,31 +1082,31 @@
                 ""
                 
         ],
-        "descripion": "Generate EXPORT/XML with all Qualifers"        
+        "description": "Generate EXPORT/XML with all Qualifers"        
     },
     "EXPORT_XML_ALL": {
         "prefix": "EXTERNAL \"file_spec\" routine_name [func_return_value_keywords] [arguments] /FAILURE=(failure_dml) /SUCCESS=(sucess_dml)",
         
         "body": [
             "EXTERNAL \"${file_spec}\" ${routine} ${keyword} ${arguments} &",
-                "\t/FAILURE=($failure_dml) &",
-                "\t/SUCCESS=($success_dml)",           
+                "\t/FAILURE=(${failure_dml}) &",
+                "\t/SUCCESS=(${success_dml})",           
                 ""
                 
         ],
-        "descripion": "Declares External Routine"        
+        "description": "Declares External Routine"        
     },
     "EXTERNAL": {
         "prefix": "EXTERNAL \"file_spec\" routine_name [func_return_value_keywords] [arguments] /FAILURE=(failure_dml) /SUCCESS=(sucess_dml)",
         
         "body": [
             "EXTERNAL \"${file_spec}\" ${routine} ${keyword} ${arguments} &",
-                "\t/FAILURE=($failure_dml) &",
-                "\t/SUCCESS=($success_dml)",           
+                "\t/FAILURE=(${failure_dml}) &",
+                "\t/SUCCESS=(${success_dml})",           
                 ""
                 
         ],
-        "descripion": "Declares External Routine"        
+        "description": "Declares External Routine"        
     },
     "FETCH": {
         "prefix": "FETCH stream_name",
@@ -1115,16 +1115,16 @@
             "FETCH stream_name"
                 
         ],
-        "descripion": "Get next record from stream"        
+        "description": "Get next record from stream"        
     },
     "FETCH_ALL": {
         "prefix": "FETCH stream_name /FAILURE=(failure_dml) /SUCCESS=(success_dml)",
         
         "body": [
-            "FETCH ${stream_name} /FAILURE=($failure_dml) /SUCCESS=($success_dml)"
+            "FETCH ${stream_name} /FAILURE=(${failure_dml}) /SUCCESS=($success_dml)"
                 
         ],
-        "descripion": "Get next record from stream"        
+        "description": "Get next record from stream"        
     },
     "FIND IN": {
         "prefix": "FIND IN table_name /[qualifiers]",
@@ -1138,7 +1138,7 @@
                 ""
                 
         ],
-        "descripion": "Find records in table"        
+        "description": "Find records in table"        
     },
     "GOTO": {
         "prefix": "GOTO block_name",
@@ -1147,79 +1147,108 @@
             "GOTO ${block_name}"
                 
         ],
-        "descripion": "Goes to block"        
+        "description": "Goes to block"        
     },
-
+    "IF": {
+        "prefix": "IF (condition)",
+        
+        "body": [
+            "IF ${condition}",
+            "\t",
+            "END_IF"
+                
+        ],
+        "description": "If Statement"        
+    },
+    "ELSE": {
+        "prefix": "ELSE",
+        
+        "body": [
+            "ELSE",
+            "\t"
+                
+        ],
+        "description": "ELSE"        
+    },
+    "ELSE_IF": {
+        "prefix": "ELSE_IF",
+        
+        "body": [
+            "ELSE_IF",
+            "\t"
+                
+        ],
+        "description": "ELSE_IF"        
+    },
+    "END_IF": {
+        "prefix": "END_IF",
+        
+        "body": [
+            "END_IF"
+                
+        ],
+        "description": "END_IF"        
+    },
+    "IMPORT": {
+        "prefix": "IMPORT [/qualifiers]",
+        
+        "body": [
+            "IMPORT &",
+                "\t/ARCHIVE=${archive_file_spec} &",
+                "\t/CHECK_ONLY &",
+                "\t/COMMIT_RATE=${commit_rate} &",
+                "\t/CSV &",
+                "\t/DATA &",
+                "\t/FAILURE=(${failure_dml}) &",
+                "\t/FROM=${from_db_handle} &",
+                "\t/LOG=${log_file_spec} &",
+                "\t/METADATA=${metadata_list} &",
+                "\t/METADATA_DUMP=${metadata_dump} &",
+                "\t/NOAUDIT &",
+                "\t/NOCHECK_ONLY &",
+                "\t/NODATA &",
+                "\t/NOLOG &",
+                "\t/NOMETADATA &",
+                "\t/NOSTATUS &",
+                "\t/STATUS &",
+                "\t/SUCCESS=(${success-dml}) &",
+                "\t/TABLES=\"${tables}\" &",
+                "\t/TO=${to_db_handle}",
+                "\t/VERBOSE"
+                
+        ],
+        "description": "IMPORT data to a database"        
+    },
+    "IMPORT_CSV": {
+        "prefix": "IMPORT/CSV [/qualifiers]",
+        
+        "body": [
+            "IMPORT/CSV &",
+                "\t/CHARACTER_SET=${character_set} &",
+                "\t/DOUBLE_QUOTE &",
+                "\t/ESCAPE_CHARACTER=${escape_char} &",
+                "\t/FAILURE=(dml-statement) &",
+                "\t/FIELD_SEPARATOR=field-separator &",
+                "\t/FIELDS=field-list &",
+                "\t/FROM=CSV-file-specification &",
+                "\t/LOG=log-file-specification &",
+                "\t/METADATA=metadata-list &",
+                "\t/QUOTE_CHARACTER=quote-character &",
+                "\t/STATUS &",
+                "\t/SUCCESS=(dml-statement) &",
+                "\t/TO= database-handle.table-name &",
+                "\t/VERBOSE"
+                
+        ],
+        "description": "IMPORT CSV into table"        
+    },
+    
+    
 
 /*
 TODO
 
 
-IF, ELSE, ELSE_IF, and END_IF
-IF (condition_expression) dml_statement
-or
-IF (condition_expression)
-dml_code
-ELSE
-dml_code
-END_IF
-or
-IF (condition_expression)
-dml_code
-ELSE_IF (condition_expression)
-dml_code
-[ELSE_IF (condition_expression)
-dml_code)]
-END_IF
-or
-IF (condition_expression)
-dml_code
-ELSE_IF (condition_expression)
-dml_code
-[ ELSE_IF (condition_expression)
-dml_code]
-ELSE
-dml_code
-END_IF
-IMPORT
-IMPORT
-[/ARCHIVE=archive-file-specification]
-[/CHECK_ONLY]
-[/COMMIT_RATE=n]
-[/CSV]
-[/DATA]
-[/FAILURE=(failure-dml)]
-[/FROM=database-handle]
-[/LOG=log-file-specification]
-[/METADATA=metadata-list]
-[/METADATA_DUMP=metadata-dump-file-specification]
-[/NOAUDIT]
-[/NOCHECK_ONLY]
-[/NODATA]
-/NOLOG
-/NOMETADATA
-/NOSTATUS
-/STATUS
-/SUCCESS=(success-dml)
-/TABLES="wildcard-tablename, wildcard-tablename, ..."
-/TO=database-handle
-/VERBOSE
-IMPORT/CSV
-IMPORT/CSV
-[/CHARACTER_SET=character-set]
-[/DOUBLE_QUOTE]
-[/ESCAPE_CHARACTER=escape-character]
-[/FAILURE=(dml-statement)]
-[/FIELD_SEPARATOR=field-separator]
-[/FIELDS=field-list]
-[/FROM=CSV-file-specification]
-[/LOG=log-file-specification]
-[/METADATA=metadata-list]
-[/QUOTE_CHARACTER=quote-character]
-[/STATUS]
-[/SUCCESS=(dml-statement)]
-[/TO= database-handle.table-name]
-[/VERBOSE]
 IMPORT/XML
 IMPORT/XML
 [/CREATE] &
