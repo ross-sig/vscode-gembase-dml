@@ -54,8 +54,22 @@
 				{
 					"name": "invalid.illegal.dml",
 					"match": "(?i)\\b(BEGIN_BLOCK|INPUT_BLOCK|ITEM_BLOCK|MENU_BLOCK|OUTPUT_BLOCK|PAUSE_BLOCK|END_BLOCK|SIGNATURE_BLOCK|YESNO_BLOCK)\\b ([A-z0-9_])* (\/[A-z0-9_]*.*)*&\\s*\n\r\\s*$\\s*$\\s*"
-				}
+				},
+				{
+					"name": "string.quoted.double.dml",
+					"begin": "code_block",
+					"patterns": [
+						{
+						"include": "$self",
+						"name": "invalid.illegal.dml",
+						"match": "hello"
+						}	
+					],
+					"end": "end_code"
 
+					
+
+				}
 				
 			]
 		},
