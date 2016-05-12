@@ -966,116 +966,180 @@
         ],
         "description": "Error Text with all qualifiers"        
     },
-
-
-
+   "EXECUTE": {
+        "prefix": "EXECUTE procedure_name",
+        
+        "body": [
+            "EXECUTE ${procedure_name}"             
+        ],
+        "description": "Execute Procedure"        
+    },
+   "EXECUTE_ALL": {
+        "prefix": "EXECUTE [/HANDLE=connect_handle] [/NOWAIT] procedure_name [(arguments)]",
+        
+        "body": [
+            "EXECUTE /HANDLE=${handle} /NOWAIT ${procedure_name} ${(arguments)}"             
+        ],
+        "description": "Execute Procedure with Arguments and ALL Qualifiers"        
+    },
+   "EXIT": {
+        "prefix": "EXIT",
+        
+        "body": [
+            "EXIT"             
+        ],
+        "description": "Exit Current Form"        
+    },
+   "EXIT_status_success": {
+        "prefix": "EXIT (%SUCCESS)",
+        
+        "body": [
+            "EXIT (%SUCCESS)"             
+        ],
+        "description": "Exit Current Form with Success Status"        
+    },
+   "EXIT_status": {
+        "prefix": "EXIT (%FAILURE)",
+        
+        "body": [
+            "EXIT ($FAILURE)"             
+        ],
+        "description": "Exit Current Form Failure Status"        
+    },
+   "EXPORT": {
+        "prefix": "EXPORT",
+        
+        "body": [
+            "EXPORT"             
+        ],
+        "description": "EXPORT"        
+    },
+   "EXPORT_ALL": {
+        "prefix": "EXPORT [Generate Qualifiers)",
+        
+        "body": [
+            "EXPORT &",
+                "\t/ARCHIVE=${archive_file_spec} &",
+                "\t/ASCII &",
+                "\t/BINARY &",
+                "\t/CHARACTER_SET=${character_set} &",
+                "\t/COMMIT_RATE=${commit_rate} &",
+                "\t/CSV &",
+                "\t/DATA &",
+                "\t/FAILURE=(${failure_dml}) &",
+                "\t/FROM=${from_db_handle} &",
+                "\t/LOG=${log_file_spec} &",
+                "\t/METADATA=${metadata_list} &",
+                "\t/NOAUDIT &",
+                "\t/NODATA &",
+                "\t/NOLOG &",
+                "\t/NOMETADATA &",
+                "\t/NOSIGN &",
+                "\t/NOSTATUS &",
+                "\t/SIGN &",
+                "\t/STATUS &",
+                "\t/SUCCESS=(${success-dml}) &",
+                "\t/TABLES=${tables} &",
+                "\t/TO=${to_db_handle}",
+                ""
+                 
+        ],
+        "description": "Generate EXPORT with all Qualifers"        
+    },
+   "EXPORT_CSV": {
+        "prefix": "EXPORT/CSV [Generate Qualifiers)",
+        
+        "body": [
+            "EXPORT/CSV &",           
+                "\t/ALWAYS_QUOTE &",
+                "\t/CHARACTER_SET=${character_set} &",
+                "\t/DOUBLE_QUOTE &",
+                "\t/ESCAPE_CHARACTER=${escape_char} &",
+                "\t/FAILURE=($failure_dml) &",
+                "\t/FIELD_SEPARATOR=${field_separator} &",
+                "\t/FIELDS=${field_list} &",
+                "\t/FROM=${db_handle}.${table} &",
+                "\t/LOG=${log_file_spec} &",
+                "\t/METADATA=${metadata_list} &",
+                "\t/QUOTE_CHARACTER=${quote_character} &",
+                "\t/STATUS &",
+                "\t/SUCCESS=(${success-dml}) &",
+                "\t/TO=${CSV-file-spec} &",
+                "\t/VERBOSE &",
+                ""
+                
+        ],
+        "descripion": "Generate EXPORT/CSV with all Qualifers"        
+    },
+   "EXPORT_XML": {
+        "prefix": "EXPORT/XML [Generate Qualifiers)",
+        
+        "body": [
+            "EXPORT/XML &",           
+                "\t/FROM=${db_handle}.${table} &",
+                "\t/TABLE=${table} &",
+                "\t/TARGET=${target}",
+                ""
+                
+        ],
+        "descripion": "Generate EXPORT/XML with all Qualifers"        
+    },
+    "EXPORT_XML_ALL": {
+        "prefix": "EXTERNAL \"file_spec\" routine_name [func_return_value_keywords] [arguments] /FAILURE=(failure_dml) /SUCCESS=(sucess_dml)",
+        
+        "body": [
+            "EXTERNAL \"${file_spec}\" ${routine} ${keyword} ${arguments} &",
+                "\t/FAILURE=($failure_dml) &",
+                "\t/SUCCESS=($success_dml)",           
+                ""
+                
+        ],
+        "descripion": "Declares External Routine"        
+    },
+    "EXTERNAL": {
+        "prefix": "EXTERNAL \"file_spec\" routine_name [func_return_value_keywords] [arguments] /FAILURE=(failure_dml) /SUCCESS=(sucess_dml)",
+        
+        "body": [
+            "EXTERNAL \"${file_spec}\" ${routine} ${keyword} ${arguments} &",
+                "\t/FAILURE=($failure_dml) &",
+                "\t/SUCCESS=($success_dml)",           
+                ""
+                
+        ],
+        "descripion": "Declares External Routine"        
+    },
+    "FETCH": {
+        "prefix": "FETCH stream_name",
+        
+        "body": [
+            "FETCH stream_name"
+                
+        ],
+        "descripion": "Get next record from stream"        
+    },
+    "FETCH_ALL": {
+        "prefix": "FETCH stream_name /FAILURE=(failure_dml) /SUCCESS=(success_dml)",
+        
+        "body": [
+            "FETCH ${stream_name} /FAILURE=($failure_dml) /SUCCESS=($success_dml)"
+                
+        ],
+        "descripion": "Get next record from stream"        
+    },
+    "FIND IN": {
+        "prefix": "FIND IN table_name /WITH=${with}",
+        
+        "body": [
+            "FETCH ${stream_name} /FAILURE=($failure_dml) /SUCCESS=($success_dml)"
+                
+        ],
+        "descripion": "Get next record from stream"        
+    },
 
 
 /*
 TODO
 
-
-EXECUTE
-EXECUTE [/HANDLE=connect_handle] [/NOWAIT]
-procedure_name [(arg1[,arg2[,...]])]
-EXIT
-EXIT [(exit_status)]
-EXPORT
-[/ARCHIVE=archive-file-specification]
-[/ASCII]
-[/BINARY]
-[/CHARACTER_SET=character-set]
-[/COMMIT_RATE=n]
-[/CSV]
-[/DATA]
-[/FAILURE=(failure-dml)]
-[/FROM=database-handle]
-[/LOG=log-file-specification]
-[/METADATA=metadata-list]
-[/NOAUDIT]
-[/NODATA]
-[/NOLOG]
-[/NOMETADATA]
-[/NOSIGN]
-[/NOSTATUS]
-[/SIGN]
-[/STATUS]
-[/SUCCESS=(success-dml)]
-[/TABLES="wildcard-tablename, wildcard-tablename,
-..."]
-[/TO=database-handle]
-EXPORT/CSV
-EXPORT/CSV
-[/ALWAYS_QUOTE]
-[/CHARACTER_SET=character-set]
-[/DOUBLE_QUOTE]
-[/ESCAPE_CHARACTER=escape-character]
-[/FAILURE=(dml-statement)]
-[/FIELD_SEPARATOR=field-separator]
-[/FIELDS=field-list]
-[/FROM=database-handle.table-name]
-[/LOG=log-file-specification]
-[/METADATA=metadata-list]
-[/QUOTE_CHARACTER=quote-character]
-[/STATUS]
-[/SUCCESS=(dml-statement)]
-[/TO=CSV-file-specification]
-[/VERBOSE]
-EXPORT/XML
-EXPORT/XML
-[/FROM=database-tag] &
-[/FROM=database-tag.table-name] &
-[/FROM=stream:] &
-[/FROM=stream:table-name] &
-[/TABLE=table-name] &
-/TARGET=target
-EXTERNAL
-EXTERNAL "file_spec" routine_name [func_return_value_keyword]
-&
-[(argument1[,argument2[,...]])]
-Keywords: WORD.V, LONG.V, FFLOAT.V, DFLOAT.V,
-GFLOAT.V
-FETCH
-FETCH stream_name [/qualifiers]
-Qualifiers
-/FAILURE=(dml_statement)
-/SUCCESS=(dml_statement)
-FILES
-FILES [/qualifiers] [file_spec]
-Qualifiers
-/BATCH
-/CHECK
-/COMPILE_ONLY[=directory_spec]
-/COPIES=copies
-/DATE
-/DATE_TIME
-/DELETE_ONLY
-/DISPLAY_ONLY[=screen_width_value]
-/EDIT_ONLY
-/FILE_DIRECTORY
-/FILE_DEVICE
-/FILE_EXTENSION
-/FILE_NAME
-/FILE_NODE
-/FILE_VERSION
-/FORM_TYPE=form_type
-/LOG=log_file_name
-/NOCOMPILE
-/NOCREATE
-/NODELETE
-/NODISPLAY
-/NOEDIT
-/NOPERFORM
-/NOPORT
-/NOPRINT
-/NOQUERY
-/NOREDRAW
-/NORENAME
-/PORT_ONLY
-/PRINT_ONLY[=DELETE]
-/QUERY
-/QUEUE=queue_name
-/SIZE
 FIND IN
 FIND IN [stream_name:Idatabase_handle.]table_name[/qualifiers]
 Qualifiers
