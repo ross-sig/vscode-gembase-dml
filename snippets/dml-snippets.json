@@ -1,7 +1,5 @@
 {
-
-    // Strings
-    // Expressions
+    
     // Forms
     "MENU_FORM": {
         "prefix": "MENU_FORM",
@@ -114,23 +112,23 @@
         "prefix": "PROCEDURE_FORM ALL QUALIFIERS",
         "body": [
             "PROCEDURE_FORM ${form_name} ${[arguments]} &",            
-                "\t/BASE",
+                "\t/BASE &",
                 "\t/BREAK=${start_form},${end_form},${expression} & ",                           
                 "\t/BREAK0=${pre_form},${post_form} &",
-                "\t/COMMIT_RATE=${commit_rate}",
+                "\t/COMMIT_RATE=${commit_rate} &",
                 "\t/FIRST=${max_records} &",
                 "\t/GROUPED_BY=${grouped_by} &",
                 "\t/JOINED_TO=${joined_to_table} &",
                 "\t/LOCK=${lock_type} & ! NONE, READ, WRITE",               
-                "\t/NOEXIT_FORWARD",
-                "\t/READ_ONLY",
+                "\t/NOEXIT_FORWARD &",
+                "\t/READ_ONLY &",
                 "\t/REDUCED_TO=${reduced_to} &",
-                "\t/SECONDARY",                
+                "\t/SECONDARY &",                
                 "\t/SELECTION=${selection} &",
                 "\t/SORTED_BY=(${sorted_by}) &",
                 "\t/STATISTIC=${var}=${statistic_function} &",
                 "\t/STREAM_NAME=${stream_name} &",               
-                "\t/STATUS",
+                "\t/STATUS &",
                 "\t/STREAM_NAME=${stream_name} &",
                 "\t/TABLE=${table} &",
                 "\t/WITH=${with_field_expression}",
@@ -352,7 +350,7 @@
     "INPUT_BLOCK": {
         "prefix": "INPUT_BLOCK (Generate)",
         "body": [
-            "INPUT_BLOCK ${block_name}",
+            "INPUT_BLOCK ${block_name} &",
                 "\t/ROW=${row_num} &",
                 "\t/COL=${col_num} &",
                 "\t/TARGET=${target}",
@@ -363,12 +361,12 @@
     "INPUT_BLOCK ALL": {
         "prefix": "INPUT_BLOCK (Generate ALL Qualifiers)",
         "body": [
-            "INPUT_BLOCK ${block_name}",
+            "INPUT_BLOCK ${block_name} &",
                 "\t/ABSOLUTE_POSITION &",
                 "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE",
                 "\t/BACK=(${back_dml}) &",
                 "\t/COL=${col} & ! CENTER, LEFT, RIGHT",
-                "\t/DISPLAY_LENGTH=${display_number}",
+                "\t/DISPLAY_LENGTH=${display_number} &",
                 "\t/DOMAIN=${domain_table} &",
                 "\t/EXIT=(${exit_dml}) &",
                 "\t/EXIT_FORWARD=(${exit_forward}) &",
@@ -416,7 +414,7 @@
      "ITEM_BLOCK": {
         "prefix": "ITEM_BLOCK (Generate)",
         "body": [
-            "ITEM_BLOCK ${block_name}",
+            "ITEM_BLOCK ${block_name} &",
                 "\t/ROW=${row_num} &",
                 "\t/COL=${col_num} &",
                 "\t/FACILITY=${facility}",
@@ -428,8 +426,8 @@
     "ITEM_BLOCK ALL": {
         "prefix": "ITEM_BLOCK (Generate ALL Qualifiers)",
         "body": [
-            "ITEM_BLOCK ${block_name}",
-                "\t/ATTRIBUTES=${attributes} ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE &",
+            "ITEM_BLOCK ${block_name} &",
+                "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE",
                 "\t/COL=${col} &",
                 "\t/FACILITY=${facility} &",
                 "\t/PROMPT=${prompt} &",
@@ -446,7 +444,7 @@
     "MENU_BLOCK": {
         "prefix": "MENU_BLOCK (Generate)",
         "body": [
-            "MENU_BLOCK ${block_name}",
+            "MENU_BLOCK ${block_name} &",
                 "\t/ROW=${row_num} &",
                 "\t/COL=${col_num} &",
                 "\t/FACILITY=${facility}",
@@ -457,7 +455,7 @@
     "MENU_BLOCK ALL": {
         "prefix": "MENU_BLOCK (Generate ALL Qualifiers)",
         "body": [
-            "MENU_BLOCK ${block_name}",
+            "MENU_BLOCK ${block_name} &",
                 "\t/BACK=(${back_dml}) &",
                 "\t/COL=${col} &",
                 "\t/EXIT=(${exit_dml}) &",
@@ -466,7 +464,7 @@
                 "\t/ITEM=${item} &",
                 "\t/ITEM_IF=${item_if} &",
                 "\t/NOREPEAT &",             
-                "\t/ROW=${row_num} & ",
+                "\t/ROW=${row_num} &",
                 "\t/SOURCE=${source} &",
                 "\t/SOURCE_IF=${source_if} &",
                 "\t/TARGET=${target} &",
@@ -492,7 +490,7 @@
         "body": [
             "OUTPUT_BLOCK ${block_name} &",
                 "\t/ABSOLUTE_POSITION &",
-                "\t/ATTRIBUTES=${attributes} ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE &",
+                "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE",
                 "\t/BREAK=${break_int} &",
                 "\t/COL=${col} &",
                 "\t/DOMAIN=${domain_table} &",
@@ -509,7 +507,7 @@
                 "\t/SOURCE_IF=${source_if} &",
                 "\t/TARGET=${target} &",
                 "\t/TOTAL &",
-                "\t/USE_IF=(${use_if_condition})",
+                "\t/USE_IF=(${use_if_condition}) &",
                 "\t/USING=${usings}",
                 "\t",
                 "\t",
@@ -607,7 +605,7 @@
                 "\t/SOURCE=${source} &",
                 "\t/SOURCE_IF=${source_if} &",
                 "\t/SUCCESS=(${success_dml}) &",
-                "\t/TARGET=${target}",
+                "\t/TARGET=${target} &",
                 "\t/USE_IF=(${use_if_condition})",                            
                 "\t",
                 "\t",
@@ -620,7 +618,1308 @@
         
     
     // Statements    
+    
+    "ADD_TO": {
+        "prefix": "ADD_TO",
+        "body": [
+            "ADD_TO ${table_or_variable} "
+                
+        ],
+        "description": "ADD_TO table or variable"        
+    },
+    "ARCHIVE": {
+        "prefix": "ARCHIVE[DBMS] [{from/source}]",
+        "body": [
+            "ARCHIVE[${DBMS}] [${from_source}] ${from_db_handle} [${to_target}] ${to_db_handle}"
+                
+        ],
+        "description": "ARCHIVE [DBMS]"        
+    },
+    "BEGIN_CASE": {
+        "prefix": "BEGIN_CASE / END_CASE",
+        "body": [
+            "BEGIN_CASE ($expression)\t",
+            "\t",
+            "END_CASE"
+                
+        ],
+        "description": "BEGIN_CASE"        
+    },           
+
+    "BEGIN_CASE_GEN": {
+        "prefix": "BEGIN_CASE / CASE / CASE_ELSE / END_CASE (Generate)",
+        "body": [
+            "BEGIN_CASE (${begin_case_expression})\t",
+            "\t",
+            "\tCASE ${operator} ${case_expression}",
+            "\t",
+            "\tCASE ${expression_a} TO ${expression_b}",
+            "\t",
+            "\tCASE ELSE",
+            "END_CASE"
+                
+        ],
+        "description": "Generate BEGIN_CASE / END_CASE block with CASE statements"        
+    },           
+    "BEGIN_DISABLE_TRIGGER": {
+        "prefix": "BEGIN_DISABLE_TRIGGER",
+        "body": [
+            "BEGIN_DISABLE_TRIGGER"
+                
+        ],
+        "description": "Disable update triggers"        
+    },
+    "BEGIN_SIGNAL_TO_STATUS": {
+        "prefix": "BEGIN_SIGNAL_TO_STATUS",
+        "body": [
+            "BEGIN_SIGNAL_TO_STATUS"
+                
+        ],
+        "description": "Trap Error Signals"        
+    },
+    "CALL": {
+        "prefix": "CALL routine_name [arguments]",
+        "body": [
+            "CALL ${routine_name} ${arguments}"
+                
+        ],
+        "description": "Call Routine"        
+    },
+    "CALL_WEB_SERVICE": {
+        "prefix": "CALL_WEB_SERVICE /ACTION=action /OPERATION=operation /PARAMETER=parameter /NAMESPACE=namespace /URL=url /RESPONSE=response /RESULT=result",
+        "body": [
+            "CALL_WEB_SERVICE &",
+                "\t/ACTION=${action} &",
+                "\t/OPERATION=${operation} &",
+                "\t/PARAMETER=(NAME=${name}, TYPE=${type}, SOURCE=${source}, TARGET=${target}) &",
+                "\t/NAMESPACE=${namespace} &",
+                "\t/URL=${url} &",
+                "\t/RESPONSE=${response} &",
+                "\t/RESULT=(NAME=${r_name}, TYPE=${r_type}, TARGET=${r_target})"
+                
+        ],
+        "description": "Call SOAP XML Web Service"        
+    },
+    "CD": {
+        "prefix": "CD directory",
+        "body": [
+            "CD ${directory}"
+                
+        ],
+        "description": "Set User Working Directory"        
+    },
+    "CHECK_DOMAIN_TARGET": {
+        "prefix": "CHECK_DOMAIN [label_name] /TARGET=table_name(field_name) [/qualifiers]",
+        "body": [
+            "CHECK_DOMAIN ${label_name} /TARGET=${table}(${field}) &",
+                "\t/DOMAIN=${domain_table} &",
+                "\t/ERROR=${expression} &",
+                "\t/FAILURE=(${failure_dml}) &",
+                "\t/NEW &",
+                "\t/NOCLEAR_BUFFER &",
+                "\t/NOERROR &",
+                "\t/OPTION=${options} & ! DOMAIN_LOCK_WRITE, DOMAIN_LOCK_NONE",
+                "\t/PROTECT &",
+                "\t/SOURCE=${source} &",
+                "\t/SOURCE_IF=${source_if} &",
+                "\t/SUCCESS=(${success_dml})",
+                ""
+                
+        ],
+        "description": "Domain Validation with TARGET"        
+    },
+   "CHECK_DOMAIN_USING": {
+        "prefix": "CHECK_DOMAIN [label_name] /USING=table_name(field_name) [/qualifiers]",
+        "body": [
+            "CHECK_DOMAIN ${label_name} /TARGET=${table}(${field}) &",
+                "\t/DOMAIN=${domain_table} &",
+                "\t/ERROR=${expression} &",
+                "\t/FAILURE=(${failure_dml}) &",
+                "\t/NEW &",
+                "\t/NOCLEAR_BUFFER &",
+                "\t/NOERROR &",
+                "\t/OPTION=${options} & ! DOMAIN_LOCK_WRITE, DOMAIN_LOCK_NONE",
+                "\t/PROTECT &",
+                "\t/SOURCE=${source} &",
+                "\t/SOURCE_IF=${source_if} &",
+                "\t/SUCCESS=(${success_dml})",
+                ""
+                
+        ],
+        "description": "Domain Validation with USING"        
+    },
+    "CLEAR_ARRAY": {
+        "prefix": "CLEAR_ARRAY #array()",
+        "body": [
+            "CLEAR_ARRAY ${#array()}"
+                
+        ],
+        "description": "Clears Array"        
+    },
+    "CLEAR_BUFFER_TABLE": {
+        "prefix": "CLEAR_BUFFER table",
+        "body": [
+            "CLEAR_BUFFER ${table}"
+                
+        ],
+        "description": "Clears Buffer (non-PID fields)"        
+    },
+    "CLEAR_BUFFER_DB_TABLE": {
+        "prefix": "CLEAR_BUFFER database_handle.table",
+        "body": [
+            "CLEAR_BUFFER ${database_handle}.${table}"
+                
+        ],
+        "description": "Clears Buffer (non-PID fields)"        
+    },
+    "CLEAR_BUFFER_VAR": {
+        "prefix": "CLEAR_BUFFER database_handle.table",
+        "body": [
+            "CLEAR_BUFFER ${variable}"
+                
+        ],
+        "description": "Clears Buffer (non-PID fields)"        
+    },
+    "CLI": {
+        "prefix": "CLI command_expression",
+        "body": [
+            "CLI ${expression}"
+                
+        ],
+        "description": "Command Language Interpreter"        
+    },
+   "CLI_ALL": {
+        "prefix": "CLI command_expression /NOERASE /PAUSE",
+        
+        "body": [
+            "CLI ${expression} /NOERASE /PAUSE"
+                
+        ],
+        "description": "Command Language Interpreter"        
+    },
+   "CLOSE_TABS": {
+        "prefix": "CLOSE_TABS",
+        
+        "body": [
+            "CLOSE_TABS"
+                
+        ],
+        "description": "Close Tabs and kill gem_ui_server processes"        
+    },
+   "CLOSE_TABS_ALL": {
+        "prefix": "CLOSE_TABS /GEMBASE_ONLY /HTML_ONLY",
+        
+        "body": [
+            "CLOSE_TABS /GEMBASE_ONLY /HTML_ONLY"
+                
+        ],
+        "description": "Close Tabs and kill gem_ui_server processes"        
+    },
+    "CLOSE_TEXT": {
+        "prefix": "CLOSE_TEXT tag",
+        
+        "body": [
+            "CLOSE_TEXT ${tag}"
+                
+        ],
+        "description": "Close text file previously opened with OPEN_TEXT"        
+    },
+    "COMMIT": {
+        "prefix": "COMMIT",
+        
+        "body": [
+            "COMMIT"
+                
+        ],
+        "description": "Commit to database"        
+    },
+    "COMPILE": {
+        "prefix": "COMPILE [/qualifiers] \"input_file_spec\" [\"output_file_spec\"]",
+        
+        "body": [
+            "COMPILE /CHECK /LIST /LOG=${log_file_name} \"${input_file_spec}\" \"${output_file_spec}\""
+                
+        ],
+        "description": "Compile DML file"        
+    },
+    "CONTINUE": {
+        "prefix": "CONTINUE",
+        
+        "body": [
+            "COMPILE"
+                
+        ],
+        "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
+    },
+    "CONTINUE_KEYWORD": {
+        "prefix": "CONTINUE [keyword]",
+        
+        "body": [
+            "COMPILE ${keyword} ! COMMIT, OUT, ROLLBAK"
+                
+        ],
+        "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
+    },
+    "DELETE FROM": {
+        "prefix": "DELETE FROM [database_handle.]table_name",
+        
+        "body": [
+            "DELETE FROM ${dataase}.${table} ! /ARCHIVE"
+                
+        ],
+        "description": "Delete buffer"        
+    },
+   "DELETE ALL FROM": {
+        "prefix": "DELETE ALL FROM [database_handle.]table_name",
+        
+        "body": [
+            "DELETE ALL FROM ${dataase}.${table} ! /ARCHIVE"             
+        ],
+        "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
+    },
+    "DELETE FROM VAR": {
+        "prefix": "DELETE FROM #variable",
+        
+        "body": [
+            "DELETE FROM ${variable} ! /ARCHIVE"
+                
+        ],
+        "description": "Delete buffer"        
+    },
+   "DELETE ALL FROM VAR": {
+        "prefix": "DELETE ALL FROM #variable",
+        
+        "body": [
+            "DELETE ALL FROM ${variable} ! /ARCHIVE"             
+        ],
+        "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
+    },
+   "DIR": {
+        "prefix": "DIR file_spec",
+        
+        "body": [
+            "DIR ${file_spec}"             
+        ],
+        "description": "List files in a directory in TABLE_EDIT form"        
+    },
+   "DISPLAY": {
+        "prefix": "DISPLAY keyword",
+        
+        "body": [
+            "DISPLAY ${keyword} ! CLEAN, DEFAULTS, BEGIN_UPDATE, END_UPDATE, FLUSH, REFRESH"             
+        ],
+        "description": "Redisplay form"        
+    },
+   "END_DISABLE_TRIGGER": {
+        "prefix": "END_DISABLE_TRIGGER",
+        
+        "body": [
+            "END_DISABLE_TRIGGER"             
+        ],
+        "description": "Re-enable updates following BEGIN_DISABLE_TRIGGER"        
+    },
+   "END_EXECUTE": {
+        "prefix": "END_EXECUTE [/CONNECT=connect_handle]",
+        
+        "body": [
+            "END_EXECUTE /CONNECT=${handle}"             
+        ],
+        "description": "Abort stored procedure"        
+    },
+   "END_GTID": {
+        "prefix": "END_GTID",
+        
+        "body": [
+            "END_GTID"             
+        ],
+        "description": "Decrements %GTID_LEVEL"        
+    },
+   "END_SIGNAL_TO_STATUS": {
+        "prefix": "END_SIGNAL_TO_STATUS",
+        
+        "body": [
+            "END_SIGNAL_TO_STATUS"             
+        ],
+        "description": "Stop trapping error signals"        
+    },
+   "END_WHILE": {
+        "prefix": "END_WHILE",
+        
+        "body": [
+            "END_WHILE"             
+        ],
+        "description": "End While Loop"        
+    },
+   "ERROR": {
+        "prefix": "ERROR error_text",
+        
+        "body": [
+            "ERROR ${error_text}"             
+        ],
+        "description": "Error Text"        
+    },
+   "ERROR_ALL": {
+        "prefix": "ERROR [/qualifiers] error_text",
+        
+        "body": [
+            "ERROR /BELL /CONFIRM /NOBELL /NOWAIT /TEXT_ONLY /WAIT ${error_text}"             
+        ],
+        "description": "Error Text with all qualifiers"        
+    },
+
+
+
+
+
+/*
+TODO
+
+
+EXECUTE
+EXECUTE [/HANDLE=connect_handle] [/NOWAIT]
+procedure_name [(arg1[,arg2[,...]])]
+EXIT
+EXIT [(exit_status)]
+EXPORT
+[/ARCHIVE=archive-file-specification]
+[/ASCII]
+[/BINARY]
+[/CHARACTER_SET=character-set]
+[/COMMIT_RATE=n]
+[/CSV]
+[/DATA]
+[/FAILURE=(failure-dml)]
+[/FROM=database-handle]
+[/LOG=log-file-specification]
+[/METADATA=metadata-list]
+[/NOAUDIT]
+[/NODATA]
+[/NOLOG]
+[/NOMETADATA]
+[/NOSIGN]
+[/NOSTATUS]
+[/SIGN]
+[/STATUS]
+[/SUCCESS=(success-dml)]
+[/TABLES="wildcard-tablename, wildcard-tablename,
+..."]
+[/TO=database-handle]
+EXPORT/CSV
+EXPORT/CSV
+[/ALWAYS_QUOTE]
+[/CHARACTER_SET=character-set]
+[/DOUBLE_QUOTE]
+[/ESCAPE_CHARACTER=escape-character]
+[/FAILURE=(dml-statement)]
+[/FIELD_SEPARATOR=field-separator]
+[/FIELDS=field-list]
+[/FROM=database-handle.table-name]
+[/LOG=log-file-specification]
+[/METADATA=metadata-list]
+[/QUOTE_CHARACTER=quote-character]
+[/STATUS]
+[/SUCCESS=(dml-statement)]
+[/TO=CSV-file-specification]
+[/VERBOSE]
+EXPORT/XML
+EXPORT/XML
+[/FROM=database-tag] &
+[/FROM=database-tag.table-name] &
+[/FROM=stream:] &
+[/FROM=stream:table-name] &
+[/TABLE=table-name] &
+/TARGET=target
+EXTERNAL
+EXTERNAL "file_spec" routine_name [func_return_value_keyword]
+&
+[(argument1[,argument2[,...]])]
+Keywords: WORD.V, LONG.V, FFLOAT.V, DFLOAT.V,
+GFLOAT.V
+FETCH
+FETCH stream_name [/qualifiers]
+Qualifiers
+/FAILURE=(dml_statement)
+/SUCCESS=(dml_statement)
+FILES
+FILES [/qualifiers] [file_spec]
+Qualifiers
+/BATCH
+/CHECK
+/COMPILE_ONLY[=directory_spec]
+/COPIES=copies
+/DATE
+/DATE_TIME
+/DELETE_ONLY
+/DISPLAY_ONLY[=screen_width_value]
+/EDIT_ONLY
+/FILE_DIRECTORY
+/FILE_DEVICE
+/FILE_EXTENSION
+/FILE_NAME
+/FILE_NODE
+/FILE_VERSION
+/FORM_TYPE=form_type
+/LOG=log_file_name
+/NOCOMPILE
+/NOCREATE
+/NODELETE
+/NODISPLAY
+/NOEDIT
+/NOPERFORM
+/NOPORT
+/NOPRINT
+/NOQUERY
+/NOREDRAW
+/NORENAME
+/PORT_ONLY
+/PRINT_ONLY[=DELETE]
+/QUERY
+/QUEUE=queue_name
+/SIZE
+FIND IN
+FIND IN [stream_name:Idatabase_handle.]table_name[/qualifiers]
+Qualifiers
+/LOCK=option_keyword
+Keywords: WRITE, READ, NONE
+/SECONDARY
+/STREAM_NAME=stream_name
+/WITH=field_name=expression
+FINISH
+FINISH database_handle
+FLOW_BLOCK
+FLOW_BLOCK [block name] /TARGET=data element
+FLOW_CONNECTOR
+FLOW_CONNECTOR /required qualifiers [/optional qualifiers]
+Required Qualifiers
+/FROM=string expression
+/TO=string expression
+Optional Qualifiers
+/TITLE=string expression
+FLOW_NODE
+FLOW_NODE /required qualifiers [/optional qualifiers]
+Required Qualifiers
+/NAME=string expression
+/ROW=numeric expression
+/COL=numeric expression
+Optional Qualifiers
+/HEIGHT=numeric expression
+/WIDTH=numeric expression
+/TITLE=string expression
+/DESC=string expression
+/GRAPHIC=string expression
+GENERATE/FORMS
+GENERATE/FORMS
+GENERATE/REPORTS
+GENERATE/REPORTS
+GOTO
+GOTO block_name
+IF, ELSE, ELSE_IF, and END_IF
+IF (condition_expression) dml_statement
+or
+IF (condition_expression)
+dml_code
+ELSE
+dml_code
+END_IF
+or
+IF (condition_expression)
+dml_code
+ELSE_IF (condition_expression)
+dml_code
+[ELSE_IF (condition_expression)
+dml_code)]
+END_IF
+or
+IF (condition_expression)
+dml_code
+ELSE_IF (condition_expression)
+dml_code
+[ ELSE_IF (condition_expression)
+dml_code]
+ELSE
+dml_code
+END_IF
+IMPORT
+IMPORT
+[/ARCHIVE=archive-file-specification]
+[/CHECK_ONLY]
+[/COMMIT_RATE=n]
+[/CSV]
+[/DATA]
+[/FAILURE=(failure-dml)]
+[/FROM=database-handle]
+[/LOG=log-file-specification]
+[/METADATA=metadata-list]
+[/METADATA_DUMP=metadata-dump-file-specification]
+[/NOAUDIT]
+[/NOCHECK_ONLY]
+[/NODATA]
+/NOLOG
+/NOMETADATA
+/NOSTATUS
+/STATUS
+/SUCCESS=(success-dml)
+/TABLES="wildcard-tablename, wildcard-tablename, ..."
+/TO=database-handle
+/VERBOSE
+IMPORT/CSV
+IMPORT/CSV
+[/CHARACTER_SET=character-set]
+[/DOUBLE_QUOTE]
+[/ESCAPE_CHARACTER=escape-character]
+[/FAILURE=(dml-statement)]
+[/FIELD_SEPARATOR=field-separator]
+[/FIELDS=field-list]
+[/FROM=CSV-file-specification]
+[/LOG=log-file-specification]
+[/METADATA=metadata-list]
+[/QUOTE_CHARACTER=quote-character]
+[/STATUS]
+[/SUCCESS=(dml-statement)]
+[/TO= database-handle.table-name]
+[/VERBOSE]
+IMPORT/XML
+IMPORT/XML
+[/CREATE] &
+[/CREATE_IF] &
+[/ERROR_TEXT=error-text] &
+[/REPLACE] &
+[/RESULTNAME=resultname] &
+/SOURCE=source &
+[/TABLE=table-name] &
+INVOKE
+INVOKE database_spec AD database_handle [/qualifiers]
+Qualifiers
+/ENGINE=engine_type_keyword
+Keywords: INGRES, ORACLE, RDB. RMS, SERVER,
+SYBASE
+/NOIMPLICIT
+LICENSE
+LICENSE
+LOAD
+LOAD file_spec INTO [database_handle.]table_name(field_name)
+MAIL
+MAIL /TO=to_address [/SUBJECT=subject_text] &
+/FILE=send_file_spec
+or
+MAIL /TO=to_address [/SUBJECT=subject_text] &
+/TEXT=text_ [/TEXT=text_line[...]]
+MENU
+MENU [database_handle.][system_name:]facility_name
+MESSAGE
+MESSAGE [/qualifiers] [database_handle.] message_name &
+[,argument1[,argument2[,...]]]
+or
+MESSAGE
+Qualifiers
+/BELL
+/CONFIRM
+/FACILITY
+/IDENTIFIER
+/SEVERITY
+/WAIT
+OPEN
+OPEN unrelated_table_file AS datafile_handle[/qualifiers]
+Qualifiers
+/DESCRIPTION=filename
+/READ_ONLY
+22 DML Statements
+OPEN_APPLICATION
+OPEN_APPLICATION application AS handle
+OPEN_TAB
+OPEN_TAB [/URL=[StringExpression]
+/WEB_APP=[String Expression]
+/FACILITY=[String Expression]
+/PERFORM=[String Expression]
+[/DESC=[String Expression]
+/NEW_WINDOW]
+OPEN_TEXT
+OPEN_TEXT [/APPEND|/CREATE/PDF] filename AD tag
+OPEN_URL
+OPEN_URL /URL=string expression {/DESC=string
+expression|/NEW_WINDOW}
+PERFORM
+PERFORM [/NODEADLOCK_EXIT] form_name &
+[(argument1[,argument2[,...]])]
+or
+PERFORM [/BATCH[=PRINT]] "form_file_spec" &
+[(argument1[,argument2[,...]])]
+or
+PERFORM [/BATCH[=PRINT]][/NODEADLOCK_EXIT] &
+*form_file_spec" form_name [(argument1[,argument2[,...]])]
+or
+PERFORM [/FACILITY [database-handle.][system-name:]]]facilityname
+or
+PERFORM [/ARRAY [/COUNT=count] #array()[form_name]
+[(argument1[,argument2[,...]])]
+PRINT
+PRINT [/qualifiers] expression
+Qualifiers
+/BELL
+/CONFIRM
+/NOBELL
+/NOWAIT
+/WAIT
+PWD
+PWD
+QUERY
+QUERY [/qualifier] [database_handle.] &
+[table_name[(field_name1[,field_name2[,...]])]]
+Qualifiers
+READ _ONLY
+Randomize
+RANDOMIZE
+READ_LINE
+READ_LINE tag [/TARGET=target_spec]
+RECEIVE
+RECEIVE resource_name [/qualifiers]
+Qualifiers
+/CREATE
+/GROUP
+/MAILBOX
+/SYSTEM
+/TARGET=#variable_name
+/WAIT
+RECEIVE_DATA
+RECEIVE_DATA [/HANDLE=connect_handle] &
+writable_data_element[,...]
+RECEIVE_TABLE
+RECEIVE_TABLE [/qualifiers] target_table_name &
+[FROM [database_handle.]source_table_name]
+Qualifiers
+/HANDLE=connect_handle
+/REPLACE
+RELEASE
+RELEASE resource_name
+REPORT
+REPORT
+REPOSITION
+REPOSITION BY [-]nnn
+or
+REPOSITION TO nnn
+REWIND_TEXT
+REWIND_TEXT tag
+ROLLBACK
+ROLLBACK
+SEARCH
+SEARCH string
+SEND
+SEND resource_name [/qualifiers] message_text
+Qualifiers
+/CREATE
+/GROUP
+/MAILBOX
+/SYSTEM
+/WAIT
+SEND_DATA
+SEND_DATA data_element[,data_element[,...]]
+SEND_MESSAGE
+SEND_MESSAGE numeric_expression, text_expression
+SEND_TABLE
+SEND_TABLE [/HANDLE=connect_handle][/REPLACE]
+source_table_name [TO
+[database_handle.]target_table_name]
+Qualifiers
+/HANDLE=connect_handle
+/REPLACE
+SET ACCESS
+SET ACCESS table_name [access_mode] [/SHARE=share_mode]
+Access modes: WRITE, MODIFY, APPEND, READ
+Share modes: WRITE, MODIFY, READ, NONE
+or
+SET ACCESS table_name &
+/RMS_OPTIONS =rms_option[,rms_option[,...]]
+RMS Options: DEFERRED_WRITES, READ_AHEAD,
+READ_CHECK, SEQUENTIAL_ONLY,
+WRITE_BEHIND, WRITE_CHECK
+SET BROADCAST
+SET BROADCAST broadcast_categories
+SET CAT_FILTER
+SET CAT_FILTER
+SET DATABASE
+SET [/LOCAL] DATABASE database_handle
+SET DATE_FORMAT
+SET DATE_FORMAT format_name
+SET DEFAULT
+SET DEFAULT directory
+SET ENTRY_MENU
+SET ENTRY_MENU
+[database_handle.][system_name:]facility_name
+or
+SET ENTRY_MENU ""
+SET GLOBAL EXIT FORM
+SET /GLOBAL EXIT FORM “FILENAME” FORMNAME(P1,…Pn)
+or
+SET /GLOBAL EXIT FORM /FACILITY DB:SYS:FAC(P1,…Pn)
+SET GLOBAL EXIT OFF
+SET /GLOBAL EXIT OFF
+SET HELP ON and SET HELP OFF
+SET HELP ON and SET HELP OFF
+SET ICON_NAME
+SET ICON_NAME string_expression
+SET INPUT BACKGROUND
+SET INPUT BACKGROUND attribute[,attribute[,...]]
+Attributes: BOLD, REVERSE, BLINK, UNDERLINE,
+NONE
+SET INPUT FOREGROUND
+SET INPUT FOREGROUND attribute[,attribute[,...]]
+Attributes: BOLD, REVERSE, BLINK, UNDERLINE,
+NONE
+SET INTERRUPT
+SET INTERRUPT dml_statement_expression
+SET KEY
+SET KEY physical_key_name [/qualifiers] logical_key_name
+Qualifiers
+/EDIT
+/GOLD
+SET KEYBOARD
+SET KEYBOARDS filename
+SET LOCAL EXIT FORM
+SET [/LOCAL]EXIT FORM “FILENAME” FORMNAME(P1, …
+Pn)
+or
+SET [/LOCAL] EXIT FORM FORMNAME(P1, … Pn)
+or
+SET [/LOCAL] EXIT FORM /FACILITY DB:SYS:FAC(P1, … Pn)
+SET LOCAL EXIT OFF
+SET /LOCAL EXIT OFF
+SET LOCK
+SET LOCK option_keyword[,option_keyword[,...]]
+Option Keywords:
+DEFAULT =keyword
+Keywords: NONE, WRITE, ENGINE_DEFINED
+DOMAIN_DEFAULT=keyword
+Keywords: NONE, WRITE, ENGINE_DEFINED
+FULL
+NO INDEX
+READ_ONLY_LOV
+TED_LINE
+SET LOCK_TIMEOUT
+SET_LOCK_TIMEOUT seconds
+SET MASK_CURRENCY_SIGN
+SET MASK_CURRENCY_SIGN currency-sign-character
+SET MASK_DIGIT_SEPARATOR
+SET MASK_DIGIT_SEPARATOR digit-separator-character
+SET MASK_RADIX_POINT
+SET MASK_RADIX_POINT radix-point-character
+SET NOVERIFY
+SET NOVERIFY
+SET OVERFLOW
+SET OVERFLOW=(FLOATING=f, INTEGER=i)
+SET PERFORM
+SET PERFORM option_keyword
+Keywords: DMC_DML, DMC_ONLY, DML_DMC,
+DML_ONLY
+SET PRECISION
+SET PRECISION floating_point_number
+SET PROMPT
+SET PROMPT expression
+SET SCREEN
+SET SCREEN option_keyword[,option_keyword]
+Keywords: BORDER, NOBORDER,
+NOUPDATE_ON_INPUT,
+UPDATE_ON_INPUT
+SET SHADOWS
+SET SHADOWS number
+SET STATUS_FREQUENCY
+SET STATUS_FREQUENCY seconds
+SET SYSTEM
+SET SYSTEM [database_handle.]system_name
+SET TIMEOUT
+SET TIMEOUT seconds
+SET TITLE_BAR
+SET TITLE_BAR string_expression
+SET TITLE_FORM
+SET TITLE_FORM filename
+SET VERIFY
+SET VERIFY
+SET WD
+SET WD directory
+SHOW CAT_FILTER
+SHOW CAT_FILTER
+SHOW DATABASE
+SHOW DATABASE
+SHOW DATE_FORMAT
+SHOW DATE_FORMAT
+SHOW DEFAULT
+SHOW DEFAULT
+SHOW ENTRY_MENU
+SHOW ENTRY_MENU
+SHOW FIELDS FOR
+SHOW FIELDS FOR table_specification
+SHOW HELP
+SHOW HELP
+SHOW HOSTID
+SHOW HOSTID
+SHOW INPUT
+SHOW INPUT
+SHOW ICON_NAME
+SHOW ICON_NAME
+SHOW INPUT
+SHOW INPUT
+SHOW INTERRUPT
+SHOW INTERRUPT
+SHOW KEYBOARD
+SHOW KEYBOARD
+SHOW LOCK
+SHOW LOCK
+SHOW LOCK_TIMEOUT
+SHOW LOCK_TIMEOUT
+SHOW OVERFLOW
+SHOW OVERFLOW
+SHOW PERFORM
+SHOW PERFORM
+SHOW ICON_NAME
+SHOW ICON_NAME
+SHOW PLATFORM
+SHOW PLATFORM
+SHOW PRECISION
+SHOW PRECISION
+SHOW PROMPT
+SHOW PROMPT
+SHOW SHADOWS
+SHOW SHADOWS
+SHOW STATUS_FREQUENCY
+SHOW STATUS_FREQUENCY
+SHOW SYSTEM
+SHOW SYSTEM
+SHOW TABLES FOR
+SHOW TABLES FOR field_specification
+SHOW TARGETID
+SHOW TARGETID
+SHOW TIMEOUT
+SHOW TIMEOUT
+SHOW TITLE_BAR
+SHOW TITLE_BAR
+SHOW TITLE_FORM
+SHOW TITLE_FORM
+SHOW VERIFY
+SHOW VERIFY
+SHOW WD
+SHOW WD
+SIGNATURE
+SIGNATURE [/qualifiers]
+Qualifiers
+/AUDIT=audit-file-specification
+/DATETIME=date-time
+/FACILITY=[[database-handle.][system-name:]]facility-name]
+/FAILURE=(failure-dml)
+/NOAUDIT
+/PASSWORD1=password-1
+/PASSWORD2=password-2
+/PURPOSE=purpose
+/SAVE
+/SUCCESS=(success-dml)
+/RECALL
+/USERNAME1=username_1
+/USERNAME2=username_2
+/USER1=user-defined-1
+/USER2=user-defined-2
+/USER3=user-defined-3
+/USER4=user-defined-4
+/USER5=user-defined-5
+/VALIDATION_FORM=form-name
+/additional-qualifiers
+START_GTID
+START_GTID
+START_STREAM
+START_STREAM stream_name &
+/TABLE=[database_handle.]table_name[,table_name[,...]] &
+[/qualifiers]
+or
+START_STREAM steam_name &
+/TABLE= #variable_name[,#variable_name[,...]][/qualifiers]
+Qualifiers
+/COMMIT_RATE =numeric_expression
+/FIRST=numeric_expression
+/GROUPED_BY=field_name[,field_name[,...]
+or
+/GROUPED_BY=([context.]field_name[,...])
+/JOINED _TO=table_name
+/LOCK=option_keyword
+Keywords: WRITE, READ, NONE
+/REDUCED_TO=([-]field_name[,...])
+or
+/REDUCED_TO=([-]table_name(field_name[,...])
+or
+/REDUCED_TO=([-]context.field_name[,...])
+or
+/REDUCED_TO([-]#variable_name[,...])
+/SECONDARY
+/SELECTION=expression
+/SORTED_BY=([-]field_name[,...])
+or
+/SORTED_BY=([-]table_name(field_name)[,...])
+or
+/SORTED_BY=([-]context.field_name[,...])
+or
+/SORTED_BY=([-]#variable_name[,...])
+/STATISTIC=variable=statistic_function
+Statistic Functions:
+AVERAGE (table_name(field_name))
+COUNT
+MAX (table_name(field_name))
+MIN (table_name(field_name))
+SAMPLE_STD_DEV (table_name(field_name))
+STD_DEV (table_name(field_name))
+TOTAL (table_name(field_name))
+/TABLE=[database_handle.]table_name[,table_name[,...]]
+or
+/TABLE=#variable_name[,#variable_name[,...]]
+/WITH=field_name operator expression
+or
+/WITH=table_name(field_name) operator expression
+or
+/WITH=context.field_name operator expression
+or
+/WITH=[context.]field_name=[context.]field_name
+START_TRANSACTION
+START_TRANSACTION [READ_ONLY]
+SWITCH
+SWITCH form_name [(argument1[,argument2[,...]])]
+or
+SWITCH "form_file_spec" [form_name]
+[(argument1[,argument2[,...]])]
+or
+SWITCH [/FACILITY[database-handle.][system-name:]]facilityname
+SWITCH_BASE
+SWITCH_BASE [%EXIT]
+or
+SWITCH_BASE form_name [(argument1[,argument2[,...]])]
+or
+SWITCH_BASE "form_file_spec" [form_name] &
+[(argument1[,argument2[,...]])]
+TABLE_SEARCH
+TABLE_SEARCH [database_handle.] &
+table_name(field_name1[,field_name2[,...]]) &
+[/qualifiers]
+Qualifiers
+/BACK=(dml_statement)
+/COL=numeric_expression
+/ERROR=expression
+/EXIT=(dml_statement)
+/FIRST=numeric_expression
+/HEIGHT=numeric_expression
+/NOERROR
+/REDUCED_TO=([-]field_name[,...])
+or
+/REDUCED_TO=([-]table_name(field_name)[,...])
+or
+/REDUCED_TO=([-]#VARIABLE_NAME[,...])
+/ROW=numeric_expression
+/SELECTION=expression
+or
+/SELECTION=ALL or ANY
+/SELECT_ONE
+/SORTED_BY=([-]field_name[,...])
+or
+/SORTED_BY=([-]table_name(field_name)[,...])
+or
+/SORTED_BY=([-]#variable_name[,...])
+/WITH=field_name operator expression
+TRANSFER
+TRANSFER command_filename
+Qualifiers
+/POSITION=position
+/LENGTH=length
+/SCALE=scale
+TRIGGER
+TRIGGER "trigger_name"
+UNLOAD
+UNLOAD file_spec &
+FROM [database_handle.]table_name(field_name)
+UTILITIES
+UTILITIES
+VERIFY
+MSSQL Server Engine:
+VERIFY “user-name/password/database-name@DNSName”
+/ENGINE=MSSQL
+/MAX_ERRORS=[Number of errors]
+/OUTPUT=GEM_RUN:[File_name]
+ORACLE Server Engine:
+VERIFY “user-name/password/schema@Connection_String”
+/ENGINE=ORACLE
+/MAX_ERRORS=[Number of errors]
+/OUTPUT=GEM_RUN:[File_name]
+WHILE and END_WHILE
+WHILE (condition_expression) dml_statement
+or
+WHILE (condition_expression)
+dml_code
+END_WHILE
+WRITE
+WRITE tag data
+WRITE_LINE
+WRITE_LINE tag [data]
+XML_RECEIVE_TABLES
+XML_RECEIVE_TABLES [/ERROR_TEXT=error-text]
+XML_SEND_TABLE
+XML_SEND_TABLE table-name &
+[/TABLE_OPTIONS=table-options] &
+[/FIELD_OPTIONS=field-options]
+$
+$ operating_system_command
+    
+    
+    */
+    
     // Functions
+    
+    
+/*
+
+AMONG(value, range-list-1 [, range-list-2…range-list-254)
+ASCII(source_character)
+BASE64_DECODE(source_string)
+BASE64_ENCODE(source_string)
+CHR(numeric_value)
+COMPRESS(source_string)
+COMPRESS_ALL (source_string)
+CSV_MERGE(#array() [,count] [, options] [, comma] [, quote]
+[, escape])
+DATA_COMPRESS(input-string)
+DATA_UNCOMPRESS(input-string)
+ELEMENT(element-number, source-string [, delimiter-string])
+EXPAND(source_string)
+IS_TRUE(input-string)
+LEFT(source_string,end_position)
+LEN(source_string)
+LOWERCASE(source_string)
+LPAD(input-string, length [,pad-character]
+LTRIM(source_string)
+MATCHING(candidate-string, pattern-string)
+MERGE(#array() [,count])
+MID(source_string,start_position,length)
+POS(source_string,substring,start_position)
+QUOTE(input-string)
+RANGE_MERGE(#from_array(), #to_array() [,count])
+REPLACE(source-string, starting-position, ending-position,
+replacement-string)
+RIGHT(source_string,start_position)
+RMD160(input-string)
+RPAD(input-string, length [,pad-character])
+RTRIM(input-string)
+SCRAMBLE(input-string)
+SEG(input-string, starting-position, ending-positon)
+STARTING_WITH(source-string, sub-string)
+STRING(duplication_count,ascii_character_value)
+TRANSLATE(source_string, source_character_set_name,
+target_character_set_name)
+TRIM(source_string)
+UNQUOTE(input-string)
+UNSCRAMBLE(input-string)
+UPPERCASE(source_string)
+NUMERIC FUNCTIONS
+ACOS(cosine)
+ACOSD(value)
+ACOSH(value)
+ACOT(value)
+ACOTD(value)
+ACOTH(value)
+ACSC(value)
+ACSCD(value)
+ACSCH(value)
+ASEC(value)
+ASECH(value)
+ASIND(value)
+ASINH(value)
+ATAND(value)
+ATAND(value)
+ATAND2(value)
+ATANH(value)
+ASIN(sine)
+ATAN(tangent)
+ATAN2(sine,cosine)
+BINARY_TO_POLY(binary_string,format)
+CEIL(number)
+COS(angle)
+COSD(value)
+COSH(value)
+COT(value)
+COTD(value)
+COTH(value)
+CSC(value)
+CSCD(value)
+CSCH(value)
+DEG(value)
+EXP(value)
+EXP2(value)
+EXP10(value)
+FAC(value)
+FIX(value)
+FRAC(value)
+FLOOR(number)
+GCD(value,value)
+INT(real_number)
+LOG(value)
+LOG2(value)
+LOG10(value)
+MAX(value, value, value, …)
+MIN(value, value, value, …)
+MOD(dividend,divisor)
+MROUND(num,multiple)
+POLY_TO_BINARY (value,format[,length][,scale]}
+RAD(value)
+RANDOM(range)
+ROUND(real_number,decimal_place)
+SEC(value)
+SECD(value)
+SECH(value)
+SIGN(value)
+SIN(angle)
+SIND(angle)
+SINH(value)
+SQRT(value)
+TAN(angle)
+TAND(value)
+TANH(value)
+DATE AND TIME FUNCTIONS
+DATE(days)
+DATE_SECONDS(seconds)
+DATE_TIME(source)
+DAYS(source_date)
+DAY_OF_WEEK(source_date)
+DAYS_IN_MONTH(input-date)
+NEXT_MONTH(input-date)
+SECONDS(source_date)
+DATA DEFINITION FUNCTIONS
+Built-in data definition functions enable you to extract metadata
+pertaining to fields, tables, indices, views, and facilities.
+Field Functions
+Use the following syntax:
+field_function([database_handle,]table_name,field_name)
+or
+field_function([table_name,]field_name)
+where field_function is the name of one of the following
+functions.
+FIELD_BASED_ON
+FIELD_CLUSTER
+FIELD_DATATYPE
+FIELD_DEFAULT
+FIELD_DESCRIPTION
+FIELD_FLAG
+FIELD_HEADING
+FIELD_HELP
+FIELD_I_LENGTH
+FIELD_I_MASK
+FIELD_INITIAL_VALUE
+FIELD_MISSING
+FIELD_NAME
+FIELD_NATIVE
+FIELD_O_LENGTH
+FIELD_O_MASK
+FIELD_PROMPT
+FIELD_SCALE
+FIELD_SHORT-PROMPT
+FIELD_SIZE
+FIELD_SOURCE
+FIELD_USER_ARGUMENT
+FIELD_VALID_VALUES
+FIELD_VALIDATION
+FIELD_VIEW_BASE
+Table Functions
+Use the following syntax:
+table_function([database_handle.]table_name)
+where table_function is the name of one of the following table
+functions.
+TABLE_ARCHIVABLE
+TABLE_DESCRIPTION
+TABLE_CLUSTER
+TABLE_FIELDS
+TABLE_FILL
+TABLE_FLAGS
+TABLE_FREE
+TABLE_GROW
+TABLE_GROW_PCT
+TABLE_IFLAGS
+TABLE_MAX_EXTENTS
+TABLE_MIN_EXTENTS
+TABLE_NAME
+TABLE_NONPID_FIELDS
+TABLE_PID
+TABLE_PID_FIELDS
+TABLE_SECURITY
+TABLE_SIZE
+TABLE_STORAGE
+TABLE_TYPE
+Index Functions
+Use the following syntax:
+index_function([database_handle.]index_name)
+where index _function is the name of one of the following index
+functions.
+INDEX_FIELDS
+INDEX_FILL
+INDEX_FREE
+INDEX_GROW
+INDEX_GROWTH_PCT
+INDEX_MAX_EXTENTS
+INDEX_MIN_EXTENTS
+INDEX_ORDER
+INDEX_SIZE
+INDEX_STORAGE
+INDEX_TABLE
+INDEX_TYPE
+INDEX_UNIQUE
+View Functions
+Use the following syntax:
+view_function([database_handle.]view_name)
+where view_function is the name of the view function.
+VIEW_SOURCE
+
+Facility Functions
+Use the following syntax:
+facility_function([[database_handle.]system_name:]facility_nam
+e)
+or
+facility_function(#variable_name)
+where facility_function is the name of one of the following
+facility functions.
+FACILITY_CLASS
+FACILITY_DESCRIPTION
+FACILITY_DML
+FACILITY_MENU_FILE
+FACILITY_MENU_FORM
+FACILITY_NAME
+FACILITY_SYSTEM
+FACILITY_TAG
+MISCELLANEOUS FUNCTIONS
+ERROR_TEXT(error_no,flags)
+GET_SCV(svc_string)
+IS_MARKED([database_handle,]table_name)
+IS_MARKED_ON_STREAM(stream_name, table_name)
+IS_NULL([database_handle.]”table_name”,"field_name")
+IS_NULL_ON_STREAM(“stream_name”,”table_name”,”field_
+name”)
+LTOTAL(break_no,total_column_number)
+MASK(mask_specification,source_string)
+MESSAGE([database_handle.]message_name[,arg1[arg2[,…]]]
+)
+PARAMETER{[database_handle.]parameter_name[,source_dat
+e])
+8 Built-In Functions
+RECORD_ADDRESS(table_spec)
+STREAM_DATA(stream_name,table_name,field_name)
+TABLE_CHECK([database_handle,]table_name,field_name)
+TABLE_DATA([database_handle,]table_name,field_name)
+TOTAL(total_number)
+FILE MANIPULATION FUNCTIONS
+status = DELETE_FILE(filename, default-filename)
+FIND_FILE(file_spec[,default_spec)
+#result=PARSE_FILENAME(filename, default-filename,
+options)
+[NO]FULL
+[NO]NODE
+[NO]DEVICE
+[NO]DIRECTORY
+[NO]NAME
+[NO]TYPE
+[NO]VERSION
+[NO]CONCEAL
+[NO]SYNTAX_ONLY
+TEMPORARY_FILENAME(name-string)
+
+*/
+    
     "ABS": {
         "prefix": "ABS",
         "body": [
@@ -635,4 +1934,145 @@
         ],
         "description": "Returns the maximum value of 2 to 255 numeric values"
     }
+    
+ // Special Vars
+ 
+ /*
+ 
+TODO
+ 
+%ACCOUNT
+%ACTUAL_BREAK
+%ADD
+%ADVANCED_USER
+%ARCHIVE
+%BITMAP
+%BROADCAST
+%CAT_FILTER
+%CURRENT_BREAK
+%DATABASE
+%DEFAULT_ENGINE
+%DELETE
+%E
+%EDIT_MODE
+%ENTRY_MENU
+%EXIT_FORM_ACTIVE
+%EXIT_FORM_ENABLED
+%EXIT_FORM_FILENAME
+%EXIT_FORM_FORMNAME
+%EXIT_FORWARD
+%FACILITY
+%FACILITY_DATABASE
+%FACILITY_NAME
+%FACILITY_SYSTEM
+%FIND
+%FORM_FILE
+%FORM_NAME
+%GEM_INIT
+%GTID
+%GTID_LEVEL
+%HARDWARE
+%HELP_LIBRARY
+%HOSTID
+%INPUT_BACKGROUND
+%INPUT_DATE_FORMAT
+%INPUT_FORGROUND
+%INPUT_PROMPT
+%INPUT_TIMEOUT
+%INPUT_UPDATE
+%INTERRUPT
+%INTERRUPT_COMMAND
+%IS_ADMIN
+%KEYBOARD_FILE
+%LANGUAGE
+%LOCK_OPTIONS
+%MASK_CURRENCY_SIGN
+%MASK_DIGIT_SEPARATOR
+%MASK_RADIX_POINT
+%MODE
+%MODIFY
+%NODENAME
+%NOW
+%OPERATING_SYSTEM
+%PAGE
+%PERFORM
+%PI
+%PID
+%PLATFORM
+%PERCISION
+%PRINT_MODE
+%QUERY_CUR_REC
+%QUERY_MAX_REC
+%QUERY_MODE
+%REPORT_DATE
+%REPORT_FORM_FEEDS
+%REPORT_PAGE_SIZE
+%REPORT_MODE
+%REPORT_NAME
+%ROW_NUMBER
+%SCREEN_MODE
+%SCREEN_WIDTH
+%SERVER
+%SHADOW_LEVEL
+%SIGNATURE_ID
+%STATUS
+%STATUS_FREQUENCY
+%SYSTEM
+%TARGETID
+%TEMPORARY_DIRECTORY
+%TERMINAL
+%TEXTFILE_MODE
+%THIN_CLIENT
+%THIN_CLIENT_CHARSET
+%THIN_CLIENT_HW
+%THIN_CLIENT_IPCNAME
+%THIN_CLIENT_MODE
+%THIN_CLIENT_OS
+%THIN_CLIENT_REPORT_DIR
+%THIN_CLIENT_TYPE
+%THIN_CLIENT_USERNAME
+%THIN_SERVER
+%THIN_SERVER_CHARSET
+%THIN_SERVER_DBCHARSET
+%THIN_SERVER_HW
+%THIN_SERVER_IPCNAME
+%THIN_SERVER_MODE
+%THIN_ SERVER_OS
+%THIN_SERVER_REPORT_DIR
+%THIN_SERVER_USERNAME
+%TITLE_FORM
+%TODAY
+%TRANS_LEVEL
+%UIC
+%UIC_GRP
+%UIC_MEM
+%UNIX
+%USERNAME
+%VERSION
+%WD
+%XPID
+VALUE SYMBOLS
+%BACK
+%DATA
+%DEADLOCK
+%EMPTY
+%EXIT
+%FAILURE
+%NORMAL
+%SUCCESS
+SECURITY VALUE SYMBOLS
+%ADMIN_ACCESS
+%CHANGE_ACCESS
+%CONTROL_ACCESS
+%DEFINE_ACCESS
+%DELETE_ACCESS
+%ERASE_ACCESS
+%MODIFY_ACCESS
+%OPERATOR_ACCESS
+%READ_ACCESS
+%SHOW_ACCESS
+
+*/
+ 
+    
 }
