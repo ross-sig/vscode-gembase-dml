@@ -1127,29 +1127,25 @@
         "descripion": "Get next record from stream"        
     },
     "FIND IN": {
-        "prefix": "FIND IN table_name /WITH=${with}",
+        "prefix": "FIND IN table_name /[qualifiers]",
         
         "body": [
-            "FETCH ${stream_name} /FAILURE=($failure_dml) /SUCCESS=($success_dml)"
+            "FIND IN $tablename",
+                "\t/LOCK=${lock_type} & ! NONE, READ, WRITE &",
+                "\t/SECONDARY &",
+                "\t/STREAM_NAME=${stream_name} &",
+                "\t/WITH=${with_field_expression}",
+                ""
                 
         ],
-        "descripion": "Get next record from stream"        
+        "descripion": "Find records in table"        
     },
 
 
 /*
 TODO
 
-FIND IN
-FIND IN [stream_name:Idatabase_handle.]table_name[/qualifiers]
-Qualifiers
-/LOCK=option_keyword
-Keywords: WRITE, READ, NONE
-/SECONDARY
-/STREAM_NAME=stream_name
-/WITH=field_name=expression
-FINISH
-FINISH database_handle
+
 FLOW_BLOCK
 FLOW_BLOCK [block name] /TARGET=data element
 FLOW_CONNECTOR
