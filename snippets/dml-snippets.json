@@ -1130,7 +1130,7 @@
         "prefix": "FIND IN table_name /[qualifiers]",
         
         "body": [
-            "FIND IN $tablename",
+            "FIND IN ${tablename}",
                 "\t/LOCK=${lock_type} & ! NONE, READ, WRITE &",
                 "\t/SECONDARY &",
                 "\t/STREAM_NAME=${stream_name} &",
@@ -1140,39 +1140,21 @@
         ],
         "descripion": "Find records in table"        
     },
+    "GOTO": {
+        "prefix": "GOTO block_name",
+        
+        "body": [
+            "GOTO ${block_name}"
+                
+        ],
+        "descripion": "Goes to block"        
+    },
 
 
 /*
 TODO
 
 
-FLOW_BLOCK
-FLOW_BLOCK [block name] /TARGET=data element
-FLOW_CONNECTOR
-FLOW_CONNECTOR /required qualifiers [/optional qualifiers]
-Required Qualifiers
-/FROM=string expression
-/TO=string expression
-Optional Qualifiers
-/TITLE=string expression
-FLOW_NODE
-FLOW_NODE /required qualifiers [/optional qualifiers]
-Required Qualifiers
-/NAME=string expression
-/ROW=numeric expression
-/COL=numeric expression
-Optional Qualifiers
-/HEIGHT=numeric expression
-/WIDTH=numeric expression
-/TITLE=string expression
-/DESC=string expression
-/GRAPHIC=string expression
-GENERATE/FORMS
-GENERATE/FORMS
-GENERATE/REPORTS
-GENERATE/REPORTS
-GOTO
-GOTO block_name
 IF, ELSE, ELSE_IF, and END_IF
 IF (condition_expression) dml_statement
 or
