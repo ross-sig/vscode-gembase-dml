@@ -20,7 +20,8 @@
 		"data",
 		"manipulation",
 		"language",
-		"aptean"
+		"aptean",
+		"4gl"
 		
 	],
 	"contributes": {
