@@ -2722,8 +2722,8 @@ TEMPORARY_FILENAME(name-string)
 
     
  // Special Vars
-
- 
+ // vscode doesn't allow special characters in the snippet prefix... so currently these aren't working.
+ // reported issue: https://github.com/Microsoft/vscode/issues/6358
  
  
     "%ACCOUNT": {
@@ -2747,7 +2747,7 @@ TEMPORARY_FILENAME(name-string)
         ],
         "description": ""
     },
-    "%ADVANCED_USER": {
+    "ADVANCED_USER": {
         "prefix": "%ADVANCED_USER",
         "body": [
             "%ADVANCED_USER"
