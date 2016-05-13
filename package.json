@@ -7,7 +7,7 @@
 	},
 	"license": "TODO",
 	"displayName": "Gembase DML",
-	"description": "GEMBASE DML language support for Visual Studio Code",	
+	"description": "GEMBASE Data Manipulation Language support for Visual Studio Code",	
 	"categories": [
 		"Languages"
 	],
@@ -18,10 +18,10 @@
 		"ross",
 		"erp",
 		"data",
-		"manupulation",
+		"manipulation",
 		"language",
-		"aptean",
-		"renaissance"
+		"aptean"
+		
 	],
 	"contributes": {
 		"snippets": [
@@ -38,7 +38,7 @@
 					".dml"
 				],
 				"aliases": [
-					"DML / Gembase"
+					"DML (Gembase)"
 				]
 			}	
 		],
