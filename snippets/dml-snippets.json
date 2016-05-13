@@ -319,7 +319,7 @@
     
     // Blocks
     "BEGIN_BLOCK": {
-        "prefix": "BEGIN_BLOCK (Generate)",
+        "prefix": "BEGIN_BLOCK block_name",
         "body": [
             "BEGIN_BLOCK ${block_name}",
                 "\t",
@@ -328,7 +328,7 @@
         "description": "Generate Begin Block"
     },
     "BEGIN_BLOCK DISPLAY_ONLY": {
-        "prefix": "BEGIN_BLOCK /DISPLAY_ONLY (Generate)",
+        "prefix": "BEGIN_BLOCK /DISPLAY_ONLY block_name",
         "body": [
             "BEGIN_BLOCK /DISPLAY_ONLY ${block_name}",
                 "\t",
@@ -337,7 +337,7 @@
         "description": "Generate Begin Block with /DISPLAY_ONLY"
     },
     "INPUT_BLOCK": {
-        "prefix": "INPUT_BLOCK (Generate)",
+        "prefix": "INPUT_BLOCK block_name",
         "body": [
             "INPUT_BLOCK ${block_name} &",
                 "\t/ROW=${row_num} &",
@@ -348,7 +348,7 @@
         "description": "Generate Input Block"        
     },    
     "INPUT_BLOCK ALL": {
-        "prefix": "INPUT_BLOCK (Generate ALL Qualifiers)",
+        "prefix": "INPUT_BLOCK block_name [/qualifiers]",
         "body": [
             "INPUT_BLOCK ${block_name} &",
                 "\t/ABSOLUTE_POSITION &",
@@ -401,7 +401,7 @@
     },    
     
      "ITEM_BLOCK": {
-        "prefix": "ITEM_BLOCK (Generate)",
+        "prefix": "ITEM_BLOCK block_name",
         "body": [
             "ITEM_BLOCK ${block_name} &",
                 "\t/ROW=${row_num} &",
@@ -413,7 +413,7 @@
     },    
     
     "ITEM_BLOCK ALL": {
-        "prefix": "ITEM_BLOCK (Generate ALL Qualifiers)",
+        "prefix": "ITEM_BLOCK block_name [/qualifiers]",
         "body": [
             "ITEM_BLOCK ${block_name} &",
                 "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, FORCE, NONE, REVERSE, UNDERLINE",
@@ -431,7 +431,7 @@
     },    
     
     "MENU_BLOCK": {
-        "prefix": "MENU_BLOCK (Generate)",
+        "prefix": "MENU_BLOCK block_name",
         "body": [
             "MENU_BLOCK ${block_name} &",
                 "\t/ROW=${row_num} &",
@@ -442,7 +442,7 @@
         "description": "Generate Menu Block"        
     },    
     "MENU_BLOCK ALL": {
-        "prefix": "MENU_BLOCK (Generate ALL Qualifiers)",
+        "prefix": "MENU_BLOCK block_name [/qualifiers]",
         "body": [
             "MENU_BLOCK ${block_name} &",
                 "\t/BACK=(${back_dml}) &",
@@ -464,7 +464,7 @@
         "description": "Generate Menu Block with ALL Qualifiers"        
     },    
     "OUTPUT_BLOCK": {
-        "prefix": "OUTPUT_BLOCK (Generate)",
+        "prefix": "OUTPUT_BLOCK block_name",
         "body": [
             "OUTPUT_BLOCK ${block_name} &",
                 "\t/ROW=numeric_expression &",
@@ -475,7 +475,7 @@
         "description": "Generate Output Block"        
     },    
     "OUTPUT_BLOCK ALL": {
-        "prefix": "OUTPUT_BLOCK (Generate ALL Qualifiers)",
+        "prefix": "OUTPUT_BLOCK block_name [/qualifiers]",
         "body": [
             "OUTPUT_BLOCK ${block_name} &",
                 "\t/ABSOLUTE_POSITION &",
@@ -505,7 +505,7 @@
         "description": "Generate Pause Block"        
     },    
     "PAUSE_BLOCK": {
-        "prefix": "PAUSE_BLOCK (Generate)",
+        "prefix": "PAUSE_BLOCK block_name",
         "body": [
             "PAUSE_BLOCK ${block_name}",              
                 "\t",
@@ -515,7 +515,7 @@
         "description": "Generate Pause Block"        
     },  
     "PAUSE_BLOCK ALL": {
-        "prefix": "PAUSE_BLOCK (Generate ALL Qualifiers)",
+        "prefix": "PAUSE_BLOCK block_name [/qualifiers]",
         "body": [
             "PAUSE_BLOCK ${block_name} &",              
                 "\t/BACK=(${back_dml}) &",
@@ -532,7 +532,7 @@
         "description": "Generate Pause Block with ALL Qualifiers"        
     },  
     "SIGNATURE_BLOCK": {
-        "prefix": "SIGNATURE_BLOCK (Generate)",
+        "prefix": "SIGNATURE_BLOCK",
         "body": [
             "SIGNATURE_BLOCK",              
                 "\t",
@@ -542,7 +542,7 @@
         "description": "Generate Signature Block"        
     },      
     "SIGNATURE_BLOCK ALL": {
-        "prefix": "SIGNATURE_BLOCK (Generate with ALL Qualifiers)",
+        "prefix": "SIGNATURE_BLOCK [/qualifiers]",
         "body": [
             "SIGNATURE_BLOCK &",              
                 "\t/AUDIT=${audit_file_spec} &",
@@ -568,7 +568,7 @@
         "description": "Generate YesNo Block with ALL Qualifiers"        
     },
     "YESNO_BLOCK": {
-        "prefix": "YESNO_BLOCK (Generate)",
+        "prefix": "YESNO_BLOCK block_name /ROW=row_num /COL=col_num",
         "body": [
             "YESNO_BLOCK ${block_name} /ROW=${row_num} /COL=${col}",                               
                 "\t",
@@ -579,7 +579,7 @@
         "description": "Generate YESNO Block"        
     },       
     "YESNO_BLOCK ALL": {
-        "prefix": "YESNO_BLOCK (Generate ALL Qualifiers)",
+        "prefix": "YESNO_BLOCK block_name /[qualifiers]",
         "body": [
             "YESNO_BLOCK ${block_name} &",   
                 "\t/BACK=(dml_statement) &",
@@ -609,7 +609,7 @@
     // Statements    
     
     "ADD_TO": {
-        "prefix": "ADD_TO",
+        "prefix": "ADD_TO table_or_var",
         "body": [
             "ADD_TO ${table_or_variable} "
                 
@@ -617,7 +617,7 @@
         "description": "ADD_TO table or variable"        
     },
     "ARCHIVE": {
-        "prefix": "ARCHIVE[DBMS] [{from/source}]",
+        "prefix": "ARCHIVE[DBMS] [from/source]",
         "body": [
             "ARCHIVE[${DBMS}] [${from_source}] ${from_db_handle} [${to_target}] ${to_db_handle}"
                 
