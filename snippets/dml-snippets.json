@@ -9,11 +9,13 @@
                 "\t/HEIGHT=${height_num} & ",                        
                 "\t/ROW=${row_num} & ",             
                 "\t/WIDTH=${width_num}",
-                "",            
+                "\t",            
                 "\tITEM_BLOCK ${block_name1} /ROW=${item1_row_num} /COL=${item_col_num} /FACILITY=${facility_name1}",
-                "",
+                "\t",
                 "\tITEM_BLOCK ${block_name2} /ROW=${item2_row_num} /COL=${item_col_num} /FACILITY=${facility_name2}",            
-                "",
+                "\t",
+                "\t${0}",
+                "\t",
             "END_FORM "
             
         ],
@@ -34,11 +36,13 @@
                 "\t/TAG_LENGTH=${tag_length} &",
                 "\t/TITLE=\"${title}\" & ",
                 "\t/WIDTH=${width_num}",
-                "",            
+                "\t",            
                 "\tITEM_BLOCK ${block_name1} /ROW=${item1_row_num} /COL=${item_col_num} /FACILITY=${facility_name1}",
-                "",
+                "\t",
                 "\tITEM_BLOCK ${block_name2} /ROW=${item2_row_num} /COL=${item_col_num} /FACILITY=${facility_name2}",            
-                "",
+                "\t",
+                "\t${0}",
+                "\t",
             "END_FORM "
             
         ],
@@ -53,6 +57,8 @@
                 "\t/HEIGHT=${height_num} &",             
                 "\t/WIDTH=${width} &",
                 "\t/TITLE=\"${title}\"",
+                "\t",
+                "\t${0}",
                 "\t",
             "END_FORM"
             
@@ -90,6 +96,8 @@
                 "\t/WIDTH=${width} &",
                 "\t/WITH=${with_field_expression}",
                 "\t",
+                "\t${0}",
+                "\t",
             "END_FORM"
             
         ],
@@ -101,6 +109,8 @@
         "prefix": "PROCEDURE_FORM form_name",
         "body": [
             "PROCEDURE_FORM ${form_name}",
+                "\t",
+                "\t${0}",
                 "\t",
             "END_FORM"            
         ],
@@ -133,6 +143,8 @@
                 "\t/TABLE=${table} &",
                 "\t/WITH=${with_field_expression}",
                 "\t",
+                "\t${0}",
+                "\t",
             "END_FORM"            
         ],
         "description": "Procedure Form with all Qualifiers"
@@ -147,6 +159,8 @@
                 "\t/ROW=row_num &",          
                 "\t/WIDTH=${width} &",
                 "\t/TABLE=${table}",
+                "\t",
+                "\t${0}",
                 "\t",
             "END_FORM"            
         ],
@@ -183,6 +197,8 @@
                 "\t/WIDTH=${width} &",
                 "\t/WITH=${with_field_expression}",
                 "\t",
+                "\t${0}",
+                "\t",
             "END_FORM"
         ],
         "description": "Query Form with all Qualifiers"
@@ -196,6 +212,8 @@
                 "\t",
                 "\tOUTPUT_BLOCK ${block_name} /ROW=${output_row_num} /COL=${output_col_num} &",
                 "\t\t/SOURCE=${source}",
+                "\t",
+                "\t${0}",
                 "\t",
             "END_FORM"
         ],
@@ -244,7 +262,9 @@
                 "\t/TABLE=${table} &",
                 "\t/WIDTH=${width} &",
                 "\t/WITH=${with} &",
-                "",
+                "\t",
+                "\t${0}",
+                "\t",
             "END_FORM"
         ],
         "description": "Report Form with all Qualifiers"
@@ -259,6 +279,8 @@
                 "\t/COL=${col_num} &",
                 "\t/HEIGHT=${height_num} &",
                 "\t/WIDTH=${width}",
+                "\t",
+                "\t${0}",
                 "\t",
             "END_FORM"
         ],
@@ -302,6 +324,8 @@
                 "\t/WIDTH=${width_num} &",
                 "\t/WITH=${with}",
                 "\t",
+                "\t${0}",
+                "\t",
             "END_FORM"
         ],
         "description": "Generate Table Form with ALL Qualifiers"
@@ -312,7 +336,8 @@
     "TITLE facility_name, \"title_text\"": {
         "prefix": "TITLE",
         "body": [
-            "TITLE ${facility_name}, \"${title_text}\""
+            "TITLE ${facility_name}, \"${title_text}\"",
+            "${0}"
         ]
     },
     
@@ -323,6 +348,8 @@
         "body": [
             "BEGIN_BLOCK ${block_name}",
                 "\t",
+                "\t${0}",
+                "\t",
             "END_BLOCK"
         ],
         "description": "Generate Begin Block"
@@ -331,6 +358,8 @@
         "prefix": "BEGIN_BLOCK /DISPLAY_ONLY block_name",
         "body": [
             "BEGIN_BLOCK /DISPLAY_ONLY ${block_name}",
+                "\t",
+                "\t${0}",
                 "\t",
             "END_BLOCK"
         ],
@@ -343,7 +372,7 @@
                 "\t/ROW=${row_num} &",
                 "\t/COL=${col_num} &",
                 "\t/TARGET=${target}",
-                "\t"
+            "${0}"
         ],
         "description": "Generate Input Block"        
     },    
@@ -394,8 +423,7 @@
                 "\t/USE_IF=(${use_if_condition}) &",
                 "\t/USER_KEY n=(${user_key}) &",
                 "\t/USING=${using_keywords}",
-                "\t"
-            
+            "${0}"
         ],
         "description": "Generate Input Block with ALL Qualifiers"        
     },    
@@ -407,7 +435,7 @@
                 "\t/ROW=${row_num} &",
                 "\t/COL=${col_num} &",
                 "\t/FACILITY=${facility}",
-                "\t"
+            "${0}"
         ],
         "description": "Generate Item Block"        
     },    
@@ -425,7 +453,7 @@
                 "\t/TAG=${tag} &",
                 "\t/TAG_LENGTH=$tag_length} &",
                 "\t/USE_IF=(${use_if_condition}) &",
-                "\t"
+            "${0}"
         ],
         "description": "Generate Item Block with ALL Qualifiers"        
     },    
@@ -437,7 +465,7 @@
                 "\t/ROW=${row_num} &",
                 "\t/COL=${col_num} &",
                 "\t/FACILITY=${facility}",
-                "\t"
+            "${0}"
         ],
         "description": "Generate Menu Block"        
     },    
@@ -459,7 +487,7 @@
                 "\t/TARGET=${target} &",
                 "\t/TITLE=\"${title}\" &",
                 "\t/USE_IF=(${use_if_condition})",
-                "\t"
+            "${0}"
         ],
         "description": "Generate Menu Block with ALL Qualifiers"        
     },    
@@ -470,7 +498,7 @@
                 "\t/ROW=numeric_expression &",
                 "\t/COL=numeric_expression &",
                 "\t/SOURCE=${source}",
-                "\t"
+            "${0}"
         ],
         "description": "Generate Output Block"        
     },    
@@ -498,9 +526,7 @@
                 "\t/TOTAL &",
                 "\t/USE_IF=(${use_if_condition}) &",
                 "\t/USING=${usings}",
-                "\t",
-                "\t",
-                ""
+            "${0}"
                     ],
         "description": "Generate Pause Block"        
     },    
@@ -508,8 +534,7 @@
         "prefix": "PAUSE_BLOCK block_name",
         "body": [
             "PAUSE_BLOCK ${block_name}",              
-                "\t",
-            ""
+            "${0}"
                 
         ],
         "description": "Generate Pause Block"        
@@ -525,8 +550,7 @@
                 "\t/PROMPT=${prompt} &",
                 "\t/ROW=${row_num} &",
                 "\t/USE_IF=(${use_if_condition})",
-            "",    
-            ""
+            "${0}"
                 
         ],
         "description": "Generate Pause Block with ALL Qualifiers"        
@@ -535,8 +559,7 @@
         "prefix": "SIGNATURE_BLOCK",
         "body": [
             "SIGNATURE_BLOCK",              
-                "\t",
-            ""
+            "${0}"
                 
         ],
         "description": "Generate Signature Block"        
@@ -562,8 +585,7 @@
                 "\t/USER4=${user_defined4} &",
                 "\t/USER5=${user_defined5} &",
                 "\t/VALIDATION_FORM=${validation_form} &",
-                "\t",
-                ""                            
+            "${0}"                        
         ],
         "description": "Generate YesNo Block with ALL Qualifiers"        
     },
@@ -571,9 +593,7 @@
         "prefix": "YESNO_BLOCK block_name /ROW=row_num /COL=col_num",
         "body": [
             "YESNO_BLOCK ${block_name} /ROW=${row_num} /COL=${col}",                               
-                "\t",
-                "\t",
-            ""
+            "${0}"
                 
         ],
         "description": "Generate YESNO Block"        
@@ -596,9 +616,7 @@
                 "\t/SUCCESS=(${success_dml}) &",
                 "\t/TARGET=${target} &",
                 "\t/USE_IF=(${use_if_condition})",                            
-                "\t",
-                "\t",
-            ""
+            "${0}"
                 
         ],
         "description": "Generate YESNO Block with ALL Qualifiers"        
@@ -611,7 +629,8 @@
     "ADD_TO": {
         "prefix": "ADD_TO table_or_var",
         "body": [
-            "ADD_TO ${table_or_variable} "
+            "ADD_TO ${table_or_variable}",
+            "${0}"
                 
         ],
         "description": "ADD_TO table or variable"        
@@ -619,8 +638,8 @@
     "ARCHIVE": {
         "prefix": "ARCHIVE[DBMS] [from/source]",
         "body": [
-            "ARCHIVE[${DBMS}] [${from_source}] ${from_db_handle} [${to_target}] ${to_db_handle}"
-                
+            "ARCHIVE[${DBMS}] [${from_source}] ${from_db_handle} [${to_target}] ${to_db_handle}",
+            "${0}"                
         ],
         "description": "ARCHIVE [DBMS]"        
     },
@@ -628,6 +647,8 @@
         "prefix": "BEGIN_CASE / END_CASE",
         "body": [
             "BEGIN_CASE ($expression)\t",
+            "\t",
+            "\t${0}",
             "\t",
             "END_CASE"
                 
@@ -645,6 +666,9 @@
             "\tCASE ${expression_a} TO ${expression_b}",
             "\t",
             "\tCASE ELSE",
+            "\t",
+            "\t${0}",
+            "\t",
             "END_CASE"
                 
         ],
@@ -653,7 +677,8 @@
     "BEGIN_DISABLE_TRIGGER": {
         "prefix": "BEGIN_DISABLE_TRIGGER",
         "body": [
-            "BEGIN_DISABLE_TRIGGER"
+            "BEGIN_DISABLE_TRIGGER",
+            "${0}"             
                 
         ],
         "description": "Disable update triggers"        
@@ -661,15 +686,16 @@
     "BEGIN_SIGNAL_TO_STATUS": {
         "prefix": "BEGIN_SIGNAL_TO_STATUS",
         "body": [
-            "BEGIN_SIGNAL_TO_STATUS"
-                
+            "BEGIN_SIGNAL_TO_STATUS",
+            "${0}"                 
         ],
         "description": "Trap Error Signals"        
     },
     "CALL": {
         "prefix": "CALL routine_name [arguments]",
         "body": [
-            "CALL ${routine_name} ${arguments}"
+            "CALL ${routine_name} ${arguments}",
+            "${0}" 
                 
         ],
         "description": "Call Routine"        
@@ -684,7 +710,8 @@
                 "\t/NAMESPACE=${namespace} &",
                 "\t/URL=${url} &",
                 "\t/RESPONSE=${response} &",
-                "\t/RESULT=(NAME=${r_name}, TYPE=${r_type}, TARGET=${r_target})"
+                "\t/RESULT=(NAME=${r_name}, TYPE=${r_type}, TARGET=${r_target})",
+            "${0}" 
                 
         ],
         "description": "Call SOAP XML Web Service"        
@@ -692,7 +719,8 @@
     "CD": {
         "prefix": "CD directory",
         "body": [
-            "CD ${directory}"
+            "CD ${directory}",
+            "${0}" 
                 
         ],
         "description": "Set User Working Directory"        
@@ -712,7 +740,7 @@
                 "\t/SOURCE=${source} &",
                 "\t/SOURCE_IF=${source_if} &",
                 "\t/SUCCESS=(${success_dml})",
-                ""
+            "${0}" 
                 
         ],
         "description": "Domain Validation with TARGET"        
@@ -732,7 +760,7 @@
                 "\t/SOURCE=${source} &",
                 "\t/SOURCE_IF=${source_if} &",
                 "\t/SUCCESS=(${success_dml})",
-                ""
+            "${0}" 
                 
         ],
         "description": "Domain Validation with USING"        
@@ -740,15 +768,16 @@
     "CLEAR_ARRAY": {
         "prefix": "CLEAR_ARRAY #array()",
         "body": [
-            "CLEAR_ARRAY ${#array()}"
-                
+            "CLEAR_ARRAY ${#array()}",
+            "${0}" 
         ],
         "description": "Clears Array"        
     },
     "CLEAR_BUFFER_TABLE": {
         "prefix": "CLEAR_BUFFER table",
         "body": [
-            "CLEAR_BUFFER ${table}"
+            "CLEAR_BUFFER ${table}",
+            "${0}"             
                 
         ],
         "description": "Clears Buffer (non-PID fields)"        
@@ -756,7 +785,8 @@
     "CLEAR_BUFFER_DB_TABLE": {
         "prefix": "CLEAR_BUFFER database_handle.table",
         "body": [
-            "CLEAR_BUFFER ${database_handle}.${table}"
+            "CLEAR_BUFFER ${database_handle}.${table}",
+            "${0}" 
                 
         ],
         "description": "Clears Buffer (non-PID fields)"        
@@ -764,7 +794,8 @@
     "CLEAR_BUFFER_VAR": {
         "prefix": "CLEAR_BUFFER database_handle.table",
         "body": [
-            "CLEAR_BUFFER ${variable}"
+            "CLEAR_BUFFER ${variable}",
+            "${0}" 
                 
         ],
         "description": "Clears Buffer (non-PID fields)"        
@@ -772,7 +803,8 @@
     "CLI": {
         "prefix": "CLI command_expression",
         "body": [
-            "CLI ${expression}"
+            "CLI ${expression}",
+            "${0}" 
                 
         ],
         "description": "Command Language Interpreter"        
@@ -781,7 +813,8 @@
         "prefix": "CLI command_expression /NOERASE /PAUSE",
         
         "body": [
-            "CLI ${expression} /NOERASE /PAUSE"
+            "CLI ${expression} /NOERASE /PAUSE",
+            "${0}" 
                 
         ],
         "description": "Command Language Interpreter"        
@@ -790,7 +823,8 @@
         "prefix": "CLOSE_TABS",
         
         "body": [
-            "CLOSE_TABS"
+            "CLOSE_TABS",
+            "${0}" 
                 
         ],
         "description": "Close Tabs and kill gem_ui_server processes"        
@@ -799,8 +833,8 @@
         "prefix": "CLOSE_TABS /GEMBASE_ONLY /HTML_ONLY",
         
         "body": [
-            "CLOSE_TABS /GEMBASE_ONLY /HTML_ONLY"
-                
+            "CLOSE_TABS /GEMBASE_ONLY /HTML_ONLY",
+            "${0}"                 
         ],
         "description": "Close Tabs and kill gem_ui_server processes"        
     },
@@ -808,7 +842,8 @@
         "prefix": "CLOSE_TEXT tag",
         
         "body": [
-            "CLOSE_TEXT ${tag}"
+            "CLOSE_TEXT ${tag}",
+            "${0}" 
                 
         ],
         "description": "Close text file previously opened with OPEN_TEXT"        
@@ -817,7 +852,8 @@
         "prefix": "COMMIT",
         
         "body": [
-            "COMMIT"
+            "COMMIT",
+            "${0}"             
                 
         ],
         "description": "Commit to database"        
@@ -826,8 +862,8 @@
         "prefix": "COMPILE [/qualifiers] \"input_file_spec\" [\"output_file_spec\"]",
         
         "body": [
-            "COMPILE /CHECK /LIST /LOG=${log_file_name} \"${input_file_spec}\" \"${output_file_spec}\""
-                
+            "COMPILE /CHECK /LIST /LOG=${log_file_name} \"${input_file_spec}\" \"${output_file_spec}\"",
+            "${0}"                 
         ],
         "description": "Compile DML file"        
     },
@@ -835,7 +871,8 @@
         "prefix": "CONTINUE",
         
         "body": [
-            "COMPILE"
+            "COMPILE",
+            "${0}" 
                 
         ],
         "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
@@ -844,8 +881,8 @@
         "prefix": "CONTINUE [keyword]",
         
         "body": [
-            "COMPILE ${keyword} ! COMMIT, OUT, ROLLBAK"
-                
+            "COMPILE ${keyword} ! COMMIT, OUT, ROLLBAK",
+            "${0}"                 
         ],
         "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
     },
@@ -853,8 +890,8 @@
         "prefix": "DELETE FROM [database_handle.]table_name",
         
         "body": [
-            "DELETE FROM ${dataase}.${table} ! /ARCHIVE"
-                
+            "DELETE FROM ${dataase}.${table} ! /ARCHIVE",
+            "${0}"                 
         ],
         "description": "Delete buffer"        
     },
@@ -862,7 +899,8 @@
         "prefix": "DELETE ALL FROM [database_handle.]table_name",
         
         "body": [
-            "DELETE ALL FROM ${dataase}.${table} ! /ARCHIVE"             
+            "DELETE ALL FROM ${dataase}.${table} ! /ARCHIVE",
+            "${0}"                          
         ],
         "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
     },
@@ -870,8 +908,8 @@
         "prefix": "DELETE FROM #variable",
         
         "body": [
-            "DELETE FROM ${variable} ! /ARCHIVE"
-                
+            "DELETE FROM ${variable} ! /ARCHIVE",
+            "${0}"                 
         ],
         "description": "Delete buffer"        
     },
@@ -879,7 +917,8 @@
         "prefix": "DELETE ALL FROM #variable",
         
         "body": [
-            "DELETE ALL FROM ${variable} ! /ARCHIVE"             
+            "DELETE ALL FROM ${variable} ! /ARCHIVE",
+            "${0}"                         
         ],
         "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
     },
@@ -887,7 +926,8 @@
         "prefix": "DIR file_spec",
         
         "body": [
-            "DIR ${file_spec}"             
+            "DIR ${file_spec}",
+            "${0}"              
         ],
         "description": "List files in a directory in TABLE_EDIT form"        
     },
@@ -895,7 +935,8 @@
         "prefix": "DISPLAY keyword",
         
         "body": [
-            "DISPLAY ${keyword} ! CLEAN, DEFAULTS, BEGIN_UPDATE, END_UPDATE, FLUSH, REFRESH"             
+            "DISPLAY ${keyword} ! CLEAN, DEFAULTS, BEGIN_UPDATE, END_UPDATE, FLUSH, REFRESH",
+            "${0}"                          
         ],
         "description": "Redisplay form"        
     },
@@ -903,7 +944,8 @@
         "prefix": "END_DISABLE_TRIGGER",
         
         "body": [
-            "END_DISABLE_TRIGGER"             
+            "END_DISABLE_TRIGGER",
+            "${0}"                          
         ],
         "description": "Re-enable updates following BEGIN_DISABLE_TRIGGER"        
     },
@@ -911,7 +953,8 @@
         "prefix": "END_EXECUTE [/CONNECT=connect_handle]",
         
         "body": [
-            "END_EXECUTE /CONNECT=${handle}"             
+            "END_EXECUTE /CONNECT=${handle}",
+            "${0}"                          
         ],
         "description": "Abort stored procedure"        
     },
@@ -919,7 +962,8 @@
         "prefix": "END_GTID",
         
         "body": [
-            "END_GTID"             
+            "END_GTID",
+            "${0}"             
         ],
         "description": "Decrements %GTID_LEVEL"        
     },
@@ -927,7 +971,8 @@
         "prefix": "END_SIGNAL_TO_STATUS",
         
         "body": [
-            "END_SIGNAL_TO_STATUS"             
+            "END_SIGNAL_TO_STATUS",
+            "${0}"                     
         ],
         "description": "Stop trapping error signals"        
     },
@@ -935,7 +980,8 @@
         "prefix": "END_WHILE",
         
         "body": [
-            "END_WHILE"             
+            "END_WHILE",
+            "${0}"       
         ],
         "description": "End While Loop"        
     },
@@ -943,7 +989,8 @@
         "prefix": "ERROR error_text",
         
         "body": [
-            "ERROR ${error_text}"             
+            "ERROR ${error_text}",
+            "${0}"                        
         ],
         "description": "Error Text"        
     },
@@ -951,7 +998,8 @@
         "prefix": "ERROR [/qualifiers] error_text",
         
         "body": [
-            "ERROR /BELL /CONFIRM /NOBELL /NOWAIT /TEXT_ONLY /WAIT ${error_text}"             
+            "ERROR /BELL /CONFIRM /NOBELL /NOWAIT /TEXT_ONLY /WAIT ${error_text}",
+            "${0}"                          
         ],
         "description": "Error Text with all qualifiers"        
     },
@@ -959,7 +1007,8 @@
         "prefix": "EXECUTE procedure_name",
         
         "body": [
-            "EXECUTE ${procedure_name}"             
+            "EXECUTE ${procedure_name}",
+            "${0}"           
         ],
         "description": "Execute Procedure"        
     },
@@ -967,7 +1016,8 @@
         "prefix": "EXECUTE [/HANDLE=connect_handle] [/NOWAIT] procedure_name [(arguments)]",
         
         "body": [
-            "EXECUTE /HANDLE=${handle} /NOWAIT ${procedure_name} ${(arguments)}"             
+            "EXECUTE /HANDLE=${handle} /NOWAIT ${procedure_name} ${(arguments)}",
+            "${0}"                         
         ],
         "description": "Execute Procedure with Arguments and ALL Qualifiers"        
     },
@@ -975,7 +1025,8 @@
         "prefix": "EXIT",
         
         "body": [
-            "EXIT"             
+            "EXIT",
+            "${0}"                   
         ],
         "description": "Exit Current Form"        
     },
@@ -983,7 +1034,8 @@
         "prefix": "EXIT (%SUCCESS)",
         
         "body": [
-            "EXIT (%SUCCESS)"             
+            "EXIT (%SUCCESS)",
+            "${0}"                       
         ],
         "description": "Exit Current Form with Success Status"        
     },
@@ -991,7 +1043,8 @@
         "prefix": "EXIT (%FAILURE)",
         
         "body": [
-            "EXIT ($FAILURE)"             
+            "EXIT ($FAILURE)",
+            "${0}"                          
         ],
         "description": "Exit Current Form Failure Status"        
     },
@@ -999,7 +1052,8 @@
         "prefix": "EXPORT",
         
         "body": [
-            "EXPORT"             
+            "EXPORT",
+            "${0}"                          
         ],
         "description": "EXPORT"        
     },
@@ -1030,7 +1084,7 @@
                 "\t/SUCCESS=(${success-dml}) &",
                 "\t/TABLES=${tables} &",
                 "\t/TO=${to_db_handle}",
-                ""
+            "${0}" 
                  
         ],
         "description": "Generate EXPORT with all Qualifers"        
@@ -1055,7 +1109,7 @@
                 "\t/SUCCESS=(${success-dml}) &",
                 "\t/TO=${CSV-file-spec} &",
                 "\t/VERBOSE &",
-                ""
+            "${0}" 
                 
         ],
         "description": "Generate EXPORT/CSV with all Qualifers"        
@@ -1068,7 +1122,7 @@
                 "\t/FROM=${db_handle}.${table} &",
                 "\t/TABLE=${table} &",
                 "\t/TARGET=${target}",
-                ""
+            "${0}" 
                 
         ],
         "description": "Generate EXPORT/XML with all Qualifers"        
@@ -1080,7 +1134,7 @@
             "EXTERNAL \"${file_spec}\" ${routine} ${keyword} ${arguments} &",
                 "\t/FAILURE=(${failure_dml}) &",
                 "\t/SUCCESS=(${success_dml})",           
-                ""
+            "${0}" 
                 
         ],
         "description": "Declares External Routine"        
@@ -1092,7 +1146,7 @@
             "EXTERNAL \"${file_spec}\" ${routine} ${keyword} ${arguments} &",
                 "\t/FAILURE=(${failure_dml}) &",
                 "\t/SUCCESS=(${success_dml})",           
-                ""
+            "${0}" 
                 
         ],
         "description": "Declares External Routine"        
@@ -1101,8 +1155,8 @@
         "prefix": "FETCH stream_name",
         
         "body": [
-            "FETCH stream_name"
-                
+            "FETCH stream_name",
+            "${0}"                 
         ],
         "description": "Get next record from stream"        
     },
@@ -1110,8 +1164,8 @@
         "prefix": "FETCH stream_name /FAILURE=(failure_dml) /SUCCESS=(success_dml)",
         
         "body": [
-            "FETCH ${stream_name} /FAILURE=(${failure_dml}) /SUCCESS=($success_dml)"
-                
+            "FETCH ${stream_name} /FAILURE=(${failure_dml}) /SUCCESS=($success_dml)",
+            "${0}"                 
         ],
         "description": "Get next record from stream"        
     },
@@ -1124,7 +1178,7 @@
                 "\t/SECONDARY &",
                 "\t/STREAM_NAME=${stream_name} &",
                 "\t/WITH=${with_field_expression}",
-                ""
+            "${0}" 
                 
         ],
         "description": "Find records in table"        
@@ -1133,8 +1187,8 @@
         "prefix": "GOTO block_name",
         
         "body": [
-            "GOTO ${block_name}"
-                
+            "GOTO ${block_name}",
+            "${0}"                 
         ],
         "description": "Goes to block"        
     },
@@ -1143,6 +1197,8 @@
         
         "body": [
             "IF ${condition}",
+            "\t",
+            "\t{0}",
             "\t",
             "END_IF"
                 
@@ -1154,17 +1210,17 @@
         
         "body": [
             "ELSE",
-            "\t"
+            "\t{0}"
                 
         ],
         "description": "ELSE"        
     },
     "ELSE_IF": {
-        "prefix": "ELSE_IF",
+        "prefix": "ELSE_IF (condition)",
         
         "body": [
-            "ELSE_IF",
-            "\t"
+            "ELSE_IF (${condition})",
+            "\t{0}"
                 
         ],
         "description": "ELSE_IF"        
@@ -1173,7 +1229,8 @@
         "prefix": "END_IF",
         
         "body": [
-            "END_IF"
+            "END_IF",
+            "${0}"             
                 
         ],
         "description": "END_IF"        
@@ -1203,8 +1260,8 @@
                 "\t/SUCCESS=(${success-dml}) &",
                 "\t/TABLES=\"${tables}\" &",
                 "\t/TO=${to_db_handle}",
-                "\t/VERBOSE"
-                
+                "\t/VERBOSE",
+            "${0}"                 
         ],
         "description": "IMPORT data to a database"        
     },
@@ -1226,8 +1283,8 @@
                 "\t/STATUS &",
                 "\t/SUCCESS=(dml-statement) &",
                 "\t/TO= database-handle.table-name &",
-                "\t/VERBOSE"
-                
+                "\t/VERBOSE",
+            "${0}"                 
         ],
         "description": "Import CSV into table"        
     },
@@ -1243,7 +1300,7 @@
                 "\t/RESULTNAME=${resultname} &",
                 "\t/SOURCE=${source} &",
                 "\t/TABLE=${table}",
-            ""
+            "${0}" 
 
                 
         ],
@@ -1253,7 +1310,7 @@
         "prefix": "LOAD file_spec INTO table(field)",
         "body": [
             "LOAD ${file_spec} INTO ${table}(${field})",
-            ""                
+            "${0}"               
         ],
         "description": "Load TXT file into field"        
     },
@@ -1261,7 +1318,7 @@
         "prefix": "MAIL /TO=to_address /SUBJECT=subject /TEXT=text [/FILE=$FILE_SPEC]",
         "body": [
             "MAIL /TO=${to_address} /SUBJECT=${subject} /TEXT={$text} /FILE=${file_spec}",
-            ""                
+            "${0}"              
         ],
         "description": "Load TXT file into field"        
     },
@@ -1294,7 +1351,7 @@
             "\t/Timeout=${smtp_server_timeout} &",
             "\t/To=${to_csv_emails} &",
             "\t/Username=${smtp_auth_username}",
-            ""
+            "${0}" 
               
         ],
         "description": "Send email via SMTP"        
@@ -1302,7 +1359,8 @@
     "MESSAGE": {
         "prefix": "MESSAGE [/qualifiers] message_name",
         "body": [
-            "MESSAGE /BELL/CONFIRM/FACILITY/IDENTIFIER/SEVERITY/WAIT ${message_name}" 
+            "MESSAGE /BELL/CONFIRM/FACILITY/IDENTIFIER/SEVERITY/WAIT ${message_name}",
+            "${0}"             
               
         ],
         "description": "Display message at bottom of display window"
@@ -1316,7 +1374,7 @@
                 "\t/PERFORM=${perform} &",
                 "\t/DESC=${desc} &",
                 "\t/NEW_WINDOW",
-            ""
+            "${0}" 
               
         ],
         "description": "Open a tab"
@@ -1328,7 +1386,8 @@
                 "\t/APPEND &",
                 "\t/CREATE &",
                 "\t/PDF &",
-                "\t/CHARACTER_SET=${character_set}"   
+                "\t/CHARACTER_SET=${character_set}"   ,
+            "${0}"                 
               
         ],
         "description": "Open text file"
@@ -1336,50 +1395,56 @@
     "OPEN_URL": {
         "prefix": "OPEN_URL /URL=url {/DESC=stringexpression|/NEW_WINDOW}",
         "body": [
-            "OPEN_URL /URL=${url} /DESC=${desc} /NEW_WINDOW"   
-              
+            "OPEN_URL /URL=${url} /DESC=${desc} /NEW_WINDOW",   
+            "${0}"               
         ],
         "description": "Open URL"
     },
     "PERFORM": {
         "prefix": "PERFORM procedure_name",
         "body": [
-            "PERFORM ${PROCEDURE_NAME}"
+            "PERFORM ${PROCEDURE_NAME}",
+            "${0}"             
         ],
         "description": "Perform Procedure"
     },
     "PRINT": {
         "prefix": "PRINT expression",
         "body": [
-            "PRINT ${expression}"
+            "PRINT ${expression}",
+            "${0}"             
         ],
         "description": "Print message at bottom of display"
     },
     "PRINT_ALL": {
         "prefix": "PRINT [/qualifiers] expression",
         "body": [
-            "PRINT /BELL/CONFIRM/NOBELL/NOWAIT/WAIT ${expression}"
+            "PRINT /BELL/CONFIRM/NOBELL/NOWAIT/WAIT ${expression}",
+            "${0}"             
         ],
         "description": "Print message at bottom of display"
     },
     "RANDOMIZE": {
         "prefix": "RANDOMIZE",
         "body": [
-            "RANDOMIZE"
+            "RANDOMIZE",
+            "${0}"             
         ],
         "description": "Seed the random number generator"
     },
     "READ_LINE": {
         "prefix": "READ_LINE tag [/TARGET=target_spec]",
         "body": [
-            "READ_LINE ${tag} /TARGET=$target_spec"
+            "READ_LINE ${tag} /TARGET=$target_spec",
+            "${0}"             
         ],
         "description": "Read record from text file"
     },
     "RECEIVE_DATA": {
         "prefix": "RECEIVE_DATA [/HANDLE=connect_handle] writable_data_elements",
         "body": [
-            "RECEIVE_DATA /HANDLE=${handle} ${writable_data_elements}"
+            "RECEIVE_DATA /HANDLE=${handle} ${writable_data_elements}",
+            "${0}"             
         ],
         "description": "Read row data from stored procedure"
     },
@@ -1389,49 +1454,56 @@
             "RECEIVE_TABLE target_table_name &",
                 "\tFROM ${source_table_name} &",
                 "\tHANDLE=${handle}",
-                "\t!/REPLACE ! truncate target table before loading data"
+                "\t!/REPLACE ! truncate target table before loading data",
+            "${0}"                 
         ],
         "description": "Receive table from database"
     },
     "REPOSITION BY": {
         "prefix": "REPOSITION BY [-]n",
         "body": [
-            "REPOSITION BY ${n}"
+            "REPOSITION BY ${n}",
+            "${0}"             
         ],
         "description": "Increae or decrease report form's current line count"
     },
     "REPOSITION TO": {
         "prefix": "REPOSITION TO n",
         "body": [
-            "REPOSITION TO ${n}"
+            "REPOSITION TO ${n}",
+            "${0}"             
         ],
         "description": "Move report form's output position"
     },
     "REWIND_TEXT": {
         "prefix": "REWIND_TEXT tag",
         "body": [
-            "REWIND_TEXT ${tag}"
+            "REWIND_TEXT ${tag}",
+            "${0}"             
         ],
         "description": "Move to beginning of file"
     },
     "ROLLBACK": {
         "prefix": "ROLLBACK",
         "body": [
-            "ROLLBACK"
+            "ROLLBACK",
+            "${0}"
         ],
         "description": "Rollback transaction"
     },
     "SEND_DATA": {
         "prefix": "SEND_DATA data_elements",
         "body": [
-            "SEND_DATA ${data_elements}"
+            "SEND_DATA ${data_elements}",
+            "${0}"
         ],
         "description": "Send data from stored procedure"
     },
     "SEND_MESSAGE": {
         "prefix": "SEND_MESSAGE numeric_expression, text_expression",
         "body": [
-            "SEND_MESSAGE ${numeric}, ${text}"
+            "SEND_MESSAGE ${numeric}, ${text}",
+            "${0}"
         ],
         "description": "Send message from stored procedure"
     },
@@ -1440,7 +1512,8 @@
         "body": [
             "SEND_TABLE source_table_name [TO target_table_name]",
                 "\t/HANDLE=${handle}",
-                "! /REPLACE"
+                "! /REPLACE",
+            "${0}"
         ],
         "description": "Send table to database"
     },
@@ -1466,7 +1539,8 @@
                 "\t/USER3=${user_defined3} &",
                 "\t/USER4=${user_defined4} &",
                 "\t/USER5=${user_defined5} &",
-                "\t/VALIDATION_FORM=${validation_form}"
+                "\t/VALIDATION_FORM=${validation_form}",
+            "${0}"
 
         ],
         "description": "Signature Statemente"
@@ -1474,21 +1548,24 @@
     "SLEEP": {
         "prefix": "SLEEP seconds",
         "body": [
-            "SLEEP ${seconds}"
+            "SLEEP ${seconds}",
+            "${0}"
         ],
         "description": "Sleep for specified number of seconds"
     },
     "START_DATA_ZONE": {
         "prefix": "START_DATA_ZONE",
         "body": [
-            "START_DATA_ZONE"
+            "START_DATA_ZONE",
+            "${0}"
         ],
         "description": "START_DATA_ZONE"
     },
     "START_GTID": {
         "prefix": "START_GTID",
         "body": [
-            "START_GTID"
+            "START_GTID",
+            "${0}"
         ],
         "description": "START_GTID"
     },
@@ -1520,7 +1597,7 @@
                 "\t/WITH=${with_field_expression}",
                 "\t ! or &",
                 "\t/WITH=${with_field_expression}",
-            ""
+            "${0}"
 
         ],
         "description": "START_STREAM"
@@ -1528,49 +1605,56 @@
     "START_TRANSACTION": {
         "prefix": "START_TRANSACTION",
         "body": [
-            "START_TRANSACTION"
+            "START_TRANSACTION",
+            "${0}"
         ],
         "description": "Starts read/write transaction"
     },    
     "START_TRANSACTION READ_ONLY": {
         "prefix": "START_TRANSACTION READ_ONLY",
         "body": [
-            "START_TRANSACTION READ_ONLY"
+            "START_TRANSACTION READ_ONLY",
+            "${0}"
         ],
         "description": "Starts read transaction"
     },    
     "SWITCH": {
         "prefix": "SWITCH form_name",
         "body": [
-            "SWITCH ${form}"
+            "SWITCH ${form}",
+            "${0}"
         ],
         "description": "Exit current form and execute form"
     },   
     "SWITCH_FILE_SPEC": {
         "prefix": "SWITCH \"form_file_spec\" [form_name] [(arguments)]",
         "body": [
-            "SWITCH “${form_file_spec}” ${form} (${arguments})"
+            "SWITCH “${form_file_spec}” ${form} (${arguments})",
+            "${0}"
         ],
         "description": "Exit current form by calling DMC or DML and execute form"
     },   
     "SWITCH_BASE": {
         "prefix": "SWITCH_BASE form_name",
         "body": [
-            "SWITCH_BASE ${form}"
+            "SWITCH_BASE ${form}",
+            "${0}"
         ],
         "description": "Automatically exit current form and execute form"
     },   
     "SWITCH_BASE_SPEC": {
         "prefix": "SWITCH_BASE \"form_file_spec\" [form_name] [(arguments)]",
         "body": [
-            "SWITCH_BASE “${form_file_spec}” ${form} (${arguments})"
+            "SWITCH_BASE “${form_file_spec}” ${form} (${arguments})",
+            "${0}"
         ],
         "description": "AUtomatically exit current form by calling DMC or DML and execute form"
     },  
     "SWITCH_BASE_EXIT": {
         "prefix": "SWITCH_BASE %EXIT",
         "body": [
-            "SWITCH_BASE %[EXIT]"
+            "SWITCH_BASE %EXIT",
+            "${0}"
         ],
         "description": "Exit form which contains /BASE qualifier"
     },   
@@ -1601,7 +1685,7 @@
                 "\t ! or &",
                 "\t/SORTED_BY=${sorted_by} &",
                 "\t/WITH=${with_field_expression}",
-            ""
+            "${0}"
             
             
         ],
@@ -1614,7 +1698,7 @@
                 "\t/POSITION=${position} &",
                 "\t/LENGTH=${length} &",
                 "\t/SCALE=${scale} &",
-                ""
+            "${0}"
         ],
         "description": "Transfer file into database"
     },  
@@ -1623,6 +1707,7 @@
         "body": [
             "WHILE (${condition})",
             "\t",
+            "\t{0}",
             "\t",
             "END_WHILE"
         ],
@@ -1631,35 +1716,40 @@
     "WRITE": {
         "prefix": "WRITE tag data",
         "body": [
-            "WRITE ${tag} ${data}"
+            "WRITE ${tag} ${data}",
+            "${0}"
         ],
         "description": "Write data into buffer"
     },  
     "WRITE_LINE": {
         "prefix": "WRITE_LINE tag [data]",
         "body": [
-            "WRITE_LINE ${tag} ${data}"
+            "WRITE_LINE ${tag} ${data}",
+            "${0}"
         ],
         "description": "Write record into buffer"
     },  
     "XML_RECEIVE_TABLES": {
         "prefix": "XML_RECEIVE_TABLES [/ERROR_TEXT=error-text]",
         "body": [
-            "XML_RECEIVE_TABLES /ERROR_TEXT=${error_text}"
+            "XML_RECEIVE_TABLES /ERROR_TEXT=${error_text}",
+            "${0}"
         ],
         "description": "Receive XML tables"
     },  
     "XML_SEND_TABLE": {
         "prefix": "XML_SEND_TABLE table-name [/TABLE_OPTIONS=table-options] [/FIELD_OPTIONS=field-options]",
         "body": [
-            "XML_SEND_TABLE ${table} /TABLE_OPTIONS=${table_options} /FIELD_OPTIONS=${field_options}"
+            "XML_SEND_TABLE ${table} /TABLE_OPTIONS=${table_options} /FIELD_OPTIONS=${field_options}",
+            "${0}"
         ],
         "description": "Send XML tables"
     },  
     "$": {
         "prefix": "$ command",
         "body": [
-            "$ ${command}"
+            "$ ${command}",
+            "${0}"
         ],
         "description": "Operating System Command"
     },  
