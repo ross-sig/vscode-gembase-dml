@@ -1664,253 +1664,948 @@
         "description": "Operating System Command"
     },  
 
+  
+
+
+// String Functions
+
+// TODO: need to add function descriptions
+
+
+    "AMONG": {
+        "prefix": "AMONG(value, range-list-1 [, range-list-2…range-list-254)",
+        "body": [
+            "AMONG(${value}, ${range_list})"
+        ],
+        "description": ""
+    },
+    "ASCII": {
+        "prefix": "ASCII(source_character)",
+        "body": [
+            "ASCII(${character})"
+        ],
+        "description": ""
+    },
+    "BASE64_DECODE": {
+        "prefix": "BASE64_DECODE(source_string)",
+        "body": [
+            "BASE64_DECODE(${string})"
+        ],
+        "description": ""
+    },
+    "BASE64_ENCODE": {
+        "prefix": "BASE64_ENCODE(source_string)",
+        "body": [
+            "BASE64_ENCODE(${string})"
+        ],
+        "description": ""
+    },
+    "CHR": {
+        "prefix": "CHR(numeric_value)",
+        "body": [
+            "CHR(${number})"
+        ],
+        "description": ""
+    },
+    "COMPRESS": {
+        "prefix": "COMPRESS(source_string)",
+        "body": [
+            "COMPRESS(${string})"
+        ],
+        "description": ""
+    },
+    "COMPRESS_ALL": {
+        "prefix": "COMPRESS_ALL (source_string)",
+        "body": [
+            "COMPRESS_ALL (${string})"
+        ],
+        "description": ""
+    },
+    "CSV_MERGE": {
+        "prefix": "CSV_MERGE(#array() [,count] [, options] [, comma] [, quote] [, escape])",
+        "body": [
+            "CSV_MERGE(${#array()}, count, options, comma, quote, escape)"
+        ],
+        "description": ""
+    },
+    "CSV_MERGE_2": {
+        "prefix": "CSV_MERGE(#array())",
+        "body": [
+            "CSV_MERGE(${#array()})"
+        ],
+        "description": ""
+    },
+    "DATA_COMPRESS": {
+        "prefix": "DATA_COMPRESS(input-string)",
+        "body": [
+            "DATA_COMPRESS(${string})"
+        ],
+        "description": ""
+    },
+    "DATA_UNCOMPRESS": {
+        "prefix": "DATA_UNCOMPRESS(input-string)",
+        "body": [
+            "DATA_UNCOMPRESS(${string})"
+        ],
+        "description": ""
+    },
+    "ELEMENT": {
+        "prefix": "ELEMENT(element-number, source-string [, delimiter-string])",
+        "body": [
+            "ELEMENT(${number}, ${string}, ${delimiter})"
+        ],
+        "description": ""
+    },
+    "ELEMENT_2": {
+        "prefix": "ELEMENT(element-number, source-string)",
+        "body": [
+            "ELEMENT(${number}, ${string})"
+        ],
+        "description": ""
+    },
+    "EXPAND": {
+        "prefix": "EXPAND(source_string)",
+        "body": [
+            "EXPAND(${string})"
+        ],
+        "description": ""
+    },
+    "IS_TRUE": {
+        "prefix": "IS_TRUE(input-string)",
+        "body": [
+            "IS_TRUE(${string})"
+        ],
+        "description": ""
+    },
+    "LEFT": {
+        "prefix": "LEFT(source_string,end_position)",
+        "body": [
+            "LEFT(${string},${end_pos})"
+        ],
+        "description": ""
+    },
+    "LEN": {
+        "prefix": "LEN(source_string)",
+        "body": [
+            "LEN(${string})"
+        ],
+        "description": ""
+    },
+    "LOWERCASE": {
+        "prefix": "LOWERCASE(source_string)",
+        "body": [
+            "LOWERCASE(${string})"
+        ],
+        "description": ""
+    },
+    "LPAD": {
+        "prefix": "LPAD(input-string, length [,pad-character]",
+        "body": [
+            "LPAD(${string}, ${length} ,${pad_char}"
+        ],
+        "description": ""
+    },
+    "LPAD_2": {
+        "prefix": "LPAD(input-string, length)",
+        "body": [
+            "LPAD(${string}, ${length}"
+        ],
+        "description": ""
+    },
+    "LTRIM": {
+        "prefix": "LTRIM(source_string)",
+        "body": [
+            "LTRIM(${string})"
+        ],
+        "description": ""
+    },
+    "MATCHING": {
+        "prefix": "MATCHING(candidate-string, pattern-string)",
+        "body": [
+            "MATCHING(${candidate-string}, ${pattern-string})"
+        ],
+        "description": ""
+    },
+    "MERGE": {
+        "prefix": "MERGE(#array() [,count])",
+        "body": [
+            "MERGE(${#array()}, ${count})"
+        ],
+        "description": ""
+    },
+    "MERGE_2": {
+        "prefix": "MERGE(#array())",
+        "body": [
+            "MERGE(${#array()})"
+        ],
+        "description": ""
+    },
+    "MID": {
+        "prefix": "MID(source_string,start_position,length)",
+        "body": [
+            "MID(#{string},${start_pos},${length})"
+        ],
+        "description": ""
+    },
+    "POS": {
+        "prefix": "POS(source_string,substring,start_position)",
+        "body": [
+            "POS(${string},${substring},${start_pos})"
+        ],
+        "description": ""
+    },
+    "QUOTE": {
+        "prefix": "QUOTE(input-string)",
+        "body": [
+            "QUOTE(${string})"
+        ],
+        "description": ""
+    },
+    "RANGE_MERGE": {
+        "prefix": "RANGE_MERGE(#from_array(), #to_array() [,count])",
+        "body": [
+            "RANGE_MERGE(${#from_array()}, ${#to_array()}, ${count})"
+        ],
+        "description": ""
+    },
+    "RANGE_MERGE_2": {
+        "prefix": "RANGE_MERGE(#from_array(), #to_array())",
+        "body": [
+            "RANGE_MERGE(${#from_array()}, ${#to_array()})"
+        ],
+        "description": ""
+    },
+    "REPLACE": {
+        "prefix": "REPLACE(source-string, starting-position, ending-position, replacement-string)",
+        "body": [
+            "REPLACE(${source_string}, ${start_pos}, ${end_pos}, ${replacement_string})"
+        ],
+        "description": ""
+    },
+    "RIGHT": {
+        "prefix": "RIGHT(source_string,start_position)",
+        "body": [
+            "RIGHT(${string},${start_pos})"
+        ],
+        "description": ""
+    },
+    "RMD160": {
+        "prefix": "RMD160(input-string)",
+        "body": [
+            "RMD160(${string})"
+        ],
+        "description": ""
+    },
+    "RPAD": {
+        "prefix": "RPAD(input-string, length [,pad-character])",
+        "body": [
+            "RPAD(${string}, ${length}, ${pad_char})"
+        ],
+        "description": ""
+    },
+    "RTRIM": {
+        "prefix": "RTRIM(input-string)",
+        "body": [
+            "RTRIM(${string})"
+        ],
+        "description": ""
+    },
+    "SCRAMBLE": {
+        "prefix": "SCRAMBLE(input-string)",
+        "body": [
+            "SCRAMBLE(${string})"
+        ],
+        "description": ""
+    },
+    "SEG": {
+        "prefix": "SEG(input-string, starting-position, ending-positon)",
+        "body": [
+            "SEG(${string}, ${start_pos}, ${end_pos})"
+        ],
+        "description": ""
+    },
+    "STARTING_WITH": {
+        "prefix": "STARTING_WITH(source-string, sub-string)",
+        "body": [
+            "STARTING_WITH(${source_string}, ${sub_string})"
+        ],
+        "description": ""
+    },
+    "STRING": {
+        "prefix": "STRING(duplication_count,ascii_character_value)",
+        "body": [
+            "STRING(duplication_count,ascii_character_value)"
+        ],
+        "description": ""
+    },
+    "TRANSLATE": {
+        "prefix": "TRANSLATE(source_string, source_character_set_name, target_character_set_name)",
+        "body": [
+            "TRANSLATE(${source_string}, ${source_char_set_name}, ${target_char_set_name})"
+        ],
+        "description": ""
+    },
+    "TRIM": {
+        "prefix": "TRIM(source_string)",
+        "body": [
+            "TRIM(${string})"
+        ],
+        "description": ""
+    },
+    "UNQUOTE": {
+        "prefix": "UNQUOTE(input-string)",
+        "body": [
+            "UNQUOTE(${string})"
+        ],
+        "description": ""
+    },
+    "UNSCRAMBLE": {
+        "prefix": "UNSCRAMBLE(input-string)",
+        "body": [
+            "UNSCRAMBLE(${string})"
+        ],
+        "description": ""
+    },
+    "UPPERCASE": {
+        "prefix": "UPPERCASE(source_string)",
+        "body": [
+            "UPPERCASE(${string})"
+        ],
+        "description": ""
+    },
+    
+    // Numeric Functions
+    
+    "ABS": {
+        "prefix": "ABS()",
+        "body": [
+            "ABS($value)"
+        ],
+        "description": "Returns the absolute value"
+    },
+    "ACOS": {
+        "prefix": "ACOS(cosine)",
+        "body": [
+            "ACOS(${cosein})"
+        ],
+        "description": ""
+    },
+    "ACOSD": {
+        "prefix": "ACOSD(value)",
+        "body": [
+            "ACOSD(${value})"
+        ],
+        "description": ""
+    },
+    "ACOSH": {
+        "prefix": "ACOSH(value)",
+        "body": [
+            "ACOSH(${value})"
+        ],
+        "description": ""
+    },
+    "ACOT": {
+        "prefix": "ACOT(value)",
+        "body": [
+            "ACOT(${value})"
+        ],
+        "description": ""
+    },
+    "ACOTD": {
+        "prefix": "ACOTD(value)",
+        "body": [
+            "ACOTD(${value})"
+        ],
+        "description": ""
+    },
+    "ACOTH": {
+        "prefix": "ACOTH(value)",
+        "body": [
+            "ACOTH(${value})"
+        ],
+        "description": ""
+    },
+    "ACSC": {
+        "prefix": "ACSC(value)",
+        "body": [
+            "ACSC(${value})"
+        ],
+        "description": ""
+    },
+    "ACSCD": {
+        "prefix": "ACSCD(value)",
+        "body": [
+            "ACSCD(${value})"
+        ],
+        "description": ""
+    },
+    "ACSCH": {
+        "prefix": "ACSCH(value)",
+        "body": [
+            "ACSCH(${value})"
+        ],
+        "description": ""
+    },
+    "ASEC": {
+        "prefix": "ASEC(value)",
+        "body": [
+            "ASEC(${value})"
+        ],
+        "description": ""
+    },
+    "ASECH": {
+        "prefix": "ASECH(value)",
+        "body": [
+            "ASECH(${value})"
+        ],
+        "description": ""
+    },
+    "ASIND": {
+        "prefix": "ASIND(value)",
+        "body": [
+            "ASIND(${value})"
+        ],
+        "description": ""
+    },
+    "ASINH": {
+        "prefix": "ASINH(value)",
+        "body": [
+            "ASINH(${value})"
+        ],
+        "description": ""
+    },
+    "ATAND": {
+        "prefix": "ATAND(value)",
+        "body": [
+            "ATAND(${value})"
+        ],
+        "description": ""
+    },
+    "ATAND2": {
+        "prefix": "ATAND2(value)",
+        "body": [
+            "ATAND2(${value})"
+        ],
+        "description": ""
+    },
+    "ATANH": {
+        "prefix": "ATANH(value)",
+        "body": [
+            "ATANH(${value})"
+        ],
+        "description": ""
+    },
+    "ASIN": {
+        "prefix": "ASIN(sine)",
+        "body": [
+            "ASIN(${sine})"
+        ],
+        "description": ""
+    },
+    "ATAN": {
+        "prefix": "ATAN(tangent)",
+        "body": [
+            "ATAN(${tangent})"
+        ],
+        "description": ""
+    },
+    "ATAN2": {
+        "prefix": "ATAN2(sine,cosine)",
+        "body": [
+            "ATAN2(${sine},${cosine})"
+        ],
+        "description": ""
+    },
+    "BINARY_TO_POLY": {
+        "prefix": "BINARY_TO_POLY(binary_string,format)",
+        "body": [
+            "BINARY_TO_POLY(${binary_string},${format})"
+        ],
+        "description": ""
+    },
+    "CEIL": {
+        "prefix": "CEIL(number)",
+        "body": [
+            "CEIL(${number})"
+        ],
+        "description": ""
+    },
+    "COS": {
+        "prefix": "COS(angle)",
+        "body": [
+            "COS(${angle})"
+        ],
+        "description": ""
+    },
+    "COSD": {
+        "prefix": "COSD(value)",
+        "body": [
+            "COSD(${value})"
+        ],
+        "description": ""
+    },
+    "COSH": {
+        "prefix": "COSH(value)",
+        "body": [
+            "COSH(${value})"
+        ],
+        "description": ""
+    },
+    "COT": {
+        "prefix": "COT(value)",
+        "body": [
+            "COT(${value)}"
+        ],
+        "description": ""
+    },
+    "COTD": {
+        "prefix": "COTD(value)",
+        "body": [
+            "COTD(${value})"
+        ],
+        "description": ""
+    },
+    "COTH": {
+        "prefix": "COTH(value)",
+        "body": [
+            "COTH(${value})"
+        ],
+        "description": ""
+    },
+    "CSC": {
+        "prefix": "CSC(value)",
+        "body": [
+            "CSC(${value})"
+        ],
+        "description": ""
+    },
+    "CSCD": {
+        "prefix": "CSCD(value)",
+        "body": [
+            "CSCD(${value})"
+        ],
+        "description": ""
+    },
+    "CSCH": {
+        "prefix": "CSCH(value)",
+        "body": [
+            "CSCH(${value})"
+        ],
+        "description": ""
+    },
+    "DEG": {
+        "prefix": "DEG(value)",
+        "body": [
+            "DEG(${value})"
+        ],
+        "description": ""
+    },
+    "EXP": {
+        "prefix": "EXP(value)",
+        "body": [
+            "EXP(${value})"
+        ],
+        "description": ""
+    },
+    "EXP2": {
+        "prefix": "EXP2(value)",
+        "body": [
+            "EXP2(${value})"
+        ],
+        "description": ""
+    },
+    "EXP10": {
+        "prefix": "EXP10(value)",
+        "body": [
+            "EXP10(${value})"
+        ],
+        "description": ""
+    },
+    "FAC": {
+        "prefix": "FAC(value)",
+        "body": [
+            "FAC(${value})"
+        ],
+        "description": ""
+    },
+    "FIX": {
+        "prefix": "FIX(value)",
+        "body": [
+            "FIX(${value})"
+        ],
+        "description": ""
+    },
+    "FRAC": {
+        "prefix": "FRAC(value)",
+        "body": [
+            "FRAC(${value})"
+        ],
+        "description": ""
+    },
+    "FLOOR": {
+        "prefix": "FLOOR(number)",
+        "body": [
+            "FLOOR(${number}})"
+        ],
+        "description": ""
+    },
+    "GCD": {
+        "prefix": "GCD(value,value)",
+        "body": [
+            "GCD(${value},${value})"
+        ],
+        "description": ""
+    },
+    "INT": {
+        "prefix": "INT(real_number)",
+        "body": [
+            "INT(${number})"
+        ],
+        "description": ""
+    },
+    "LOG": {
+        "prefix": "LOG(value)",
+        "body": [
+            "LOG(${value})"
+        ],
+        "description": ""
+    },
+    "LGO2": {
+        "prefix": "LOG2(value)",
+        "body": [
+            "LOG2(${value})"
+        ],
+        "description": ""
+    },
+    "LOG10": {
+        "prefix": "LOG10(value)",
+        "body": [
+            "LOG10(${value})"
+        ],
+        "description": ""
+    },
+    "MAX": {
+        "prefix": "MAX(value, value, value, …)",
+        "body": [
+            "MAX(${values})"
+        ],
+        "description": ""
+    },
+    "MIN": {
+        "prefix": "MIN(value, value, value, …)",
+        "body": [
+            "MIN(${values})"
+        ],
+        "description": ""
+    },
+    "MOD": {
+        "prefix": "MOD(dividend,divisor)",
+        "body": [
+            "MOD(${dividend},${divisor})"
+        ],
+        "description": ""
+    },
+    "MROUND": {
+        "prefix": "MROUND(num,multiple)",
+        "body": [
+            "MROUND(${num},${multiple})"
+        ],
+        "description": ""
+    },
+    "POLY_TO_BINARY": {
+        "prefix": "POLY_TO_BINARY(value,format[,length][,scale])",
+        "body": [
+            "POLY_TO_BINARY(${value},${format},${length},${scale}"
+        ],
+        "description": ""
+    },
+    "POLY_TO_BINARY_2": {
+        "prefix": "POLY_TO_BINARY(value,format)",
+        "body": [
+            "POLY_TO_BINARY(${value},${format})"
+        ],
+        "description": ""
+    },
+    "RAD": {
+        "prefix": "RAD(value)",
+        "body": [
+            "RAD(${value})"
+        ],
+        "description": ""
+    },
+    "RANDOM": {
+        "prefix": "RANDOM(range)",
+        "body": [
+            "RANDOM(${range})"
+        ],
+        "description": ""
+    },
+    "ROUND": {
+        "prefix": "ROUND(real_number,decimal_place)",
+        "body": [
+            "ROUND(${real_number},${decimal_place})"
+        ],
+        "description": ""
+    },
+    "SEC": {
+        "prefix": "SEC(value)",
+        "body": [
+            "SEC(${value})"
+        ],
+        "description": ""
+    },
+    "SECD": {
+        "prefix": "SECD(value)",
+        "body": [
+            "SECD(${secd})"
+        ],
+        "description": ""
+    },
+    "SECH": {
+        "prefix": "SECH(value)",
+        "body": [
+            "SECH(${sech})"
+        ],
+        "description": ""
+    },
+    "SIGN": {
+        "prefix": "SIGN(value)",
+        "body": [
+            "SIGN(${sign})"
+        ],
+        "description": ""
+    },
+    "SIN": {
+        "prefix": "SIN(angle)",
+        "body": [
+            "SIN(${angle})"
+        ],
+        "description": ""
+    },
+    "SIND": {
+        "prefix": "SIND(angle)",
+        "body": [
+            "SIND(${angle})"
+        ],
+        "description": ""
+    },
+    "SINH": {
+        "prefix": "SINH(value)",
+        "body": [
+            "SINH(${value})"
+        ],
+        "description": ""
+    },
+    "SQRT": {
+        "prefix": "SQRT(value)",
+        "body": [
+            "SQRT(${value})"
+        ],
+        "description": ""
+    },
+    "TAN": {
+        "prefix": "TAN(angle)",
+        "body": [
+            "TAN(${value})"
+        ],
+        "description": ""
+    },
+    "TAND": {
+        "prefix": "TAND(value)",
+        "body": [
+            "TAND(${value})"
+        ],
+        "description": ""
+    },
+    "TANH": {
+        "prefix": "TANH(value)",
+        "body": [
+            "TANH(${value})"
+        ],
+        "description": ""
+    },
+
+// date and time functions
+
+    "DATE": {
+        "prefix": "DATE(days)",
+        "body": [
+            "DATE(${days})"
+        ],
+        "description": ""
+    },
+    "DATE_SECONDS": {
+        "prefix": "DATE_SECONDS(seconds)",
+        "body": [
+            "DATE_SECONDS(${seconds})"
+        ],
+        "description": ""
+    },
+    "DATE_TIME": {
+        "prefix": "DATE_TIME(source)",
+        "body": [
+            "DATE_TIME(${source})"
+        ],
+        "description": ""
+    },
+    "DAYS": {
+        "prefix": "DAYS(source_date)",
+        "body": [
+            "DAYS(${source_date})"
+        ],
+        "description": ""
+    },
+    "DAY_OF_WEEK": {
+        "prefix": "DAY_OF_WEEK(source_date)",
+        "body": [
+            "DAY_OF_WEEK(${source_date})"
+        ],
+        "description": ""
+    },
+    "DAYS_IN_MONTH": {
+        "prefix": "DAYS_IN_MONTH(input-date)",
+        "body": [
+            "DAYS_IN_MONTH(${input-date})"
+        ],
+        "description": ""
+    },
+    "NEXT_MONTH": {
+        "prefix": "NEXT_MONTH(input-date)",
+        "body": [
+            "NEXT_MONTH(${input-date})"
+        ],
+        "description": ""
+    },
+    "SECONDS": {
+        "prefix": "SECONDS(source_date)",
+        "body": [
+            "SECONDS(${source_date})"
+        ],
+        "description": ""
+    },
+
+
+// Misc functions
+
+    "ERROR_TEXT": {
+        "prefix": "ERROR_TEXT(error_no,flags)",
+        "body": [
+            "ERROR_TEXT(${error_no},${flags})"
+        ],
+        "description": ""
+    },
+    "GET_SCV": {
+        "prefix": "GET_SCV(svc_string)",
+        "body": [
+            "GET_SCV(${svc_string})"
+        ],
+        "description": ""
+    },
+    "IS_MARKED": {
+        "prefix": "IS_MARKED([database_handle,]table_name)",
+        "body": [
+            "IS_MARKED(${table})"
+        ],
+        "description": ""
+    },
+    "IS_MARKED_ON_STREAM": {
+        "prefix": "IS_MARKED_ON_STREAM(stream_name, table_name)",
+        "body": [
+            "IS_MARKED_ON_STREAM(${stream_name}, ${table_name})"
+        ],
+        "description": ""
+    },
+    "IS_NULL": {
+        "prefix": "IS_NULL([database_handle.]\"table_name\",\"field_name\")",
+        "body": [
+            "IS_NULL(\"${table}\",\"${field}\")"
+        ],
+        "description": ""
+    },
+    "IS_NULL_ON_STREAM": {
+        "prefix": "IS_NULL_ON_STREAM(\"stream_name\",\"table_name\",\"field_name\")",
+        "body": [
+            "IS_NULL_ON_STREAM(\"${stream}\",\"${table}\",\"${field}\")"
+        ],
+        "description": ""
+    },
+    "LTOTAL": {
+        "prefix": "LTOTAL(break_no,total_column_number)",
+        "body": [
+            "LTOTAL(${break_no},${total_column_number})"
+        ],
+        "description": ""
+    },
+    "MASK": {
+        "prefix": "MASK(mask_specification,source_string)",
+        "body": [
+            "MASK(${mask_specification},${source_string})"
+        ],
+        "description": ""
+    },
+    "MESSAGE_FUNCTION": {
+        "prefix": "MESSAGE([database_handle.]message_name[,arg1[arg2[,…]]])",
+        "body": [
+            "MESSAGE(${msg_name}, ${arguments})"
+        ],
+        "description": ""
+    },
+    "PARAMETER": {
+        "prefix": "PARAMETER([database_handle.]parameter_name[,source_date])",
+        "body": [
+            "PARAMETER(${parameter},${source_date})"
+        ],
+        "description": ""
+    },
+    "PARAMETER2": {
+        "prefix": "PARAMETER(parameter_name)",
+        "body": [
+            "PARAMETER(${parameter})"
+        ],
+        "description": ""
+    },
+
+    "RECORD_ADDRESS": {
+        "prefix": "RECORD_ADDRESS(table_spec)",
+        "body": [
+            "RECORD_ADDRESS(${table_spec})"
+        ],
+        "description": ""
+    },
+    "STREAM_DATA": {
+        "prefix": "STREAM_DATA(stream_name,table_name,field_name)",
+        "body": [
+            "STREAM_DATA(${stream},${table},${field})"
+        ],
+        "description": ""
+    },
+    "TABLE_CHECK": {
+        "prefix": "TABLE_CHECK([database_handle,]table_name,field_name)",
+        "body": [
+            "TABLE_CHECK(${table},${field})"
+        ],
+        "description": ""
+    },
+    "TABLE_DATA": {
+        "prefix": "TABLE_DATA([database_handle,]table_name,field_name)",
+        "body": [
+            "TABLE_DATA(${table},${field})"
+        ],
+        "description": ""
+    },
+    "TOTAL": {
+        "prefix": "TOTAL(total_number)",
+        "body": [
+            "TOTAL(${total_number})"
+        ],
+        "description": ""
+    },
+
+//
+
 /*
 
 
-
-TODO
-
-    
-    
-    */
-    
-    // Functions
-    
-    
-/*
-
-AMONG(${value}, {$range-lists})
-ASCII($char)
-BASE64_DECODE($string)
-BASE64_ENCODE($string)
-CHR($number)
-COMPRESS($string)
-COMPRESS_ALL ($string)
-CSV_MERGE(${array})
-CSV_MERGE(${array}, ${count})
-DATA_COMPRESS(${string})
-DATA_UNCOMPRESS(${string})
-ELEMENT(${element_number, $string)
-ELEMENT(${element_number, $string, ${delimiter})
-EXPAND(${string})
-IS_TRUE($Pstring})
-LEFT(${string},${end_position})
-LEN(${string})
-LOWERCASE(${string})
-LPAD(${string}, $length)
-LPAD(${string}, $length, $pad-character)
-LTRIM(${string})
-MATCHING($candidate_string, ${pattern_string})
-MERGE(${#array()})
-MERGE(${#array()}, ${count}])
-MID(${string},${start_pos},${length})
-POS(${string},${substring},${start_position})
-QUOTE(${input_string})
-RANGE_MERGE(${#from_array()}, ${#to_array()})
-RANGE_MERGE(${#from_array()}, ${#to_array()}, ${count}])
-REPLACE(${string, ${start_pos}, ${end_pos}, ${replacement_string})
-RIGHT(source_string,start_position)
-RMD160(input-string)
-RPAD(input-string, length [,pad-character])
-RTRIM(input-string)
-SCRAMBLE(input-string)
-SEG(input-string, starting-position, ending-positon)
-STARTING_WITH(source-string, sub-string)
-STRING(duplication_count,ascii_character_value)
-TRANSLATE(source_string, source_character_set_name,
-target_character_set_name)
-TRIM(source_string)
-UNQUOTE(input-string)
-UNSCRAMBLE(input-string)
-UPPERCASE(source_string)
-NUMERIC FUNCTIONS
-ACOS(cosine)
-ACOSD(value)
-ACOSH(value)
-ACOT(value)
-ACOTD(value)
-ACOTH(value)
-ACSC(value)
-ACSCD(value)
-ACSCH(value)
-ASEC(value)
-ASECH(value)
-ASIND(value)
-ASINH(value)
-ATAND(value)
-ATAND(value)
-ATAND2(value)
-ATANH(value)
-ASIN(sine)
-ATAN(tangent)
-ATAN2(sine,cosine)
-BINARY_TO_POLY(binary_string,format)
-CEIL(number)
-COS(angle)
-COSD(value)
-COSH(value)
-COT(value)
-COTD(value)
-COTH(value)
-CSC(value)
-CSCD(value)
-CSCH(value)
-DEG(value)
-EXP(value)
-EXP2(value)
-EXP10(value)
-FAC(value)
-FIX(value)
-FRAC(value)
-FLOOR(number)
-GCD(value,value)
-INT(real_number)
-LOG(value)
-LOG2(value)
-LOG10(value)
-MAX(value, value, value, …)
-MIN(value, value, value, …)
-MOD(dividend,divisor)
-MROUND(num,multiple)
-POLY_TO_BINARY (value,format[,length][,scale]}
-RAD(value)
-RANDOM(range)
-ROUND(real_number,decimal_place)
-SEC(value)
-SECD(value)
-SECH(value)
-SIGN(value)
-SIN(angle)
-SIND(angle)
-SINH(value)
-SQRT(value)
-TAN(angle)
-TAND(value)
-TANH(value)
-DATE AND TIME FUNCTIONS
-DATE(days)
-DATE_SECONDS(seconds)
-DATE_TIME(source)
-DAYS(source_date)
-DAY_OF_WEEK(source_date)
-DAYS_IN_MONTH(input-date)
-NEXT_MONTH(input-date)
-SECONDS(source_date)
-DATA DEFINITION FUNCTIONS
-Built-in data definition functions enable you to extract metadata
-pertaining to fields, tables, indices, views, and facilities.
-Field Functions
-Use the following syntax:
-field_function([database_handle,]table_name,field_name)
-or
-field_function([table_name,]field_name)
-where field_function is the name of one of the following
-functions.
-FIELD_BASED_ON
-FIELD_CLUSTER
-FIELD_DATATYPE
-FIELD_DEFAULT
-FIELD_DESCRIPTION
-FIELD_FLAG
-FIELD_HEADING
-FIELD_HELP
-FIELD_I_LENGTH
-FIELD_I_MASK
-FIELD_INITIAL_VALUE
-FIELD_MISSING
-FIELD_NAME
-FIELD_NATIVE
-FIELD_O_LENGTH
-FIELD_O_MASK
-FIELD_PROMPT
-FIELD_SCALE
-FIELD_SHORT-PROMPT
-FIELD_SIZE
-FIELD_SOURCE
-FIELD_USER_ARGUMENT
-FIELD_VALID_VALUES
-FIELD_VALIDATION
-FIELD_VIEW_BASE
-Table Functions
-Use the following syntax:
-table_function([database_handle.]table_name)
-where table_function is the name of one of the following table
-functions.
-TABLE_ARCHIVABLE
-TABLE_DESCRIPTION
-TABLE_CLUSTER
-TABLE_FIELDS
-TABLE_FILL
-TABLE_FLAGS
-TABLE_FREE
-TABLE_GROW
-TABLE_GROW_PCT
-TABLE_IFLAGS
-TABLE_MAX_EXTENTS
-TABLE_MIN_EXTENTS
-TABLE_NAME
-TABLE_NONPID_FIELDS
-TABLE_PID
-TABLE_PID_FIELDS
-TABLE_SECURITY
-TABLE_SIZE
-TABLE_STORAGE
-TABLE_TYPE
-Index Functions
-Use the following syntax:
-index_function([database_handle.]index_name)
-where index _function is the name of one of the following index
-functions.
-INDEX_FIELDS
-INDEX_FILL
-INDEX_FREE
-INDEX_GROW
-INDEX_GROWTH_PCT
-INDEX_MAX_EXTENTS
-INDEX_MIN_EXTENTS
-INDEX_ORDER
-INDEX_SIZE
-INDEX_STORAGE
-INDEX_TABLE
-INDEX_TYPE
-INDEX_UNIQUE
-View Functions
-Use the following syntax:
-view_function([database_handle.]view_name)
-where view_function is the name of the view function.
-VIEW_SOURCE
-
-Facility Functions
-Use the following syntax:
-facility_function([[database_handle.]system_name:]facility_nam
-e)
-or
-facility_function(#variable_name)
-where facility_function is the name of one of the following
-facility functions.
-FACILITY_CLASS
-FACILITY_DESCRIPTION
-FACILITY_DML
-FACILITY_MENU_FILE
-FACILITY_MENU_FORM
-FACILITY_NAME
-FACILITY_SYSTEM
-FACILITY_TAG
-MISCELLANEOUS FUNCTIONS
-ERROR_TEXT(error_no,flags)
-GET_SCV(svc_string)
-IS_MARKED([database_handle,]table_name)
-IS_MARKED_ON_STREAM(stream_name, table_name)
-IS_NULL([database_handle.]”table_name”,"field_name")
-IS_NULL_ON_STREAM(“stream_name”,”table_name”,”field_
-name”)
-LTOTAL(break_no,total_column_number)
-MASK(mask_specification,source_string)
-MESSAGE([database_handle.]message_name[,arg1[arg2[,…]]]
-)
-PARAMETER{[database_handle.]parameter_name[,source_dat
-e])
-8 Built-In Functions
 RECORD_ADDRESS(table_spec)
 STREAM_DATA(stream_name,table_name,field_name)
 TABLE_CHECK([database_handle,]table_name,field_name)
@@ -1934,159 +2629,920 @@ TEMPORARY_FILENAME(name-string)
 
 */
     
-    "ABS": {
-        "prefix": "ABS()",
-        "body": [
-            "ABS($0)"
-        ],
-        "description": "Returns the absolute value"
-    },
-    "MAX": {
-        "prefix": "MAX",
-        "body": [
-            "MAX(${value1},${value2})"
-        ],
-        "description": "Returns the maximum value of 2 to 255 numeric values"
-    }
+
     
  // Special Vars
- 
- /*
- 
-TODO
- 
-%ACCOUNT
-%ACTUAL_BREAK
-%ADD
-%ADVANCED_USER
-%ARCHIVE
-%BITMAP
-%BROADCAST
-%CAT_FILTER
-%CURRENT_BREAK
-%DATABASE
-%DEFAULT_ENGINE
-%DELETE
-%E
-%EDIT_MODE
-%ENTRY_MENU
-%EXIT_FORM_ACTIVE
-%EXIT_FORM_ENABLED
-%EXIT_FORM_FILENAME
-%EXIT_FORM_FORMNAME
-%EXIT_FORWARD
-%FACILITY
-%FACILITY_DATABASE
-%FACILITY_NAME
-%FACILITY_SYSTEM
-%FIND
-%FORM_FILE
-%FORM_NAME
-%GEM_INIT
-%GTID
-%GTID_LEVEL
-%HARDWARE
-%HELP_LIBRARY
-%HOSTID
-%INPUT_BACKGROUND
-%INPUT_DATE_FORMAT
-%INPUT_FORGROUND
-%INPUT_PROMPT
-%INPUT_TIMEOUT
-%INPUT_UPDATE
-%INTERRUPT
-%INTERRUPT_COMMAND
-%IS_ADMIN
-%KEYBOARD_FILE
-%LANGUAGE
-%LOCK_OPTIONS
-%MASK_CURRENCY_SIGN
-%MASK_DIGIT_SEPARATOR
-%MASK_RADIX_POINT
-%MODE
-%MODIFY
-%NODENAME
-%NOW
-%OPERATING_SYSTEM
-%PAGE
-%PERFORM
-%PI
-%PID
-%PLATFORM
-%PERCISION
-%PRINT_MODE
-%QUERY_CUR_REC
-%QUERY_MAX_REC
-%QUERY_MODE
-%REPORT_DATE
-%REPORT_FORM_FEEDS
-%REPORT_PAGE_SIZE
-%REPORT_MODE
-%REPORT_NAME
-%ROW_NUMBER
-%SCREEN_MODE
-%SCREEN_WIDTH
-%SERVER
-%SHADOW_LEVEL
-%SIGNATURE_ID
-%STATUS
-%STATUS_FREQUENCY
-%SYSTEM
-%TARGETID
-%TEMPORARY_DIRECTORY
-%TERMINAL
-%TEXTFILE_MODE
-%THIN_CLIENT
-%THIN_CLIENT_CHARSET
-%THIN_CLIENT_HW
-%THIN_CLIENT_IPCNAME
-%THIN_CLIENT_MODE
-%THIN_CLIENT_OS
-%THIN_CLIENT_REPORT_DIR
-%THIN_CLIENT_TYPE
-%THIN_CLIENT_USERNAME
-%THIN_SERVER
-%THIN_SERVER_CHARSET
-%THIN_SERVER_DBCHARSET
-%THIN_SERVER_HW
-%THIN_SERVER_IPCNAME
-%THIN_SERVER_MODE
-%THIN_ SERVER_OS
-%THIN_SERVER_REPORT_DIR
-%THIN_SERVER_USERNAME
-%TITLE_FORM
-%TODAY
-%TRANS_LEVEL
-%UIC
-%UIC_GRP
-%UIC_MEM
-%UNIX
-%USERNAME
-%VERSION
-%WD
-%XPID
-VALUE SYMBOLS
-%BACK
-%DATA
-%DEADLOCK
-%EMPTY
-%EXIT
-%FAILURE
-%NORMAL
-%SUCCESS
-SECURITY VALUE SYMBOLS
-%ADMIN_ACCESS
-%CHANGE_ACCESS
-%CONTROL_ACCESS
-%DEFINE_ACCESS
-%DELETE_ACCESS
-%ERASE_ACCESS
-%MODIFY_ACCESS
-%OPERATOR_ACCESS
-%READ_ACCESS
-%SHOW_ACCESS
 
-*/
  
+    "%ACCOUNT": {
+        "prefix": "%ACCOUNT",
+        "body": [
+            "%ACCOUNT"
+        ],
+        "description": ""
+    },
+    "%ACTUAL_BREAK": {
+        "prefix": "%ACTUAL_BREAK",
+        "body": [
+            "%ACTUAL_BREAK"
+        ],
+        "description": ""
+    },
+    "%ADD": {
+        "prefix": "%ADD",
+        "body": [
+            "%ADD"
+        ],
+        "description": ""
+    },
+    "%ADVANCED_USER": {
+        "prefix": "%ADVANCED_USER",
+        "body": [
+            "%ADVANCED_USER"
+        ],
+        "description": ""
+    },
+    "%ARCHIVE": {
+        "prefix": "%ARCHIVE",
+        "body": [
+            "%ARCHIVE"
+        ],
+        "description": ""
+    },
+    "%BITMAP": {
+        "prefix": "%BITMAP",
+        "body": [
+            "%BITMAP"
+        ],
+        "description": ""
+    },
+    "%BROADCAST": {
+        "prefix": "%BROADCAST",
+        "body": [
+            "%BROADCAST"
+        ],
+        "description": ""
+    },
+    "%CAT_FILTER": {
+        "prefix": "%CAT_FILTER",
+        "body": [
+            "%CAT_FILTER"
+        ],
+        "description": ""
+    },
+    "%CURRENT_BREAK": {
+        "prefix": "%CURRENT_BREAK",
+        "body": [
+            "%CURRENT_BREAK"
+        ],
+        "description": ""
+    },
+    "%DATABASE": {
+        "prefix": "%DATABASE",
+        "body": [
+            "%DATABASE"
+        ],
+        "description": ""
+    },
+    "%DEFAULT_ENGINE": {
+        "prefix": "%DEFAULT_ENGINE",
+        "body": [
+            "%DEFAULT_ENGINE"
+        ],
+        "description": ""
+    },
+    "%DELETE": {
+        "prefix": "%DELETE",
+        "body": [
+            "%DELETE"
+        ],
+        "description": ""
+    },
+    "%E": {
+        "prefix": "%E",
+        "body": [
+            "%E"
+        ],
+        "description": ""
+    },
+    "%EDIT_MODE": {
+        "prefix": "%EDIT_MODE",
+        "body": [
+            "%EDIT_MODE"
+        ],
+        "description": ""
+    },
+    "%ENTRY_MENU": {
+        "prefix": "%ENTRY_MENU",
+        "body": [
+            "%ENTRY_MENU"
+        ],
+        "description": ""
+    },
+    "%EXIT_FORM_ACTIVE": {
+        "prefix": "%EXIT_FORM_ACTIVE",
+        "body": [
+            "%EXIT_FORM_ACTIVE"
+        ],
+        "description": ""
+    },
+    "%EXIT_FORM_ENABLED": {
+        "prefix": "%EXIT_FORM_ENABLED",
+        "body": [
+            "%EXIT_FORM_ENABLED"
+        ],
+        "description": ""
+    },
+    "%EXIT_FORM_FILENAME": {
+        "prefix": "%EXIT_FORM_FILENAME",
+        "body": [
+            "%EXIT_FORM_FILENAME"
+        ],
+        "description": ""
+    },
+    "%EXIT_FORM_FORMNAME": {
+        "prefix": "%EXIT_FORM_FORMNAME",
+        "body": [
+            "%EXIT_FORM_FORMNAME"
+        ],
+        "description": ""
+    },
+    "%EXIT_FORWARD": {
+        "prefix": "%EXIT_FORWARD",
+        "body": [
+            "%EXIT_FORWARD"
+        ],
+        "description": ""
+    },
+    "%FACILITY": {
+        "prefix": "%FACILITY",
+        "body": [
+            "%FACILITY"
+        ],
+        "description": ""
+    },
+    "%FACILITY_DATABASE": {
+        "prefix": "%FACILITY_DATABASE",
+        "body": [
+            "%FACILITY_DATABASE"
+        ],
+        "description": ""
+    },
+    "%FACILITY_NAME": {
+        "prefix": "%FACILITY_NAME",
+        "body": [
+            "%FACILITY_NAME"
+        ],
+        "description": ""
+    },
+    "%FACILITY_SYSTEM": {
+        "prefix": "%FACILITY_SYSTEM",
+        "body": [
+            "%FACILITY_SYSTEM"
+        ],
+        "description": ""
+    },
+    "%FIND": {
+        "prefix": "%FIND",
+        "body": [
+            "%FIND"
+        ],
+        "description": ""
+    },
+    "%FORM_FILE": {
+        "prefix": "%FORM_FILE",
+        "body": [
+            "%FORM_FILE"
+        ],
+        "description": ""
+    },
+    "%FORM_NAME": {
+        "prefix": "%FORM_NAME",
+        "body": [
+            "%FORM_NAME"
+        ],
+        "description": ""
+    },
+    "%GEM_INIT": {
+        "prefix": "%GEM_INIT",
+        "body": [
+            "%GEM_INIT"
+        ],
+        "description": ""
+    },
+    "%GTID": {
+        "prefix": "%GTID",
+        "body": [
+            "%GTID"
+        ],
+        "description": ""
+    },
+    "%GTID_LEVEL": {
+        "prefix": "%GTID_LEVEL",
+        "body": [
+            "%GTID_LEVEL"
+        ],
+        "description": ""
+    },
+    "%HARDWARE": {
+        "prefix": "%HARDWARE",
+        "body": [
+            "%HARDWARE"
+        ],
+        "description": ""
+    },
+    "%HELP_LIBRARY": {
+        "prefix": "%HELP_LIBRARY",
+        "body": [
+            "%HELP_LIBRARY"
+        ],
+        "description": ""
+    },
+    "%HOSTID": {
+        "prefix": "%HOSTID",
+        "body": [
+            "%HOSTID"
+        ],
+        "description": ""
+    },
+    "%INPUT_BACKGROUND": {
+        "prefix": "%INPUT_BACKGROUND",
+        "body": [
+            "%INPUT_BACKGROUND"
+        ],
+        "description": ""
+    },
+    "%INPUT_DATE_FORMAT": {
+        "prefix": "%INPUT_DATE_FORMAT",
+        "body": [
+            "%INPUT_DATE_FORMAT"
+        ],
+        "description": ""
+    },
+    "%INPUT_FORGROUND": {
+        "prefix": "%INPUT_FORGROUND",
+        "body": [
+            "%INPUT_FORGROUND"
+        ],
+        "description": ""
+    },
+    "%INPUT_PROMPT": {
+        "prefix": "%INPUT_PROMPT",
+        "body": [
+            "%INPUT_PROMPT"
+        ],
+        "description": ""
+    },
+    "%INPUT_TIMEOUT": {
+        "prefix": "%INPUT_TIMEOUT",
+        "body": [
+            "%INPUT_TIMEOUT"
+        ],
+        "description": ""
+    },
+    "%INPUT_UPDATE": {
+        "prefix": "%INPUT_UPDATE",
+        "body": [
+            "%INPUT_UPDATE"
+        ],
+        "description": ""
+    },
+    "%INTERRUPT": {
+        "prefix": "%INTERRUPT",
+        "body": [
+            "%INTERRUPT"
+        ],
+        "description": ""
+    },
+    "%INTERRUPT_COMMAND": {
+        "prefix": "%INTERRUPT_COMMAND",
+        "body": [
+            "%INTERRUPT_COMMAND"
+        ],
+        "description": ""
+    },
+    "%IS_ADMIN": {
+        "prefix": "%IS_ADMIN",
+        "body": [
+            "%IS_ADMIN"
+        ],
+        "description": ""
+    },
+    "%KEYBOARD_FILE": {
+        "prefix": "%KEYBOARD_FILE",
+        "body": [
+            "%KEYBOARD_FILE"
+        ],
+        "description": ""
+    },
+    "%LANGUAGE": {
+        "prefix": "%LANGUAGE",
+        "body": [
+            "%LANGUAGE"
+        ],
+        "description": ""
+    },
+    "%LOCK_OPTIONS": {
+        "prefix": "%LOCK_OPTIONS",
+        "body": [
+            "%LOCK_OPTIONS"
+        ],
+        "description": ""
+    },
+    "%MASK_CURRENCY_SIGN": {
+        "prefix": "%MASK_CURRENCY_SIGN",
+        "body": [
+            "%MASK_CURRENCY_SIGN"
+        ],
+        "description": ""
+    },
+    "%MASK_DIGIT_SEPARATOR": {
+        "prefix": "%MASK_DIGIT_SEPARATOR",
+        "body": [
+            "%MASK_DIGIT_SEPARATOR"
+        ],
+        "description": ""
+    },
+    "%MASK_RADIX_POINT": {
+        "prefix": "%MASK_RADIX_POINT",
+        "body": [
+            "%MASK_RADIX_POINT"
+        ],
+        "description": ""
+    },
+    "%MODE": {
+        "prefix": "%MODE",
+        "body": [
+            "%MODE"
+        ],
+        "description": ""
+    },
+    "%MODIFY": {
+        "prefix": "%MODIFY",
+        "body": [
+            "%MODIFY"
+        ],
+        "description": ""
+    },
+    "%NODENAME": {
+        "prefix": "%NODENAME",
+        "body": [
+            "%NODENAME"
+        ],
+        "description": ""
+    },
+    "%NOW": {
+        "prefix": "%NOW",
+        "body": [
+            "%NOW"
+        ],
+        "description": ""
+    },
+    "%OPERATING_SYSTEM": {
+        "prefix": "%OPERATING_SYSTEM",
+        "body": [
+            "%OPERATING_SYSTEM"
+        ],
+        "description": ""
+    },
+    "%PAGE": {
+        "prefix": "%PAGE",
+        "body": [
+            "%PAGE"
+        ],
+        "description": ""
+    },
+    "%PERFORM": {
+        "prefix": "%PERFORM",
+        "body": [
+            "%PERFORM"
+        ],
+        "description": ""
+    },
+    "%PI": {
+        "prefix": "%PI",
+        "body": [
+            "%PI"
+        ],
+        "description": ""
+    },
+    "%PID": {
+        "prefix": "%PID",
+        "body": [
+            "%PID"
+        ],
+        "description": ""
+    },
+    "%PLATFORM": {
+        "prefix": "%PLATFORM",
+        "body": [
+            "%PLATFORM"
+        ],
+        "description": ""
+    },
+    "%PERCISION": {
+        "prefix": "%PERCISION",
+        "body": [
+            "%PERCISION"
+        ],
+        "description": ""
+    },
+    "%PRINT_MODE": {
+        "prefix": "%PRINT_MODE",
+        "body": [
+            "%PRINT_MODE"
+        ],
+        "description": ""
+    },
+    "%QUERY_CUR_REC": {
+        "prefix": "%QUERY_CUR_REC",
+        "body": [
+            "%QUERY_CUR_REC"
+        ],
+        "description": ""
+    },
+    "%QUERY_MAX_REC": {
+        "prefix": "%QUERY_MAX_REC",
+        "body": [
+            "%QUERY_MAX_REC"
+        ],
+        "description": ""
+    },
+    "%QUERY_MODE": {
+        "prefix": "%QUERY_MODE",
+        "body": [
+            "%QUERY_MODE"
+        ],
+        "description": ""
+    },
+    "%REPORT_DATE": {
+        "prefix": "%REPORT_DATE",
+        "body": [
+            "%REPORT_DATE"
+        ],
+        "description": ""
+    },
+    "%REPORT_FORM_FEEDS": {
+        "prefix": "%REPORT_FORM_FEEDS",
+        "body": [
+            "%REPORT_FORM_FEEDS"
+        ],
+        "description": ""
+    },
+    "%REPORT_PAGE_SIZE": {
+        "prefix": "%REPORT_PAGE_SIZE",
+        "body": [
+            "%REPORT_PAGE_SIZE"
+        ],
+        "description": ""
+    },
+    "%REPORT_MODE": {
+        "prefix": "%REPORT_MODE",
+        "body": [
+            "%REPORT_MODE"
+        ],
+        "description": ""
+    },
+    "%REPORT_NAME": {
+        "prefix": "%REPORT_NAME",
+        "body": [
+            "%REPORT_NAME"
+        ],
+        "description": ""
+    },
+    "%ROW_NUMBER": {
+        "prefix": "%ROW_NUMBER",
+        "body": [
+            "%ROW_NUMBER"
+        ],
+        "description": ""
+    },
+    "%SCREEN_MODE": {
+        "prefix": "%SCREEN_MODE",
+        "body": [
+            "%SCREEN_MODE"
+        ],
+        "description": ""
+    },
+    "%SCREEN_WIDTH": {
+        "prefix": "%SCREEN_WIDTH",
+        "body": [
+            "%SCREEN_WIDTH"
+        ],
+        "description": ""
+    },
+    "%SERVER": {
+        "prefix": "%SERVER",
+        "body": [
+            "%SERVER"
+        ],
+        "description": ""
+    },
+    "%SHADOW_LEVEL": {
+        "prefix": "%SHADOW_LEVEL",
+        "body": [
+            "%SHADOW_LEVEL"
+        ],
+        "description": ""
+    },
+    "%SIGNATURE_ID": {
+        "prefix": "%SIGNATURE_ID",
+        "body": [
+            "%SIGNATURE_ID"
+        ],
+        "description": ""
+    },
+    "%STATUS": {
+        "prefix": "%STATUS",
+        "body": [
+            "%STATUS"
+        ],
+        "description": ""
+    },
+    "%STATUS_FREQUENCY": {
+        "prefix": "%STATUS_FREQUENCY",
+        "body": [
+            "%STATUS_FREQUENCY"
+        ],
+        "description": ""
+    },
+    "%SYSTEM": {
+        "prefix": "%SYSTEM",
+        "body": [
+            "%SYSTEM"
+        ],
+        "description": ""
+    },
+    "%TARGETID": {
+        "prefix": "%TARGETID",
+        "body": [
+            "%TARGETID"
+        ],
+        "description": ""
+    },
+    "%TEMPORARY_DIRECTORY": {
+        "prefix": "%TEMPORARY_DIRECTORY",
+        "body": [
+            "%TEMPORARY_DIRECTORY"
+        ],
+        "description": ""
+    },
+    "%TERMINAL": {
+        "prefix": "%TERMINAL",
+        "body": [
+            "%TERMINAL"
+        ],
+        "description": ""
+    },
+    "%TEXTFILE_MODE": {
+        "prefix": "%TEXTFILE_MODE",
+        "body": [
+            "%TEXTFILE_MODE"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT": {
+        "prefix": "%THIN_CLIENT",
+        "body": [
+            "%THIN_CLIENT"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT_CHARSET": {
+        "prefix": "%THIN_CLIENT_CHARSET",
+        "body": [
+            "%THIN_CLIENT_CHARSET"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT_HW": {
+        "prefix": "%THIN_CLIENT_HW",
+        "body": [
+            "%THIN_CLIENT_HW"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT_IPCNAME": {
+        "prefix": "%THIN_CLIENT_IPCNAME",
+        "body": [
+            "%THIN_CLIENT_IPCNAME"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT_MODE": {
+        "prefix": "%THIN_CLIENT_MODE",
+        "body": [
+            "%THIN_CLIENT_MODE"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT_OS": {
+        "prefix": "%THIN_CLIENT_OS",
+        "body": [
+            "%THIN_CLIENT_OS"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT_REPORT_DIR": {
+        "prefix": "%THIN_CLIENT_REPORT_DIR",
+        "body": [
+            "%THIN_CLIENT_REPORT_DIR"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT_TYPE": {
+        "prefix": "%THIN_CLIENT_TYPE",
+        "body": [
+            "%THIN_CLIENT_TYPE"
+        ],
+        "description": ""
+    },
+    "%THIN_CLIENT_USERNAME": {
+        "prefix": "%THIN_CLIENT_USERNAME",
+        "body": [
+            "%THIN_CLIENT_USERNAME"
+        ],
+        "description": ""
+    },
+    "%THIN_SERVER": {
+        "prefix": "%THIN_SERVER",
+        "body": [
+            "%THIN_SERVER"
+        ],
+        "description": ""
+    },
+    "%THIN_SERVER_CHARSET": {
+        "prefix": "%THIN_SERVER_CHARSET",
+        "body": [
+            "%THIN_SERVER_CHARSET"
+        ],
+        "description": ""
+    },
+    "%THIN_SERVER_DBCHARSET": {
+        "prefix": "%THIN_SERVER_DBCHARSET",
+        "body": [
+            "%THIN_SERVER_DBCHARSET"
+        ],
+        "description": ""
+    },
+    "%THIN_SERVER_HW": {
+        "prefix": "%THIN_SERVER_HW",
+        "body": [
+            "%THIN_SERVER_HW"
+        ],
+        "description": ""
+    },
+    "%THIN_SERVER_IPCNAME": {
+        "prefix": "%THIN_SERVER_IPCNAME",
+        "body": [
+            "%THIN_SERVER_IPCNAME"
+        ],
+        "description": ""
+    },
+    "%THIN_SERVER_MODE": {
+        "prefix": "%THIN_SERVER_MODE",
+        "body": [
+            "%THIN_SERVER_MODE"
+        ],
+        "description": ""
+    },
+    "%THIN_ SERVER_OS": {
+        "prefix": "%THIN_ SERVER_OS",
+        "body": [
+            "%THIN_ SERVER_OS"
+        ],
+        "description": ""
+    },
+    "%THIN_SERVER_REPORT_DIR": {
+        "prefix": "%THIN_SERVER_REPORT_DIR",
+        "body": [
+            "%THIN_SERVER_REPORT_DIR"
+        ],
+        "description": ""
+    },
+    "%THIN_SERVER_USERNAME": {
+        "prefix": "%THIN_SERVER_USERNAME",
+        "body": [
+            "%THIN_SERVER_USERNAME"
+        ],
+        "description": ""
+    },
+    "%TITLE_FORM": {
+        "prefix": "%TITLE_FORM",
+        "body": [
+            "%TITLE_FORM"
+        ],
+        "description": ""
+    },
+    "%TODAY": {
+        "prefix": "%TODAY",
+        "body": [
+            "%TODAY"
+        ],
+        "description": ""
+    },
+    "%TRANS_LEVEL": {
+        "prefix": "%TRANS_LEVEL",
+        "body": [
+            "%TRANS_LEVEL"
+        ],
+        "description": ""
+    },
+    "%UIC": {
+        "prefix": "%UIC",
+        "body": [
+            "%UIC"
+        ],
+        "description": ""
+    },
+    "%UIC_GRP": {
+        "prefix": "%UIC_GRP",
+        "body": [
+            "%UIC_GRP"
+        ],
+        "description": ""
+    },
+    "%UIC_MEM": {
+        "prefix": "%UIC_MEM",
+        "body": [
+            "%UIC_MEM"
+        ],
+        "description": ""
+    },
+    "%UNIX": {
+        "prefix": "%UNIX",
+        "body": [
+            "%UNIX"
+        ],
+        "description": ""
+    },
+    "%USERNAME": {
+        "prefix": "%USERNAME",
+        "body": [
+            "%USERNAME"
+        ],
+        "description": ""
+    },
+    "%VERSION": {
+        "prefix": "%VERSION",
+        "body": [
+            "%VERSION"
+        ],
+        "description": ""
+    },
+    "%WD": {
+        "prefix": "%WD",
+        "body": [
+            "%WD"
+        ],
+        "description": ""
+    },
+    "%XPID": {
+        "prefix": "%XPID",
+        "body": [
+            "%XPID"
+        ],
+        "description": ""
+    },
+    "VALUE SYMBOLS": {
+        "prefix": "VALUE SYMBOLS",
+        "body": [
+            "VALUE SYMBOLS"
+        ],
+        "description": ""
+    },
+    "%BACK": {
+        "prefix": "%BACK",
+        "body": [
+            "%BACK"
+        ],
+        "description": ""
+    },
+    "%DATA": {
+        "prefix": "%DATA",
+        "body": [
+            "%DATA"
+        ],
+        "description": ""
+    },
+    "%DEADLOCK": {
+        "prefix": "%DEADLOCK",
+        "body": [
+            "%DEADLOCK"
+        ],
+        "description": ""
+    },
+    "%EMPTY": {
+        "prefix": "%EMPTY",
+        "body": [
+            "%EMPTY"
+        ],
+        "description": ""
+    },
+    "%EXIT": {
+        "prefix": "%EXIT",
+        "body": [
+            "%EXIT"
+        ],
+        "description": ""
+    },
+    "%FAILURE": {
+        "prefix": "%FAILURE",
+        "body": [
+            "%FAILURE"
+        ],
+        "description": ""
+    },
+    "%NORMAL": {
+        "prefix": "%NORMAL",
+        "body": [
+            "%NORMAL"
+        ],
+        "description": ""
+    },
+    "%SUCCESS": {
+        "prefix": "%SUCCESS",
+        "body": [
+            "%SUCCESS"
+        ],
+        "description": ""
+    },
+    "SECURITY VALUE SYMBOLS": {
+        "prefix": "SECURITY VALUE SYMBOLS",
+        "body": [
+            "SECURITY VALUE SYMBOLS"
+        ],
+        "description": ""
+    },
+    "%ADMIN_ACCESS": {
+        "prefix": "%ADMIN_ACCESS",
+        "body": [
+            "%ADMIN_ACCESS"
+        ],
+        "description": ""
+    },
+    "%CHANGE_ACCESS": {
+        "prefix": "%CHANGE_ACCESS",
+        "body": [
+            "%CHANGE_ACCESS"
+        ],
+        "description": ""
+    },
+    "%CONTROL_ACCESS": {
+        "prefix": "%CONTROL_ACCESS",
+        "body": [
+            "%CONTROL_ACCESS"
+        ],
+        "description": ""
+    },
+    "%DEFINE_ACCESS": {
+        "prefix": "%DEFINE_ACCESS",
+        "body": [
+            "%DEFINE_ACCESS"
+        ],
+        "description": ""
+    },
+    "%DELETE_ACCESS": {
+        "prefix": "%DELETE_ACCESS",
+        "body": [
+            "%DELETE_ACCESS"
+        ],
+        "description": ""
+    },
+    "%ERASE_ACCESS": {
+        "prefix": "%ERASE_ACCESS",
+        "body": [
+            "%ERASE_ACCESS"
+        ],
+        "description": ""
+    },
+    "%MODIFY_ACCESS": {
+        "prefix": "%MODIFY_ACCESS",
+        "body": [
+            "%MODIFY_ACCESS"
+        ],
+        "description": ""
+    },
+    "%OPERATOR_ACCESS": {
+        "prefix": "%OPERATOR_ACCESS",
+        "body": [
+            "%OPERATOR_ACCESS"
+        ],
+        "description": ""
+    },
+    "%READ_ACCESS": {
+        "prefix": "%READ_ACCESS",
+        "body": [
+            "%READ_ACCESS"
+        ],
+        "description": ""
+    },
+    "%SHOW_ACCESS": {
+        "prefix": "%SHOW_ACCESS",
+        "body": [
+            "%SHOW_ACCESS"
+        ],
+        "description": ""
+    }
     
 }
