@@ -2069,448 +2069,448 @@
     "ABS": {
         "prefix": "ABS()",
         "body": [
-            "ABS(${value})"
+            "ABS(${value})${0}"
         ],
         "description": "Returns the absolute value"
     },
     "ACOS": {
         "prefix": "ACOS(cosine)",
         "body": [
-            "ACOS(${cosine})"
+            "ACOS(${cosine})${0}"
         ],
         "description": ""
     },
     "ACOSD": {
         "prefix": "ACOSD(value)",
         "body": [
-            "ACOSD(${value})"
+            "ACOSD(${value})${0}"
         ],
         "description": ""
     },
     "ACOSH": {
         "prefix": "ACOSH(value)",
         "body": [
-            "ACOSH(${value})"
+            "ACOSH(${value})${0}"
         ],
         "description": ""
     },
     "ACOT": {
         "prefix": "ACOT(value)",
         "body": [
-            "ACOT(${value})"
+            "ACOT(${value})${0}"
         ],
         "description": ""
     },
     "ACOTD": {
         "prefix": "ACOTD(value)",
         "body": [
-            "ACOTD(${value})"
+            "ACOTD(${value})${0}"
         ],
         "description": ""
     },
     "ACOTH": {
         "prefix": "ACOTH(value)",
         "body": [
-            "ACOTH(${value})"
+            "ACOTH(${value})${0}"
         ],
         "description": ""
     },
     "ACSC": {
         "prefix": "ACSC(value)",
         "body": [
-            "ACSC(${value})"
+            "ACSC(${value})${0}"
         ],
         "description": ""
     },
     "ACSCD": {
         "prefix": "ACSCD(value)",
         "body": [
-            "ACSCD(${value})"
+            "ACSCD(${value})${0}"
         ],
         "description": ""
     },
     "ACSCH": {
         "prefix": "ACSCH(value)",
         "body": [
-            "ACSCH(${value})"
+            "ACSCH(${value})${0}"
         ],
         "description": ""
     },
     "ASEC": {
         "prefix": "ASEC(value)",
         "body": [
-            "ASEC(${value})"
+            "ASEC(${value})${0}"
         ],
         "description": ""
     },
     "ASECH": {
         "prefix": "ASECH(value)",
         "body": [
-            "ASECH(${value})"
+            "ASECH(${value})${0}"
         ],
         "description": ""
     },
     "ASIND": {
         "prefix": "ASIND(value)",
         "body": [
-            "ASIND(${value})"
+            "ASIND(${value})${0}"
         ],
         "description": ""
     },
     "ASINH": {
         "prefix": "ASINH(value)",
         "body": [
-            "ASINH(${value})"
+            "ASINH(${value})${0}"
         ],
         "description": ""
     },
     "ATAND": {
         "prefix": "ATAND(value)",
         "body": [
-            "ATAND(${value})"
+            "ATAND(${value})${0}"
         ],
         "description": ""
     },
     "ATAND2": {
         "prefix": "ATAND2(value)",
         "body": [
-            "ATAND2(${value})"
+            "ATAND2(${value})${0}"
         ],
         "description": ""
     },
     "ATANH": {
         "prefix": "ATANH(value)",
         "body": [
-            "ATANH(${value})"
+            "ATANH(${value})${0}"
         ],
         "description": ""
     },
     "ASIN": {
         "prefix": "ASIN(sine)",
         "body": [
-            "ASIN(${sine})"
+            "ASIN(${sine})${0}"
         ],
         "description": ""
     },
     "ATAN": {
         "prefix": "ATAN(tangent)",
         "body": [
-            "ATAN(${tangent})"
+            "ATAN(${tangent})${0}"
         ],
         "description": ""
     },
     "ATAN2": {
         "prefix": "ATAN2(sine,cosine)",
         "body": [
-            "ATAN2(${sine},${cosine})"
+            "ATAN2(${sine},${cosine})${0}"
         ],
         "description": ""
     },
     "BINARY_TO_POLY": {
         "prefix": "BINARY_TO_POLY(binary_string,format)",
         "body": [
-            "BINARY_TO_POLY(${binary_string},${format})"
+            "BINARY_TO_POLY(${binary_string},${format})${0}"
         ],
         "description": ""
     },
     "CEIL": {
         "prefix": "CEIL(number)",
         "body": [
-            "CEIL(${number})"
+            "CEIL(${number})${0}"
         ],
         "description": ""
     },
     "COS": {
         "prefix": "COS(angle)",
         "body": [
-            "COS(${angle})"
+            "COS(${angle})${0}"
         ],
         "description": ""
     },
     "COSD": {
         "prefix": "COSD(value)",
         "body": [
-            "COSD(${value})"
+            "COSD(${value})${0}"
         ],
         "description": ""
     },
     "COSH": {
         "prefix": "COSH(value)",
         "body": [
-            "COSH(${value})"
+            "COSH(${value})${0}"
         ],
         "description": ""
     },
     "COT": {
         "prefix": "COT(value)",
         "body": [
-            "COT(${value)}"
+            "COT(${value)}${0}"
         ],
         "description": ""
     },
     "COTD": {
         "prefix": "COTD(value)",
         "body": [
-            "COTD(${value})"
+            "COTD(${value})${0}"
         ],
         "description": ""
     },
     "COTH": {
         "prefix": "COTH(value)",
         "body": [
-            "COTH(${value})"
+            "COTH(${value})${0}"
         ],
         "description": ""
     },
     "CSC": {
         "prefix": "CSC(value)",
         "body": [
-            "CSC(${value})"
+            "CSC(${value})${0}"
         ],
         "description": ""
     },
     "CSCD": {
         "prefix": "CSCD(value)",
         "body": [
-            "CSCD(${value})"
+            "CSCD(${value})${0}"
         ],
         "description": ""
     },
     "CSCH": {
         "prefix": "CSCH(value)",
         "body": [
-            "CSCH(${value})"
+            "CSCH(${value})${0}"
         ],
         "description": ""
     },
     "DEG": {
         "prefix": "DEG(value)",
         "body": [
-            "DEG(${value})"
+            "DEG(${value})${0}"
         ],
         "description": ""
     },
     "EXP": {
         "prefix": "EXP(value)",
         "body": [
-            "EXP(${value})"
+            "EXP(${value})${0}"
         ],
         "description": ""
     },
     "EXP2": {
         "prefix": "EXP2(value)",
         "body": [
-            "EXP2(${value})"
+            "EXP2(${value})${0}"
         ],
         "description": ""
     },
     "EXP10": {
         "prefix": "EXP10(value)",
         "body": [
-            "EXP10(${value})"
+            "EXP10(${value})${0}"
         ],
         "description": ""
     },
     "FAC": {
         "prefix": "FAC(value)",
         "body": [
-            "FAC(${value})"
+            "FAC(${value})${0}"
         ],
         "description": ""
     },
     "FIX": {
         "prefix": "FIX(value)",
         "body": [
-            "FIX(${value})"
+            "FIX(${value})${0}"
         ],
         "description": ""
     },
     "FRAC": {
         "prefix": "FRAC(value)",
         "body": [
-            "FRAC(${value})"
+            "FRAC(${value})${0}"
         ],
         "description": ""
     },
     "FLOOR": {
         "prefix": "FLOOR(number)",
         "body": [
-            "FLOOR(${number}})"
+            "FLOOR(${number})${0}"
         ],
         "description": ""
     },
     "GCD": {
         "prefix": "GCD(value,value)",
         "body": [
-            "GCD(${value},${value})"
+            "GCD(${value},${value})${0}"
         ],
         "description": ""
     },
     "INT": {
         "prefix": "INT(real_number)",
         "body": [
-            "INT(${number})"
+            "INT(${number})${0}"
         ],
         "description": ""
     },
     "LOG": {
         "prefix": "LOG(value)",
         "body": [
-            "LOG(${value})"
+            "LOG(${value})${0}"
         ],
         "description": ""
     },
     "LGO2": {
         "prefix": "LOG2(value)",
         "body": [
-            "LOG2(${value})"
+            "LOG2(${value})${0}"
         ],
         "description": ""
     },
     "LOG10": {
         "prefix": "LOG10(value)",
         "body": [
-            "LOG10(${value})"
+            "LOG10(${value})${0}"
         ],
         "description": ""
     },
     "MAX": {
         "prefix": "MAX(value, value, value, …)",
         "body": [
-            "MAX(${values})"
+            "MAX(${values})${0}"
         ],
         "description": ""
     },
     "MIN": {
         "prefix": "MIN(value, value, value, …)",
         "body": [
-            "MIN(${values})"
+            "MIN(${values})${0}"
         ],
         "description": ""
     },
     "MOD": {
         "prefix": "MOD(dividend,divisor)",
         "body": [
-            "MOD(${dividend},${divisor})"
+            "MOD(${dividend},${divisor})${0}"
         ],
         "description": ""
     },
     "MROUND": {
         "prefix": "MROUND(num,multiple)",
         "body": [
-            "MROUND(${num},${multiple})"
+            "MROUND(${num},${multiple})${0}"
         ],
         "description": ""
     },
     "POLY_TO_BINARY": {
         "prefix": "POLY_TO_BINARY(value,format[,length][,scale])",
         "body": [
-            "POLY_TO_BINARY(${value},${format},${length},${scale}"
+            "POLY_TO_BINARY(${value},${format},${length},${scale}${0}"
         ],
         "description": ""
     },
     "POLY_TO_BINARY_2": {
         "prefix": "POLY_TO_BINARY(value,format)",
         "body": [
-            "POLY_TO_BINARY(${value},${format})"
+            "POLY_TO_BINARY(${value},${format})${0}"
         ],
         "description": ""
     },
     "RAD": {
         "prefix": "RAD(value)",
         "body": [
-            "RAD(${value})"
+            "RAD(${value})${0}"
         ],
         "description": ""
     },
     "RANDOM": {
         "prefix": "RANDOM(range)",
         "body": [
-            "RANDOM(${range})"
+            "RANDOM(${range})${0}"
         ],
         "description": ""
     },
     "ROUND": {
         "prefix": "ROUND(real_number,decimal_place)",
         "body": [
-            "ROUND(${real_number},${decimal_place})"
+            "ROUND(${real_number},${decimal_place})${0}"
         ],
         "description": ""
     },
     "SEC": {
         "prefix": "SEC(value)",
         "body": [
-            "SEC(${value})"
+            "SEC(${value})${0}"
         ],
         "description": ""
     },
     "SECD": {
         "prefix": "SECD(value)",
         "body": [
-            "SECD(${secd})"
+            "SECD(${secd})${0}"
         ],
         "description": ""
     },
     "SECH": {
         "prefix": "SECH(value)",
         "body": [
-            "SECH(${sech})"
+            "SECH(${sech})${0}"
         ],
         "description": ""
     },
     "SIGN": {
         "prefix": "SIGN(value)",
         "body": [
-            "SIGN(${sign})"
+            "SIGN(${sign})${0}"
         ],
         "description": ""
     },
     "SIN": {
         "prefix": "SIN(angle)",
         "body": [
-            "SIN(${angle})"
+            "SIN(${angle})${0}"
         ],
         "description": ""
     },
     "SIND": {
         "prefix": "SIND(angle)",
         "body": [
-            "SIND(${angle})"
+            "SIND(${angle})${0}"
         ],
         "description": ""
     },
     "SINH": {
         "prefix": "SINH(value)",
         "body": [
-            "SINH(${value})"
+            "SINH(${value})${0}"
         ],
         "description": ""
     },
     "SQRT": {
         "prefix": "SQRT(value)",
         "body": [
-            "SQRT(${value})"
+            "SQRT(${value})${0}"
         ],
         "description": ""
     },
     "TAN": {
         "prefix": "TAN(angle)",
         "body": [
-            "TAN(${value})"
+            "TAN(${value})${0}"
         ],
         "description": ""
     },
     "TAND": {
         "prefix": "TAND(value)",
         "body": [
-            "TAND(${value})"
+            "TAND(${value})${0}"
         ],
         "description": ""
     },
     "TANH": {
         "prefix": "TANH(value)",
         "body": [
-            "TANH(${value})"
+            "TANH(${value})${0}"
         ],
         "description": ""
     },
@@ -2520,56 +2520,56 @@
     "DATE": {
         "prefix": "DATE(days)",
         "body": [
-            "DATE(${days})"
+            "DATE(${days})${0}"
         ],
         "description": ""
     },
     "DATE_SECONDS": {
         "prefix": "DATE_SECONDS(seconds)",
         "body": [
-            "DATE_SECONDS(${seconds})"
+            "DATE_SECONDS(${seconds})${0}"
         ],
         "description": ""
     },
     "DATE_TIME": {
         "prefix": "DATE_TIME(source)",
         "body": [
-            "DATE_TIME(${source})"
+            "DATE_TIME(${source})${0}"
         ],
         "description": ""
     },
     "DAYS": {
         "prefix": "DAYS(source_date)",
         "body": [
-            "DAYS(${source_date})"
+            "DAYS(${source_date})${0}"
         ],
         "description": ""
     },
     "DAY_OF_WEEK": {
         "prefix": "DAY_OF_WEEK(source_date)",
         "body": [
-            "DAY_OF_WEEK(${source_date})"
+            "DAY_OF_WEEK(${source_date})${0}"
         ],
         "description": ""
     },
     "DAYS_IN_MONTH": {
         "prefix": "DAYS_IN_MONTH(input-date)",
         "body": [
-            "DAYS_IN_MONTH(${input-date})"
+            "DAYS_IN_MONTH(${input-date})${0}"
         ],
         "description": ""
     },
     "NEXT_MONTH": {
         "prefix": "NEXT_MONTH(input-date)",
         "body": [
-            "NEXT_MONTH(${input-date})"
+            "NEXT_MONTH(${input-date})${0}"
         ],
         "description": ""
     },
     "SECONDS": {
         "prefix": "SECONDS(source_date)",
         "body": [
-            "SECONDS(${source_date})"
+            "SECONDS(${source_date})${0}"
         ],
         "description": ""
     },
@@ -2580,77 +2580,77 @@
     "ERROR_TEXT": {
         "prefix": "ERROR_TEXT(error_no,flags)",
         "body": [
-            "ERROR_TEXT(${error_no},${flags})"
+            "ERROR_TEXT(${error_no},${flags})${0}"
         ],
         "description": ""
     },
     "GET_SCV": {
         "prefix": "GET_SCV(svc_string)",
         "body": [
-            "GET_SCV(${svc_string})"
+            "GET_SCV(${svc_string})${0}"
         ],
         "description": ""
     },
     "IS_MARKED": {
         "prefix": "IS_MARKED([database_handle,]table_name)",
         "body": [
-            "IS_MARKED(${table})"
+            "IS_MARKED(${table})${0}"
         ],
         "description": ""
     },
     "IS_MARKED_ON_STREAM": {
         "prefix": "IS_MARKED_ON_STREAM(stream_name, table_name)",
         "body": [
-            "IS_MARKED_ON_STREAM(${stream_name}, ${table_name})"
+            "IS_MARKED_ON_STREAM(${stream_name}, ${table_name})${0}"
         ],
         "description": ""
     },
     "IS_NULL": {
         "prefix": "IS_NULL([database_handle.]\"table_name\",\"field_name\")",
         "body": [
-            "IS_NULL(\"${table}\",\"${field}\")"
+            "IS_NULL(\"${table}\",\"${field}\")${0}"
         ],
         "description": ""
     },
     "IS_NULL_ON_STREAM": {
         "prefix": "IS_NULL_ON_STREAM(\"stream_name\",\"table_name\",\"field_name\")",
         "body": [
-            "IS_NULL_ON_STREAM(\"${stream}\",\"${table}\",\"${field}\")"
+            "IS_NULL_ON_STREAM(\"${stream}\",\"${table}\",\"${field}\")${0}"
         ],
         "description": ""
     },
     "LTOTAL": {
         "prefix": "LTOTAL(break_no,total_column_number)",
         "body": [
-            "LTOTAL(${break_no},${total_column_number})"
+            "LTOTAL(${break_no},${total_column_number})${0}"
         ],
         "description": ""
     },
     "MASK": {
         "prefix": "MASK(mask_specification,source_string)",
         "body": [
-            "MASK(${mask_specification},${source_string})"
+            "MASK(${mask_specification},${source_string})${0}"
         ],
         "description": ""
     },
     "MESSAGE_FUNCTION": {
         "prefix": "MESSAGE([database_handle.]message_name[,arg1[arg2[,…]]])",
         "body": [
-            "MESSAGE(${msg_name}, ${arguments})"
+            "MESSAGE(${msg_name}, ${arguments})${0}"
         ],
         "description": ""
     },
     "PARAMETER": {
         "prefix": "PARAMETER([database_handle.]parameter_name[,source_date])",
         "body": [
-            "PARAMETER(${parameter},${source_date})"
+            "PARAMETER(${parameter},${source_date})${0}"
         ],
         "description": ""
     },
     "PARAMETER2": {
         "prefix": "PARAMETER(parameter_name)",
         "body": [
-            "PARAMETER(${parameter})"
+            "PARAMETER(${parameter})${0}"
         ],
         "description": ""
     },
@@ -2658,35 +2658,35 @@
     "RECORD_ADDRESS": {
         "prefix": "RECORD_ADDRESS(table_spec)",
         "body": [
-            "RECORD_ADDRESS(${table_spec})"
+            "RECORD_ADDRESS(${table_spec})${0}"
         ],
         "description": ""
     },
     "STREAM_DATA": {
         "prefix": "STREAM_DATA(stream_name,table_name,field_name)",
         "body": [
-            "STREAM_DATA(${stream},${table},${field})"
+            "STREAM_DATA(${stream},${table},${field})${0}"
         ],
         "description": ""
     },
     "TABLE_CHECK": {
         "prefix": "TABLE_CHECK([database_handle,]table_name,field_name)",
         "body": [
-            "TABLE_CHECK(${table},${field})"
+            "TABLE_CHECK(${table},${field})${0}"
         ],
         "description": ""
     },
     "TABLE_DATA": {
         "prefix": "TABLE_DATA([database_handle,]table_name,field_name)",
         "body": [
-            "TABLE_DATA(${table},${field})"
+            "TABLE_DATA(${table},${field})${0}"
         ],
         "description": ""
     },
     "TOTAL": {
         "prefix": "TOTAL(total_number)",
         "body": [
-            "TOTAL(${total_number})"
+            "TOTAL(${total_number})${0}"
         ],
         "description": ""
     },
