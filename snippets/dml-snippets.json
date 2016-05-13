@@ -1444,180 +1444,232 @@
         ],
         "description": "Send table to database"
     },
+    "SIGNATURE": {
+        "prefix": "SIGNATURE [/qualifiers]",
+        "body": [
+            "SIGNATURE &",
+                "\t/AUDIT=audit-file-specification &",
+                "\t/DATETIME=${datetime} &",
+                "\t/FACILITY=${facility} &",
+                "\t/FAILURE=(${failure_dml}) &",
+                "\t/NOAUDIT &",
+                "\t/PASSWORD1=${password1} &",
+                "\t/PASSWORD2=${password2} &",
+                "\t/PURPOSE=${purpose} &",
+                "\t/SAVE &",
+                "\t/SUCCESS=(${success-dml}) &",
+                "\t/RECALL &",
+                "\t/USERNAME1=${username1} &",
+                "\t/USERNAME2=${username2} &",
+                "\t/USER1=${user_defined1} &",
+                "\t/USER2=${user_defined2} &",
+                "\t/USER3=${user_defined3} &",
+                "\t/USER4=${user_defined4} &",
+                "\t/USER5=${user_defined5} &",
+                "\t/VALIDATION_FORM=${validation_form}"
 
+        ],
+        "description": "Signature Statemente"
+    },
+    "SLEEP": {
+        "prefix": "SLEEP seconds",
+        "body": [
+            "SLEEP ${seconds}"
+        ],
+        "description": "Sleep for specified number of seconds"
+    },
+    "START_DATA_ZONE": {
+        "prefix": "START_DATA_ZONE",
+        "body": [
+            "START_DATA_ZONE"
+        ],
+        "description": "START_DATA_ZONE"
+    },
+    "START_GTID": {
+        "prefix": "START_GTID",
+        "body": [
+            "START_GTID"
+        ],
+        "description": "START_GTID"
+    },
+    "START_STREAM": {
+        "prefix": "START_STREAM stream_name /TABLE=table [/qualifiers]",
+        "body": [
+            "START_STREAM ${stream} /TABLE=${table} &",
+                "\t/COMMIT_RATE=${commit_rate} &",
+                "\t/FIRST=${max_records} &",
+                "\t/GROUPED_BY=${grouped_by} &",
+                "\t ! or",
+                "\t/GROUPED_BY=${grouped_by} &",
+                "\t/JOINED_TO=${joined_to} &",
+                "\t/LOCK=${lock_type} & ! NONE, READ, WRITE &",
+                "\t/REDUCED_TO=${reduced_to} &",
+                "\t ! or &",
+                "\t/REDUCED_TO=${reduced_to} &",
+                "\t/SECONDARY &",
+                "\t/SELECTION=expression &",
+                "\t/SORTED_BY=([-]field_name[,...]) &",
+                "\t ! or &",
+                "\t/SORTED_BY=${sorted_by} &",
+                "\t ! or &",
+                "\t/SORTED_BY=${sorted_by} &",
+                "\t/STATISTIC=${variable}=${statistic_function} &",
+                "\t/TABLE=${table} &",
+                "\t ! or &",
+                "\t/TABLE=${table} &",
+                "\t/WITH=${with_field_expression}",
+                "\t ! or &",
+                "\t/WITH=${with_field_expression}",
+            ""
 
-
-
-
-    
+        ],
+        "description": "START_STREAM"
+    },
+    "START_TRANSACTION": {
+        "prefix": "START_TRANSACTION",
+        "body": [
+            "START_TRANSACTION"
+        ],
+        "description": "Starts read/write transaction"
+    },    
+    "START_TRANSACTION READ_ONLY": {
+        "prefix": "START_TRANSACTION READ_ONLY",
+        "body": [
+            "START_TRANSACTION READ_ONLY"
+        ],
+        "description": "Starts read transaction"
+    },    
+    "SWITCH": {
+        "prefix": "SWITCH form_name",
+        "body": [
+            "SWITCH ${form}"
+        ],
+        "description": "Exit current form and execute form"
+    },   
+    "SWITCH_FILE_SPEC": {
+        "prefix": "SWITCH \"form_file_spec\" [form_name] [(arguments)]",
+        "body": [
+            "SWITCH “${form_file_spec}” ${form} (${arguments})"
+        ],
+        "description": "Exit current form by calling DMC or DML and execute form"
+    },   
+    "SWITCH_BASE": {
+        "prefix": "SWITCH_BASE form_name",
+        "body": [
+            "SWITCH_BASE ${form}"
+        ],
+        "description": "Automatically exit current form and execute form"
+    },   
+    "SWITCH_BASE_SPEC": {
+        "prefix": "SWITCH_BASE \"form_file_spec\" [form_name] [(arguments)]",
+        "body": [
+            "SWITCH_BASE “${form_file_spec}” ${form} (${arguments})"
+        ],
+        "description": "AUtomatically exit current form by calling DMC or DML and execute form"
+    },  
+    "SWITCH_BASE_EXIT": {
+        "prefix": "SWITCH_BASE %EXIT",
+        "body": [
+            "SWITCH_BASE %[EXIT]"
+        ],
+        "description": "Exit form which contains /BASE qualifier"
+    },   
+    "TABLE_SEARCH": {
+        "prefix": "TABLE_SEARCH table_name(fields) [/qualifiers]",
+        "body": [
+            "TABLE_SEARCH ${table}(${fields}) &",
+                "\t/BACK=(${dml_back}) &",
+                "\t/COL=${col_num} &",
+                "\t/ERROR=${error} &",
+                "\t/EXIT=(${dml_exit}) &",
+                "\t/FIRST=${max_records} &",
+                "\t/HEIGHT=${height_num} &",
+                "\t/NOERROR &",
+                "\t/REDUCED_TO=${reduced_to} &",
+                "\t ! or &",
+                "\t/REDUCED_TO=${reduced_to} &",
+                "\t ! or &",
+                "\t/REDUCED_TO=${reduced_to} &",
+                "\t/ROW=${row_num} &",
+                "\t/SELECTION=${selection} &",
+                "\t ! or &",
+                "\t/SELECTION=${selection_all_or_any} & ! ALL or ANY",
+                "\t/SELECT_ONE &",
+                "\t/SORTED_BY=(${sorted_by}) &",
+                "\t ! or &",
+                "\t/SORTED_BY=(${sorted_by}) &",
+                "\t ! or &",
+                "\t/SORTED_BY=${sorted_by} &",
+                "\t/WITH=${with_field_expression}",
+            ""
+            
+            
+        ],
+        "description": "Display data from table/fields in an LOV window"
+    },   
+    "TRANSFER": {
+        "prefix": "TRANSFER command_filename [/qualifiers]",
+        "body": [
+            "TRANSFER ${command_filename} &",
+                "\t/POSITION=${position} &",
+                "\t/LENGTH=${length} &",
+                "\t/SCALE=${scale} &",
+                ""
+        ],
+        "description": "Transfer file into database"
+    },  
+    "WHILE": {
+        "prefix": "WHILE (condition)",
+        "body": [
+            "WHILE (${condition})",
+            "\t",
+            "\t",
+            "END_WHILE"
+        ],
+        "description": "While loop"
+    },  
+    "WRITE": {
+        "prefix": "WRITE tag data",
+        "body": [
+            "WRITE ${tag} ${data}"
+        ],
+        "description": "Write data into buffer"
+    },  
+    "WRITE_LINE": {
+        "prefix": "WRITE_LINE tag [data]",
+        "body": [
+            "WRITE_LINE ${tag} ${data}"
+        ],
+        "description": "Write record into buffer"
+    },  
+    "XML_RECEIVE_TABLES": {
+        "prefix": "XML_RECEIVE_TABLES [/ERROR_TEXT=error-text]",
+        "body": [
+            "XML_RECEIVE_TABLES /ERROR_TEXT=${error_text}"
+        ],
+        "description": "Receive XML tables"
+    },  
+    "XML_SEND_TABLE": {
+        "prefix": "XML_SEND_TABLE table-name [/TABLE_OPTIONS=table-options] [/FIELD_OPTIONS=field-options]",
+        "body": [
+            "XML_SEND_TABLE ${table} /TABLE_OPTIONS=${table_options} /FIELD_OPTIONS=${field_options}"
+        ],
+        "description": "Send XML tables"
+    },  
+    "$": {
+        "prefix": "$ command",
+        "body": [
+            "$ ${command}"
+        ],
+        "description": "Operating System Command"
+    },  
 
 /*
+
+
+
 TODO
 
-Qualifiers
-
-SIGNATURE
-SIGNATURE [/qualifiers]
-Qualifiers
-/AUDIT=audit-file-specification
-/DATETIME=date-time
-/FACILITY=[[database-handle.][system-name:]]facility-name]
-/FAILURE=(failure-dml)
-/NOAUDIT
-/PASSWORD1=password-1
-/PASSWORD2=password-2
-/PURPOSE=purpose
-/SAVE
-/SUCCESS=(success-dml)
-/RECALL
-/USERNAME1=username_1
-/USERNAME2=username_2
-/USER1=user-defined-1
-/USER2=user-defined-2
-/USER3=user-defined-3
-/USER4=user-defined-4
-/USER5=user-defined-5
-/VALIDATION_FORM=form-name
-/additional-qualifiers
-START_GTID
-START_GTID
-START_STREAM
-START_STREAM stream_name &
-/TABLE=[database_handle.]table_name[,table_name[,...]] &
-[/qualifiers]
-or
-START_STREAM steam_name &
-/TABLE= #variable_name[,#variable_name[,...]][/qualifiers]
-Qualifiers
-/COMMIT_RATE =numeric_expression
-/FIRST=numeric_expression
-/GROUPED_BY=field_name[,field_name[,...]
-or
-/GROUPED_BY=([context.]field_name[,...])
-/JOINED _TO=table_name
-/LOCK=option_keyword
-Keywords: WRITE, READ, NONE
-/REDUCED_TO=([-]field_name[,...])
-or
-/REDUCED_TO=([-]table_name(field_name[,...])
-or
-/REDUCED_TO=([-]context.field_name[,...])
-or
-/REDUCED_TO([-]#variable_name[,...])
-/SECONDARY
-/SELECTION=expression
-/SORTED_BY=([-]field_name[,...])
-or
-/SORTED_BY=([-]table_name(field_name)[,...])
-or
-/SORTED_BY=([-]context.field_name[,...])
-or
-/SORTED_BY=([-]#variable_name[,...])
-/STATISTIC=variable=statistic_function
-Statistic Functions:
-AVERAGE (table_name(field_name))
-COUNT
-MAX (table_name(field_name))
-MIN (table_name(field_name))
-SAMPLE_STD_DEV (table_name(field_name))
-STD_DEV (table_name(field_name))
-TOTAL (table_name(field_name))
-/TABLE=[database_handle.]table_name[,table_name[,...]]
-or
-/TABLE=#variable_name[,#variable_name[,...]]
-/WITH=field_name operator expression
-or
-/WITH=table_name(field_name) operator expression
-or
-/WITH=context.field_name operator expression
-or
-/WITH=[context.]field_name=[context.]field_name
-START_TRANSACTION
-START_TRANSACTION [READ_ONLY]
-SWITCH
-SWITCH form_name [(argument1[,argument2[,...]])]
-or
-SWITCH "form_file_spec" [form_name]
-[(argument1[,argument2[,...]])]
-or
-SWITCH [/FACILITY[database-handle.][system-name:]]facilityname
-SWITCH_BASE
-SWITCH_BASE [%EXIT]
-or
-SWITCH_BASE form_name [(argument1[,argument2[,...]])]
-or
-SWITCH_BASE "form_file_spec" [form_name] &
-[(argument1[,argument2[,...]])]
-TABLE_SEARCH
-TABLE_SEARCH [database_handle.] &
-table_name(field_name1[,field_name2[,...]]) &
-[/qualifiers]
-Qualifiers
-/BACK=(dml_statement)
-/COL=numeric_expression
-/ERROR=expression
-/EXIT=(dml_statement)
-/FIRST=numeric_expression
-/HEIGHT=numeric_expression
-/NOERROR
-/REDUCED_TO=([-]field_name[,...])
-or
-/REDUCED_TO=([-]table_name(field_name)[,...])
-or
-/REDUCED_TO=([-]#VARIABLE_NAME[,...])
-/ROW=numeric_expression
-/SELECTION=expression
-or
-/SELECTION=ALL or ANY
-/SELECT_ONE
-/SORTED_BY=([-]field_name[,...])
-or
-/SORTED_BY=([-]table_name(field_name)[,...])
-or
-/SORTED_BY=([-]#variable_name[,...])
-/WITH=field_name operator expression
-TRANSFER
-TRANSFER command_filename
-Qualifiers
-/POSITION=position
-/LENGTH=length
-/SCALE=scale
-TRIGGER
-TRIGGER "trigger_name"
-UNLOAD
-UNLOAD file_spec &
-FROM [database_handle.]table_name(field_name)
-UTILITIES
-UTILITIES
-VERIFY
-MSSQL Server Engine:
-VERIFY “user-name/password/database-name@DNSName”
-/ENGINE=MSSQL
-/MAX_ERRORS=[Number of errors]
-/OUTPUT=GEM_RUN:[File_name]
-ORACLE Server Engine:
-VERIFY “user-name/password/schema@Connection_String”
-/ENGINE=ORACLE
-/MAX_ERRORS=[Number of errors]
-/OUTPUT=GEM_RUN:[File_name]
-WHILE and END_WHILE
-WHILE (condition_expression) dml_statement
-or
-WHILE (condition_expression)
-dml_code
-END_WHILE
-WRITE
-WRITE tag data
-WRITE_LINE
-WRITE_LINE tag [data]
-XML_RECEIVE_TABLES
-XML_RECEIVE_TABLES [/ERROR_TEXT=error-text]
-XML_SEND_TABLE
-XML_SEND_TABLE table-name &
-[/TABLE_OPTIONS=table-options] &
-[/FIELD_OPTIONS=field-options]
-$
-$ operating_system_command
     
     
     */
@@ -1882,7 +1934,7 @@ TEMPORARY_FILENAME(name-string)
     "ABS": {
         "prefix": "ABS",
         "body": [
-            "ABS(${x})"
+            "ABS($0)"
         ],
         "description": "Returns the absolute value"
     },
