@@ -2,7 +2,7 @@
     
     // Forms
     "MENU_FORM": {
-        "prefix": "MENU_FORM",
+        "prefix": "MENU_FORM form_name",
         "body": [
             "MENU_FORM ${form_name} &",                           
                 "\t/COL=${col_num} & ",        
@@ -21,7 +21,7 @@
     },
     
         "MENU_FORM ALL": {
-        "prefix": "MENU_FORM ALL QUALIFIERS",
+        "prefix": "MENU_FORM form_name [/qualifiers]",
         "body": [
             "MENU_FORM ${form_name} &",            
                 "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, NOBORDER, REVERSE, UNDERLINE",
@@ -46,7 +46,7 @@
     },
 
     "NORMAL_FORM": {
-        "prefix": "FORM",
+        "prefix": "FORM form_name",
         "body": [
             "FORM ${form_name} &",                          
                 "\t/COL=${col_num} &",              
@@ -57,11 +57,11 @@
             "END_FORM"
             
         ],
-        "description": " Normal Form"
+        "description": "Normal Form"
     },
 
     "NORMAL_FORM ALL": {
-        "prefix": "FORM ALL QUALIFIERS",
+        "prefix": "FORM form_name [/qualifiers]",
         "body": [
             "FORM ${form_name} &",            
                 "\t/ATTRIBUTES=${attributes} & ! BLINK, BOLD, NOBORDER, REVERSE, UNDERLINE",
@@ -98,7 +98,7 @@
 
 
     "PROCEDURE_FORM": {
-        "prefix": "PROCEDURE_FORM",
+        "prefix": "PROCEDURE_FORM form_name",
         "body": [
             "PROCEDURE_FORM ${form_name}",
                 "\t",
@@ -139,7 +139,7 @@
     },
     
     "QUERY_FORM": {
-        "prefix": "QUERY_FORM",
+        "prefix": "QUERY_FORM form_name",
         "body": [
             "QUERY_FORM ${form_name} &",                         
                 "\t/COL=${col_num} &",         
@@ -155,7 +155,7 @@
     
     
     "QUERY_FORM_ALL": {
-        "prefix": "QUERY_FORM ALL QUALIFIERS",
+        "prefix": "QUERY_FORM form_name [arguments] [/qualifiers]",
         "body": [
             "QUERY_FORM ${form_name} ${[arguments]} &",                         
                 "\t/ADD_FORM=${add_form_name} &",
@@ -189,7 +189,7 @@
     },    
     
     "REPORT_FORM": {
-        "prefix": "REPORT_FORM",
+        "prefix": "REPORT_FORM form_name",
         "body": [
             "REPORT_FORM ${form_name} &",
                 "\t/TABLE=${table}",
@@ -203,7 +203,7 @@
     },  
     
         "REPORT_FORM ALL": {
-        "prefix": "REPORT_FORM ALL QUALIFIERS",
+        "prefix": "REPORT_FORM form_name [/qualifiers]",
         "body": [
             "REPORT_FORM ${form_name} &",              
                 "\t/BASE &",
@@ -251,7 +251,7 @@
     },  
     
    "TABLE_FORM": {
-        "prefix": "TABLE_FORM",
+        "prefix": "TABLE_FORM form_name",
         "body": [
             "TABLE_FORM ${form_name} &",
                 "\t/TABLE=${table} &",
@@ -267,7 +267,7 @@
 
 
    "TABLE_FORM ALL": {
-        "prefix": "TABLE_FORM ALL QUALIFIERS",
+        "prefix": "TABLE_FORM form_name [/qualifiers]",
         "body": [
             "TABLE_FORM ${form_name} &",
                 "\t/ALTERNATE_FORM=${alt_form} &",
