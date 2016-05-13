@@ -2069,14 +2069,14 @@
     "ABS": {
         "prefix": "ABS()",
         "body": [
-            "ABS($value)"
+            "ABS(${value})"
         ],
         "description": "Returns the absolute value"
     },
     "ACOS": {
         "prefix": "ACOS(cosine)",
         "body": [
-            "ACOS(${cosein})"
+            "ACOS(${cosine})"
         ],
         "description": ""
     },
@@ -2723,6 +2723,8 @@ TEMPORARY_FILENAME(name-string)
     
  // Special Vars
 
+ 
+ 
  
     "%ACCOUNT": {
         "prefix": "%ACCOUNT",
@@ -3536,12 +3538,12 @@ TEMPORARY_FILENAME(name-string)
         ],
         "description": ""
     },
-    "%FAILURE": {
-        "prefix": "%FAILURE",
+    "FAILURE": {
+        "prefix": "\\%FAILURE",
         "body": [
             "%FAILURE"
         ],
-        "description": ""
+        "description": "failure"
     },
     "%NORMAL": {
         "prefix": "%NORMAL",
