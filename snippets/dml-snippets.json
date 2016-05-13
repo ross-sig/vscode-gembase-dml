@@ -1679,33 +1679,36 @@ TODO
     
 /*
 
-AMONG(value, range-list-1 [, range-list-2…range-list-254)
-ASCII(source_character)
-BASE64_DECODE(source_string)
-BASE64_ENCODE(source_string)
-CHR(numeric_value)
-COMPRESS(source_string)
-COMPRESS_ALL (source_string)
-CSV_MERGE(#array() [,count] [, options] [, comma] [, quote]
-[, escape])
-DATA_COMPRESS(input-string)
-DATA_UNCOMPRESS(input-string)
-ELEMENT(element-number, source-string [, delimiter-string])
-EXPAND(source_string)
-IS_TRUE(input-string)
-LEFT(source_string,end_position)
-LEN(source_string)
-LOWERCASE(source_string)
-LPAD(input-string, length [,pad-character]
-LTRIM(source_string)
-MATCHING(candidate-string, pattern-string)
-MERGE(#array() [,count])
-MID(source_string,start_position,length)
-POS(source_string,substring,start_position)
-QUOTE(input-string)
-RANGE_MERGE(#from_array(), #to_array() [,count])
-REPLACE(source-string, starting-position, ending-position,
-replacement-string)
+AMONG(${value}, {$range-lists})
+ASCII($char)
+BASE64_DECODE($string)
+BASE64_ENCODE($string)
+CHR($number)
+COMPRESS($string)
+COMPRESS_ALL ($string)
+CSV_MERGE(${array})
+CSV_MERGE(${array}, ${count})
+DATA_COMPRESS(${string})
+DATA_UNCOMPRESS(${string})
+ELEMENT(${element_number, $string)
+ELEMENT(${element_number, $string, ${delimiter})
+EXPAND(${string})
+IS_TRUE($Pstring})
+LEFT(${string},${end_position})
+LEN(${string})
+LOWERCASE(${string})
+LPAD(${string}, $length)
+LPAD(${string}, $length, $pad-character)
+LTRIM(${string})
+MATCHING($candidate_string, ${pattern_string})
+MERGE(${#array()})
+MERGE(${#array()}, ${count}])
+MID(${string},${start_pos},${length})
+POS(${string},${substring},${start_position})
+QUOTE(${input_string})
+RANGE_MERGE(${#from_array()}, ${#to_array()})
+RANGE_MERGE(${#from_array()}, ${#to_array()}, ${count}])
+REPLACE(${string, ${start_pos}, ${end_pos}, ${replacement_string})
 RIGHT(source_string,start_position)
 RMD160(input-string)
 RPAD(input-string, length [,pad-character])
@@ -1932,7 +1935,7 @@ TEMPORARY_FILENAME(name-string)
 */
     
     "ABS": {
-        "prefix": "ABS",
+        "prefix": "ABS()",
         "body": [
             "ABS($0)"
         ],
