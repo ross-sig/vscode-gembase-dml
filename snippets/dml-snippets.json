@@ -1240,9 +1240,26 @@
                 "\t/VERBOSE"
                 
         ],
-        "description": "IMPORT CSV into table"        
+        "description": "Import CSV into table"        
     },
-    
+    "IMPORT_XML": {
+        "prefix": "IMPORT/XML [/qualifiers]",
+        
+        "body": [
+            "IMPORT/XML &",
+                "\t/CREATE &",
+                "\t/CREATE_IF &",
+                "\t/ERROR_TEXT=${error_text} &",
+                "\t/REPLACE &",
+                "\t/RESULTNAME=${resultname} &",
+                "\t/SOURCE=${source} &",
+                "\t/TABLE=${table}",
+            ""
+
+                
+        ],
+        "description": "IMPORT XML into table"        
+    },
     
 
 /*
