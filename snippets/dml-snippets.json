@@ -1889,9 +1889,9 @@
         "description": ""
     },
     "LPAD": {
-        "prefix": "LPAD(input-string, length [,pad-character]",
+        "prefix": "LPAD(input-string, length [,pad-character])",
         "body": [
-            "LPAD(${string}, ${length} ,${pad_char}"
+            "LPAD(${string}, ${length} ,${pad_char})"
         ],
         "description": ""
     },
