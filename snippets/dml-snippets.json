@@ -156,7 +156,7 @@
             "QUERY_FORM ${form_name} &",                         
                 "\t/COL=${col_num} &",         
                 "\t/HEIGHT=${height_num} &",      
-                "\t/ROW=row_num &",          
+                "\t/ROW=${row_num} &",          
                 "\t/WIDTH=${width} &",
                 "\t/TABLE=${table}",
                 "\t",
