@@ -1260,38 +1260,65 @@
         ],
         "description": "IMPORT XML into table"        
     },
+    "LOAD": {
+        "prefix": "LOAD file_spec INTO table(field)",
+        "body": [
+            "LOAD ${file_spec} INTO ${table}(${field})",
+            ""                
+        ],
+        "description": "Load TXT file into field"        
+    },
+    "MAIL": {
+        "prefix": "MAIL /TO=to_address /SUBJECT=subject /TEXT=text [/FILE=$FILE_SPEC]",
+        "body": [
+            "MAIL /TO=${to_address} /SUBJECT=${subject} /TEXT={$text} /FILE=${file_spec}",
+            ""                
+        ],
+        "description": "Load TXT file into field"        
+    },
+    "MAIL/SMTP``": {
+        "prefix": "MAIL/SMTP [/qualifiers]",
+        "body": [
+            "MAIL/SMTP &",
+            "\t/Attachments=${csv_file_spec_list} &",
+            "\t/Bcc=${bcc_csv_emails} &",
+            "\t/Cc=${cc_csv_emails} &",
+            "\t/Domain=${smtp_auth_domain} &",
+            "\t/Error_Code=${gembase_smtp_error_code} &",
+            "\t/Error_Text=${gembase_smtp_error_text} &",
+            "\t/File=${msg_body_filename} &",
+            "\t/From=${from_email} &",
+            "\t/Header=${custom_header} &",
+            "\t/Importance=${importance} &",
+            "\t/Notify=${delivery_status_notification_keywords} &",
+            "\t/Options=${options} &",
+            "\t/Password=${smtp_auth_password} &",
+            "\t/Port=${smtp_server_port} &",
+            "\t/Reply_To=${reply_to_email} &",
+            "\t/Response_Code=${smtp_server_response_code} &",
+            "\t/Response_Text=${smtp_server_response_text} &",
+            "\t/Sender=${sender_email} &",
+            "\t/Sensitivity=${sensitivity_level} &",
+            "\t/Server=${smtp_server_hostname} &",
+            "\t/Subject=${subject} &",
+            "\t/Text=${message_body} &",
+            "\t/Timeout=${smtp_server_timeout} &",
+            "\t/To=${to_csv_emails} &",
+            "\t/Username=${smtp_auth_username}",
+            ""
+              
+        ],
+        "description": "Send email via SMTP"        
+    },
+
     
 
 /*
 TODO
 
 
-IMPORT/XML
-IMPORT/XML
-[/CREATE] &
-[/CREATE_IF] &
-[/ERROR_TEXT=error-text] &
-[/REPLACE] &
-[/RESULTNAME=resultname] &
-/SOURCE=source &
-[/TABLE=table-name] &
-INVOKE
-INVOKE database_spec AD database_handle [/qualifiers]
-Qualifiers
-/ENGINE=engine_type_keyword
-Keywords: INGRES, ORACLE, RDB. RMS, SERVER,
-SYBASE
-/NOIMPLICIT
-LICENSE
-LICENSE
-LOAD
-LOAD file_spec INTO [database_handle.]table_name(field_name)
-MAIL
-MAIL /TO=to_address [/SUBJECT=subject_text] &
-/FILE=send_file_spec
-or
-MAIL /TO=to_address [/SUBJECT=subject_text] &
-/TEXT=text_ [/TEXT=text_line[...]]
+
+
 MENU
 MENU [database_handle.][system_name:]facility_name
 MESSAGE
