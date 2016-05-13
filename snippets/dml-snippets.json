@@ -306,18 +306,7 @@
         ],
         "description": "Generate Table Form with ALL Qualifiers"
     },  
-
-
-        
-    
-    // TODO move this            
-    "PERFORM": {
-        "prefix": "PERFORM",
-        "body": [
-            "PERFORM ${PROCEDURE_NAME}"
-        ],
-        "description": "Perform Procedure"
-    },
+            
     // Declarations
         
     "TITLE facility_name, \"title_text\"": {
@@ -1276,7 +1265,7 @@
         ],
         "description": "Load TXT file into field"        
     },
-    "MAIL/SMTP``": {
+    "MAIL/SMTP": {
         "prefix": "MAIL/SMTP [/qualifiers]",
         "body": [
             "MAIL/SMTP &",
@@ -1310,6 +1299,63 @@
         ],
         "description": "Send email via SMTP"        
     },
+    "MESSAGE": {
+        "prefix": "MESSAGE [/qualifiers] message_name",
+        "body": [
+            "MESSAGE /BELL/CONFIRM/FACILITY/IDENTIFIER/SEVERITY/WAIT ${message_name}" 
+              
+        ],
+        "description": "Display message at bottom of display window"
+    },
+    "OPEN_TAB": {
+        "prefix": "OPEN_TAB [/qualifiers]",
+        "body": [
+            "OPEN_TAB [/URL=[StringExpression] &",
+                "\t/WEB_APP=${web_app} &",
+                "\t/FACILITY=${facility} &",
+                "\t/PERFORM=${perform} &",
+                "\t/DESC=${desc} &",
+                "\t/NEW_WINDOW",
+            ""
+              
+        ],
+        "description": "Open a tab"
+    },
+    "OPEN_TEXT": {
+        "prefix": "OPEN_TEXT [/APPEND|/CREATE/PDF] filename AS tag",
+        "body": [
+            "OPEN_TEXT ${filename} AS ${tag} &",
+                "\t/APPEND &",
+                "\t/CREATE &",
+                "\t/PDF &",
+                "\t/CHARACTER_SET=${character_set}"   
+              
+        ],
+        "description": "Open text file"
+    },
+    "OPEN_URL": {
+        "prefix": "OPEN_URL /URL=url {/DESC=stringexpression|/NEW_WINDOW}",
+        "body": [
+            "OPEN_URL /URL=${url} /DESC=${desc} /NEW_WINDOW"   
+              
+        ],
+        "description": "Open URL"
+    },
+    // TODO move this            
+    "PERFORM": {
+        "prefix": "PERFORM procedure_name",
+        "body": [
+            "PERFORM ${PROCEDURE_NAME}"
+        ],
+        "description": "Perform Procedure"
+    },
+    "PERFORM": {
+        "prefix": "PERFORM [/qualifiers] procedure_name [(arguments)]",
+        "body": [
+            "PERFORM /NODEADLOCK_EXIT /BATCH ${PROCEDURE_NAME}"
+        ],
+        "description": "Perform Procedure"
+    },
 
     
 
@@ -1318,42 +1364,6 @@ TODO
 
 
 
-
-MENU
-MENU [database_handle.][system_name:]facility_name
-MESSAGE
-MESSAGE [/qualifiers] [database_handle.] message_name &
-[,argument1[,argument2[,...]]]
-or
-MESSAGE
-Qualifiers
-/BELL
-/CONFIRM
-/FACILITY
-/IDENTIFIER
-/SEVERITY
-/WAIT
-OPEN
-OPEN unrelated_table_file AS datafile_handle[/qualifiers]
-Qualifiers
-/DESCRIPTION=filename
-/READ_ONLY
-22 DML Statements
-OPEN_APPLICATION
-OPEN_APPLICATION application AS handle
-OPEN_TAB
-OPEN_TAB [/URL=[StringExpression]
-/WEB_APP=[String Expression]
-/FACILITY=[String Expression]
-/PERFORM=[String Expression]
-[/DESC=[String Expression]
-/NEW_WINDOW]
-OPEN_TEXT
-OPEN_TEXT [/APPEND|/CREATE/PDF] filename AD tag
-OPEN_URL
-OPEN_URL /URL=string expression {/DESC=string
-expression|/NEW_WINDOW}
-PERFORM
 PERFORM [/NODEADLOCK_EXIT] form_name &
 [(argument1[,argument2[,...]])]
 or
