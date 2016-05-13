@@ -1341,7 +1341,6 @@
         ],
         "description": "Open URL"
     },
-    // TODO move this            
     "PERFORM": {
         "prefix": "PERFORM procedure_name",
         "body": [
@@ -1349,279 +1348,114 @@
         ],
         "description": "Perform Procedure"
     },
-    "PERFORM": {
-        "prefix": "PERFORM [/qualifiers] procedure_name [(arguments)]",
+    "PRINT": {
+        "prefix": "PRINT expression",
         "body": [
-            "PERFORM /NODEADLOCK_EXIT /BATCH ${PROCEDURE_NAME}"
+            "PRINT ${expression}"
         ],
-        "description": "Perform Procedure"
+        "description": "Print message at bottom of display"
     },
+    "PRINT_ALL": {
+        "prefix": "PRINT [/qualifiers] expression",
+        "body": [
+            "PRINT /BELL/CONFIRM/NOBELL/NOWAIT/WAIT ${expression}"
+        ],
+        "description": "Print message at bottom of display"
+    },
+    "RANDOMIZE": {
+        "prefix": "RANDOMIZE",
+        "body": [
+            "RANDOMIZE"
+        ],
+        "description": "Seed the random number generator"
+    },
+    "READ_LINE": {
+        "prefix": "READ_LINE tag [/TARGET=target_spec]",
+        "body": [
+            "READ_LINE ${tag} /TARGET=$target_spec"
+        ],
+        "description": "Read record from text file"
+    },
+    "RECEIVE_DATA": {
+        "prefix": "RECEIVE_DATA [/HANDLE=connect_handle] writable_data_elements",
+        "body": [
+            "RECEIVE_DATA /HANDLE=${handle} ${writable_data_elements}"
+        ],
+        "description": "Read row data from stored procedure"
+    },
+    "RECEIVE_TABLE": {
+        "prefix": "RECEIVE_TABLE [/qualifiers] target_table [FROM source_table]",
+        "body": [
+            "RECEIVE_TABLE target_table_name &",
+                "\tFROM ${source_table_name} &",
+                "\tHANDLE=${handle}",
+                "\t!/REPLACE ! truncate target table before loading data"
+        ],
+        "description": "Receive table from database"
+    },
+    "REPOSITION BY": {
+        "prefix": "REPOSITION BY [-]n",
+        "body": [
+            "REPOSITION BY ${n}"
+        ],
+        "description": "Increae or decrease report form's current line count"
+    },
+    "REPOSITION TO": {
+        "prefix": "REPOSITION TO n",
+        "body": [
+            "REPOSITION TO ${n}"
+        ],
+        "description": "Move report form's output position"
+    },
+    "REWIND_TEXT": {
+        "prefix": "REWIND_TEXT tag",
+        "body": [
+            "REWIND_TEXT ${tag}"
+        ],
+        "description": "Move to beginning of file"
+    },
+    "ROLLBACK": {
+        "prefix": "ROLLBACK",
+        "body": [
+            "ROLLBACK"
+        ],
+        "description": "Rollback transaction"
+    },
+    "SEND_DATA": {
+        "prefix": "SEND_DATA data_elements",
+        "body": [
+            "SEND_DATA ${data_elements}"
+        ],
+        "description": "Send data from stored procedure"
+    },
+    "SEND_MESSAGE": {
+        "prefix": "SEND_MESSAGE numeric_expression, text_expression",
+        "body": [
+            "SEND_MESSAGE ${numeric}, ${text}"
+        ],
+        "description": "Send message from stored procedure"
+    },
+    "SEND_TABLE": {
+        "prefix": "SEND_TABLE [/HANDLE=connect_handle][/REPLACE] source_table_name [TO target_table_name]",
+        "body": [
+            "SEND_TABLE source_table_name [TO target_table_name]",
+                "\t/HANDLE=${handle}",
+                "! /REPLACE"
+        ],
+        "description": "Send table to database"
+    },
+
+
+
+
 
     
 
 /*
 TODO
 
+Qualifiers
 
-
-PERFORM [/NODEADLOCK_EXIT] form_name &
-[(argument1[,argument2[,...]])]
-or
-PERFORM [/BATCH[=PRINT]] "form_file_spec" &
-[(argument1[,argument2[,...]])]
-or
-PERFORM [/BATCH[=PRINT]][/NODEADLOCK_EXIT] &
-*form_file_spec" form_name [(argument1[,argument2[,...]])]
-or
-PERFORM [/FACILITY [database-handle.][system-name:]]]facilityname
-or
-PERFORM [/ARRAY [/COUNT=count] #array()[form_name]
-[(argument1[,argument2[,...]])]
-PRINT
-PRINT [/qualifiers] expression
-Qualifiers
-/BELL
-/CONFIRM
-/NOBELL
-/NOWAIT
-/WAIT
-PWD
-PWD
-QUERY
-QUERY [/qualifier] [database_handle.] &
-[table_name[(field_name1[,field_name2[,...]])]]
-Qualifiers
-READ _ONLY
-Randomize
-RANDOMIZE
-READ_LINE
-READ_LINE tag [/TARGET=target_spec]
-RECEIVE
-RECEIVE resource_name [/qualifiers]
-Qualifiers
-/CREATE
-/GROUP
-/MAILBOX
-/SYSTEM
-/TARGET=#variable_name
-/WAIT
-RECEIVE_DATA
-RECEIVE_DATA [/HANDLE=connect_handle] &
-writable_data_element[,...]
-RECEIVE_TABLE
-RECEIVE_TABLE [/qualifiers] target_table_name &
-[FROM [database_handle.]source_table_name]
-Qualifiers
-/HANDLE=connect_handle
-/REPLACE
-RELEASE
-RELEASE resource_name
-REPORT
-REPORT
-REPOSITION
-REPOSITION BY [-]nnn
-or
-REPOSITION TO nnn
-REWIND_TEXT
-REWIND_TEXT tag
-ROLLBACK
-ROLLBACK
-SEARCH
-SEARCH string
-SEND
-SEND resource_name [/qualifiers] message_text
-Qualifiers
-/CREATE
-/GROUP
-/MAILBOX
-/SYSTEM
-/WAIT
-SEND_DATA
-SEND_DATA data_element[,data_element[,...]]
-SEND_MESSAGE
-SEND_MESSAGE numeric_expression, text_expression
-SEND_TABLE
-SEND_TABLE [/HANDLE=connect_handle][/REPLACE]
-source_table_name [TO
-[database_handle.]target_table_name]
-Qualifiers
-/HANDLE=connect_handle
-/REPLACE
-SET ACCESS
-SET ACCESS table_name [access_mode] [/SHARE=share_mode]
-Access modes: WRITE, MODIFY, APPEND, READ
-Share modes: WRITE, MODIFY, READ, NONE
-or
-SET ACCESS table_name &
-/RMS_OPTIONS =rms_option[,rms_option[,...]]
-RMS Options: DEFERRED_WRITES, READ_AHEAD,
-READ_CHECK, SEQUENTIAL_ONLY,
-WRITE_BEHIND, WRITE_CHECK
-SET BROADCAST
-SET BROADCAST broadcast_categories
-SET CAT_FILTER
-SET CAT_FILTER
-SET DATABASE
-SET [/LOCAL] DATABASE database_handle
-SET DATE_FORMAT
-SET DATE_FORMAT format_name
-SET DEFAULT
-SET DEFAULT directory
-SET ENTRY_MENU
-SET ENTRY_MENU
-[database_handle.][system_name:]facility_name
-or
-SET ENTRY_MENU ""
-SET GLOBAL EXIT FORM
-SET /GLOBAL EXIT FORM “FILENAME” FORMNAME(P1,…Pn)
-or
-SET /GLOBAL EXIT FORM /FACILITY DB:SYS:FAC(P1,…Pn)
-SET GLOBAL EXIT OFF
-SET /GLOBAL EXIT OFF
-SET HELP ON and SET HELP OFF
-SET HELP ON and SET HELP OFF
-SET ICON_NAME
-SET ICON_NAME string_expression
-SET INPUT BACKGROUND
-SET INPUT BACKGROUND attribute[,attribute[,...]]
-Attributes: BOLD, REVERSE, BLINK, UNDERLINE,
-NONE
-SET INPUT FOREGROUND
-SET INPUT FOREGROUND attribute[,attribute[,...]]
-Attributes: BOLD, REVERSE, BLINK, UNDERLINE,
-NONE
-SET INTERRUPT
-SET INTERRUPT dml_statement_expression
-SET KEY
-SET KEY physical_key_name [/qualifiers] logical_key_name
-Qualifiers
-/EDIT
-/GOLD
-SET KEYBOARD
-SET KEYBOARDS filename
-SET LOCAL EXIT FORM
-SET [/LOCAL]EXIT FORM “FILENAME” FORMNAME(P1, …
-Pn)
-or
-SET [/LOCAL] EXIT FORM FORMNAME(P1, … Pn)
-or
-SET [/LOCAL] EXIT FORM /FACILITY DB:SYS:FAC(P1, … Pn)
-SET LOCAL EXIT OFF
-SET /LOCAL EXIT OFF
-SET LOCK
-SET LOCK option_keyword[,option_keyword[,...]]
-Option Keywords:
-DEFAULT =keyword
-Keywords: NONE, WRITE, ENGINE_DEFINED
-DOMAIN_DEFAULT=keyword
-Keywords: NONE, WRITE, ENGINE_DEFINED
-FULL
-NO INDEX
-READ_ONLY_LOV
-TED_LINE
-SET LOCK_TIMEOUT
-SET_LOCK_TIMEOUT seconds
-SET MASK_CURRENCY_SIGN
-SET MASK_CURRENCY_SIGN currency-sign-character
-SET MASK_DIGIT_SEPARATOR
-SET MASK_DIGIT_SEPARATOR digit-separator-character
-SET MASK_RADIX_POINT
-SET MASK_RADIX_POINT radix-point-character
-SET NOVERIFY
-SET NOVERIFY
-SET OVERFLOW
-SET OVERFLOW=(FLOATING=f, INTEGER=i)
-SET PERFORM
-SET PERFORM option_keyword
-Keywords: DMC_DML, DMC_ONLY, DML_DMC,
-DML_ONLY
-SET PRECISION
-SET PRECISION floating_point_number
-SET PROMPT
-SET PROMPT expression
-SET SCREEN
-SET SCREEN option_keyword[,option_keyword]
-Keywords: BORDER, NOBORDER,
-NOUPDATE_ON_INPUT,
-UPDATE_ON_INPUT
-SET SHADOWS
-SET SHADOWS number
-SET STATUS_FREQUENCY
-SET STATUS_FREQUENCY seconds
-SET SYSTEM
-SET SYSTEM [database_handle.]system_name
-SET TIMEOUT
-SET TIMEOUT seconds
-SET TITLE_BAR
-SET TITLE_BAR string_expression
-SET TITLE_FORM
-SET TITLE_FORM filename
-SET VERIFY
-SET VERIFY
-SET WD
-SET WD directory
-SHOW CAT_FILTER
-SHOW CAT_FILTER
-SHOW DATABASE
-SHOW DATABASE
-SHOW DATE_FORMAT
-SHOW DATE_FORMAT
-SHOW DEFAULT
-SHOW DEFAULT
-SHOW ENTRY_MENU
-SHOW ENTRY_MENU
-SHOW FIELDS FOR
-SHOW FIELDS FOR table_specification
-SHOW HELP
-SHOW HELP
-SHOW HOSTID
-SHOW HOSTID
-SHOW INPUT
-SHOW INPUT
-SHOW ICON_NAME
-SHOW ICON_NAME
-SHOW INPUT
-SHOW INPUT
-SHOW INTERRUPT
-SHOW INTERRUPT
-SHOW KEYBOARD
-SHOW KEYBOARD
-SHOW LOCK
-SHOW LOCK
-SHOW LOCK_TIMEOUT
-SHOW LOCK_TIMEOUT
-SHOW OVERFLOW
-SHOW OVERFLOW
-SHOW PERFORM
-SHOW PERFORM
-SHOW ICON_NAME
-SHOW ICON_NAME
-SHOW PLATFORM
-SHOW PLATFORM
-SHOW PRECISION
-SHOW PRECISION
-SHOW PROMPT
-SHOW PROMPT
-SHOW SHADOWS
-SHOW SHADOWS
-SHOW STATUS_FREQUENCY
-SHOW STATUS_FREQUENCY
-SHOW SYSTEM
-SHOW SYSTEM
-SHOW TABLES FOR
-SHOW TABLES FOR field_specification
-SHOW TARGETID
-SHOW TARGETID
-SHOW TIMEOUT
-SHOW TIMEOUT
-SHOW TITLE_BAR
-SHOW TITLE_BAR
-SHOW TITLE_FORM
-SHOW TITLE_FORM
-SHOW VERIFY
-SHOW VERIFY
-SHOW WD
-SHOW WD
 SIGNATURE
 SIGNATURE [/qualifiers]
 Qualifiers
