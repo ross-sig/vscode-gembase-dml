@@ -2550,7 +2550,7 @@
     "DAYS_IN_MONTH": {
         "prefix": "DAYS_IN_MONTH(input-date)",
         "body": [
-            "DAYS_IN_MONTH(${input-date})${0}"
+            "DAYS_IN_MONTH(${date})${0}"
         ],
         "description": ""
     },
