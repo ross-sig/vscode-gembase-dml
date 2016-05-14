@@ -1418,7 +1418,7 @@
     "READ_LINE": {
         "prefix": "READ_LINE tag [/TARGET=target_spec]",
         "body": [
-            "READ_LINE ${tag} /TARGET=$target_spec",
+            "READ_LINE ${tag} /TARGET=${target_spec}",
             "${0}"             
         ],
         "description": "Read record from text file"
