@@ -867,7 +867,7 @@
         "prefix": "CONTINUE",
         
         "body": [
-            "COMPILE",
+            "CONTINUE",
             "${0}" 
                 
         ],
@@ -877,7 +877,7 @@
         "prefix": "CONTINUE [keyword]",
         
         "body": [
-            "COMPILE ${keyword} ! COMMIT, OUT, ROLLBAK",
+            "CONTINUE ${keyword} ! COMMIT, OUT, ROLLBAK",
             "${0}"                 
         ],
         "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
