@@ -1916,7 +1916,7 @@
     "MID": {
         "prefix": "MID(source_string,start_position,length)",
         "body": [
-            "MID(#{string},${start_pos},${length})"
+            "MID(${string},${start_pos},${length})"
         ],
         "description": ""
     },
