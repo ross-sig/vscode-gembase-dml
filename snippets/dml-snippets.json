@@ -1157,7 +1157,7 @@
         "prefix": "FIND IN table_name /[qualifiers]",
         
         "body": [
-            "FIND IN ${tablename}",
+            "FIND IN ${tablename} &",
                 "\t/LOCK=${lock_type} & ! NONE, READ, WRITE &",
                 "\t/SECONDARY &",
                 "\t/STREAM_NAME=${stream_name} &",
