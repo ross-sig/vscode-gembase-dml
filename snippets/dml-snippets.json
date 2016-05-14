@@ -1628,7 +1628,7 @@
     "SWITCH_BASE_SPEC": {
         "prefix": "SWITCH_BASE \"form_file_spec\" [form_name] [(arguments)]",
         "body": [
-            "SWITCH_BASE “${form_file_spec}” ${form} (${arguments})",
+            "SWITCH_BASE \"${form_file_spec}\" ${form} (${arguments})",
             "${0}"
         ],
         "description": "AUtomatically exit current form by calling DMC or DML and execute form"
