@@ -494,10 +494,7 @@
     "OUTPUT_BLOCK": {
         "prefix": "OUTPUT_BLOCK block_name",
         "body": [
-            "OUTPUT_BLOCK ${block_name} &",
-                "\t/ROW=numeric_expression &",
-                "\t/COL=numeric_expression &",
-                "\t/SOURCE=${source}",
+            "OUTPUT_BLOCK ${block_name} /ROW=${row_num} /COL=${col_num} /SOURCE=${source}",
             "${0}"
         ],
         "description": "Generate Output Block"        
@@ -646,8 +643,7 @@
     "BEGIN_CASE": {
         "prefix": "BEGIN_CASE / END_CASE",
         "body": [
-            "BEGIN_CASE ($expression)\t",
-            "\t",
+            "BEGIN_CASE (${expression})\t",
             "\t${0}",
             "\t",
             "END_CASE"
@@ -1196,9 +1192,8 @@
         "prefix": "IF (condition)",
         
         "body": [
-            "IF ${condition}",
-            "\t",
-            "\t{0}",
+            "IF (${condition})",
+            "\t${0}",
             "\t",
             "END_IF"
                 
@@ -1210,7 +1205,7 @@
         
         "body": [
             "ELSE",
-            "\t{0}"
+            "\t${0}"
                 
         ],
         "description": "ELSE"        
@@ -1220,7 +1215,7 @@
         
         "body": [
             "ELSE_IF (${condition})",
-            "\t{0}"
+            "\t${0}"
                 
         ],
         "description": "ELSE_IF"        
@@ -1914,7 +1909,7 @@
         "body": [
             "MATCHING(${candidate-string}, ${pattern-string})"
         ],
-        "description": ""
+        "description": "Return 1 if candidate string matches pattern string and 0 if it does not match"
     },
     "MERGE": {
         "prefix": "MERGE(#array() [,count])",
