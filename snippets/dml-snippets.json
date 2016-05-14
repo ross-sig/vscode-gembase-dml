@@ -623,14 +623,14 @@
     
     // Statements    
     
-    "ADD_TO": {
-        "prefix": "ADD_TO table_or_var",
+    "ADD TO": {
+        "prefix": "ADD TO table_or_var",
         "body": [
-            "ADD_TO ${table_or_variable}",
+            "ADD TO ${table_or_variable}",
             "${0}"
                 
         ],
-        "description": "ADD_TO table or variable"        
+        "description": "ADD TO table or variable"        
     },
     "ARCHIVE": {
         "prefix": "ARCHIVE[DBMS] [from/source]",
