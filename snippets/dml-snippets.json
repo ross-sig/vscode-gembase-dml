@@ -599,7 +599,7 @@
         "prefix": "YESNO_BLOCK block_name /[qualifiers]",
         "body": [
             "YESNO_BLOCK ${block_name} &",   
-                "\t/BACK=(dml_statement) &",
+                "\t/BACK=(${back_dml}) &",
                 "\t/COL=${col} &",
                 "\t/EXIT=(${exit_dml}) &",
                 "\t/EXIT_FORWARD=(${exit_forward_dml}) &",
@@ -1690,7 +1690,7 @@
         "body": [
             "WHILE (${condition})",
             "\t",
-            "\t{0}",
+            "\t${0}",
             "\t",
             "END_WHILE"
         ],
