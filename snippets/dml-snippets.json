@@ -1139,7 +1139,7 @@
         "prefix": "FETCH stream_name",
         
         "body": [
-            "FETCH {$stream_name}",
+            "FETCH ${stream_name}",
             "${0}"                 
         ],
         "description": "Get next record from stream"        
@@ -1148,7 +1148,7 @@
         "prefix": "FETCH stream_name /FAILURE=(failure_dml) /SUCCESS=(success_dml)",
         
         "body": [
-            "FETCH ${stream_name} /FAILURE=(${failure_dml}) /SUCCESS=($success_dml)",
+            "FETCH ${stream_name} /FAILURE=(${failure_dml}) /SUCCESS=(${success_dml})",
             "${0}"                 
         ],
         "description": "Get next record from stream"        
