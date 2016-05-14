@@ -1504,7 +1504,7 @@
         "prefix": "SIGNATURE [/qualifiers]",
         "body": [
             "SIGNATURE &",
-                "\t/AUDIT=audit-file-specification &",
+                "\t/AUDIT=${audit_file_spec} &",
                 "\t/DATETIME=${datetime} &",
                 "\t/FACILITY=${facility} &",
                 "\t/FAILURE=(${failure_dml}) &",
