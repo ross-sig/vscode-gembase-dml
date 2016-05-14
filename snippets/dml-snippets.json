@@ -1300,7 +1300,7 @@
     "MAIL": {
         "prefix": "MAIL /TO=to_address /SUBJECT=subject /TEXT=text [/FILE=$FILE_SPEC]",
         "body": [
-            "MAIL /TO=${to_address} /SUBJECT=${subject} /TEXT={$text} /FILE=${file_spec}",
+            "MAIL /TO=${to_address} /SUBJECT=${subject} /TEXT=${text} /FILE=${file_spec}",
             "${0}"              
         ],
         "description": "Load TXT file into field"        
