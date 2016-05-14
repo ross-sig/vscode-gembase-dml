@@ -886,7 +886,7 @@
         "prefix": "DELETE FROM [database_handle.]table_name",
         
         "body": [
-            "DELETE FROM ${dataase}.${table} ! /ARCHIVE",
+            "DELETE FROM ${database}.${table} ! /ARCHIVE",
             "${0}"                 
         ],
         "description": "Delete buffer"        
@@ -895,7 +895,7 @@
         "prefix": "DELETE ALL FROM [database_handle.]table_name",
         
         "body": [
-            "DELETE ALL FROM ${dataase}.${table} ! /ARCHIVE",
+            "DELETE ALL FROM ${database}.${table} ! /ARCHIVE",
             "${0}"                          
         ],
         "description": "Transfers program control to the end of the inner-most loop, continuing the loop."        
