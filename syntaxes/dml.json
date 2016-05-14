@@ -227,7 +227,7 @@
 				{
 					"comment": "Misc",
 					"name": "entity.name.function.dml",
-					"match": "\\b(?i)(PARAMETER)\\b"
+					"match": "\\b(?i)(PARAMETER|RECORD_ADDRESS)\\b"
 				}
 			]
 		}	
