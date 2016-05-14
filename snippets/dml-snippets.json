@@ -1351,7 +1351,7 @@
     "OPEN_TAB": {
         "prefix": "OPEN_TAB [/qualifiers]",
         "body": [
-            "OPEN_TAB [/URL=[StringExpression] &",
+            "OPEN_TAB /URL=${url} &",
                 "\t/WEB_APP=${web_app} &",
                 "\t/FACILITY=${facility} &",
                 "\t/PERFORM=${perform} &",
