@@ -1434,9 +1434,9 @@
     "RECEIVE_TABLE": {
         "prefix": "RECEIVE_TABLE [/qualifiers] target_table [FROM source_table]",
         "body": [
-            "RECEIVE_TABLE target_table_name &",
-                "\tFROM ${source_table_name} &",
-                "\tHANDLE=${handle}",
+            "RECEIVE_TABLE ${target_table} &",
+                "\t/FROM ${source_table} &",
+                "\t/HANDLE=${handle}",
                 "\t!/REPLACE ! truncate target table before loading data",
             "${0}"                 
         ],
