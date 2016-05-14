@@ -788,7 +788,7 @@
         "description": "Clears Buffer (non-PID fields)"        
     },
     "CLEAR_BUFFER_VAR": {
-        "prefix": "CLEAR_BUFFER database_handle.table",
+        "prefix": "CLEAR_BUFFER variable",
         "body": [
             "CLEAR_BUFFER ${variable}",
             "${0}" 
