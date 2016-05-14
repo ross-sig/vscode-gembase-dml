@@ -1123,18 +1123,6 @@
         ],
         "description": "Generate EXPORT/XML with all Qualifers"        
     },
-    "EXPORT_XML_ALL": {
-        "prefix": "EXTERNAL \"file_spec\" routine_name [func_return_value_keywords] [arguments] /FAILURE=(failure_dml) /SUCCESS=(sucess_dml)",
-        
-        "body": [
-            "EXTERNAL \"${file_spec}\" ${routine} ${keyword} ${arguments} &",
-                "\t/FAILURE=(${failure_dml}) &",
-                "\t/SUCCESS=(${success_dml})",           
-            "${0}" 
-                
-        ],
-        "description": "Declares External Routine"        
-    },
     "EXTERNAL": {
         "prefix": "EXTERNAL \"file_spec\" routine_name [func_return_value_keywords] [arguments] /FAILURE=(failure_dml) /SUCCESS=(sucess_dml)",
         
