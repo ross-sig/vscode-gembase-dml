@@ -25,6 +25,6 @@ To install download the copy the folder vscode-gembase-dml and place it in your 
 
 # Screenshots
 
-![Screenshot](dml_editor.gif "Screenshot")
+![Screenshot](https://gitlab.com/ross-sig/vscode-gembase-dml/raw/master/dml_editor.gif "DML Edior Screenshot")
 
 

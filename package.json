@@ -16,7 +16,7 @@
     },
 	"displayName": "Gembase DML",
 	"description": "GEMBASE Data Manipulation Language support for Visual Studio Code",	
-	"icon": "./vs-code-gembase-dml-icon-128.png",
+	"icon": "vs-code-gembase-dml-icon-128.png",
 	"categories": [
 		"Languages"
 	],
@@ -25,13 +25,7 @@
 		"iaf",
 		"gembase",
 		"ross",
-		"erp",
-		"data",
-		"manipulation",
-		"language",
-		"aptean",
 		"4gl"
-		
 	],
 	"preview": 1,
 	"contributes": {
