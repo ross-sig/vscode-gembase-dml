@@ -26,7 +26,7 @@ https://marketplace.visualstudio.com/items?itemName=litehouse.dml
 
 Download and install Visual Studio Code: https://code.visualstudio.com/
 
-To install the DML extension pen Visual Studio Code and type \[Control+P\] then "ext install dml" \[enter\]
+To install the DML extension open Visual Studio Code and type \[Control+P\] then "ext install dml" \[enter\]
 
 # Screenshots
 
