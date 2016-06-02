@@ -24,6 +24,7 @@
 		"4gl"
 		
 	],
+	"preview": 1,
 	"contributes": {
 		"snippets": [
 			{
