@@ -5,7 +5,15 @@
 		"engines": {
 		"vscode": "1.1.1"
 	},
-	"license": "MIT",
+	"license": "MIT",	
+    "bugs": {
+        "url": "https://gitlab.com/ross-sig/vscode-gembase-dml/issues"
+    },
+    "homepage": "https://gitlab.com/ross-sig/vscode-gembase-dml",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/ross-sig/vscode-gembase-dml.git"
+    },
 	"displayName": "Gembase DML",
 	"description": "GEMBASE Data Manipulation Language support for Visual Studio Code",	
 	"icon": "./vs-code-gembase-dml-icon-128.png",
