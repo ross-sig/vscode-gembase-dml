@@ -18,10 +18,15 @@ If you'd like to make any contributions create a pull request.
 
 https://gitlab.com/ross-sig/vscode-gembase-dml.git
 
+Visual Studio Marketplace:
+
+https://marketplace.visualstudio.com/items?itemName=litehouse.dml
 
 # Installing
 
-To install download the copy the folder vscode-gembase-dml and place it in your .vscode\extensions folder (on Windows this is: C:\Users\yourusername\.vscode\extensions\)
+Download and install Visual Studio Code: https://code.visualstudio.com/
+
+To install the DML extension pen Visual Studio Code and type \[Control+P\] then "ext install dml" \[enter\]
 
 # Screenshots
 
