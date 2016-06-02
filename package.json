@@ -8,6 +8,7 @@
 	"license": "MIT",
 	"displayName": "Gembase DML",
 	"description": "GEMBASE Data Manipulation Language support for Visual Studio Code",	
+	"icon": "./vs-code-gembase-dml-icon-128.png",
 	"categories": [
 		"Languages"
 	],
