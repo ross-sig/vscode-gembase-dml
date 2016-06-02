@@ -1,11 +1,11 @@
 {
 	"name": "dml",
-	"version": "0.9.0",
-	"publisher": "ahnooie",
+	"version": "0.9.1",
+	"publisher": "litehouse",
 		"engines": {
-		"vscode": "1.1.0"
+		"vscode": "1.1.1"
 	},
-	"license": "TODO",
+	"license": "MIT",
 	"displayName": "Gembase DML",
 	"description": "GEMBASE Data Manipulation Language support for Visual Studio Code",	
 	"categories": [
