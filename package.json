@@ -1,6 +1,6 @@
 {
 	"name": "dml",
-	"version": "0.9.4",
+	"version": "0.9.5",
 	"publisher": "litehouse",
 		"engines": {
 		"vscode": "1.1.1"
