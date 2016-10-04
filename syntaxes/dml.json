@@ -58,13 +58,28 @@
 			"patterns": [
 				{
 					"name": "string.quoted.double.dml",
-					"begin": "(\"|\\')",
+					"begin": "\"",
 					"beginCaptures": {
 						"0": {
 							"name": "punctuation.definition.string.begin.dml"
 						}
 					},
-					"end": "(\"|\\')",
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.dml"
+						}
+					}
+				},
+				{
+					"name": "string.quoted.single.dml",
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.dml"
+						}
+					},
+					"end": "'",
 					"endCaptures": {
 						"0": {
 							"name": "punctuation.definition.string.end.dml"
