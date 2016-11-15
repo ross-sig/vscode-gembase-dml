@@ -1,9 +1,9 @@
 {
 	"name": "dml",
-	"version": "0.9.7",
+	"version": "1.0.0",
 	"publisher": "litehouse",
 		"engines": {
-		"vscode": "1.2.1"
+		"vscode": "1.7.1"
 	},
 	"license": "MIT",	
     "bugs": {
@@ -27,7 +27,6 @@
 		"ross",
 		"4gl"
 	],
-	"preview": 1,
 	"contributes": {
 		"snippets": [
 			{
