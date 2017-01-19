@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"publisher": "litehouse",
 		"engines": {
-		"vscode": "1.7.1"
+		"vscode": "^1.7.1"
 	},
 	"license": "MIT",	
     "bugs": {
