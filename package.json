@@ -5,7 +5,7 @@
 		"engines": {
 		"vscode": "^1.7.1"
 	},
-	"main": "./out/src/extension",
+	"main": "",
 	"license": "MIT",	
     "bugs": {
         "url": "https://gitlab.com/ross-sig/vscode-gembase-dml/issues"
