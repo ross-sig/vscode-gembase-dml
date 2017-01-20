@@ -3,9 +3,8 @@
 	"version": "1.0.4",
 	"publisher": "litehouse",
 		"engines": {
-		"vscode": "^1.7.1"
+		"vscode": "^1.8.1"
 	},
-	"main": "",
 	"license": "MIT",	
     "bugs": {
         "url": "https://gitlab.com/ross-sig/vscode-gembase-dml/issues"
