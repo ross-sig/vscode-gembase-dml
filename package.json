@@ -1,11 +1,11 @@
 {
 	"name": "dml",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"publisher": "litehouse",
 		"engines": {
 		"vscode": "^1.7.1"
 	},
-	"main": "./out/extension",
+	"main": "./out/src/extension",
 	"license": "MIT",	
     "bugs": {
         "url": "https://gitlab.com/ross-sig/vscode-gembase-dml/issues"
