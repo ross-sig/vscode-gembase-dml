@@ -13,11 +13,11 @@ This extension is in alpha.  It may generate bad code that doesn't compile.  Sta
 ## Issues and Contributions
 If you find any issues or have feature requests report them here:
 
-https://gitlab.com/ross-sig/vscode-gembase-dml/issues
+https://github.com/ross-sig/vscode-gembase-dml/issues
 
-If you'd like to make any contributions create a pull request.
+If you'd like to make any contributions please create a pull request here:
 
-https://gitlab.com/ross-sig/vscode-gembase-dml.git
+https://github.com/ross-sig/vscode-gembase-dml
 
 # Installing
 
@@ -31,6 +31,6 @@ Then install the DML extension by opening Visual Studio Code and type \[Ctrl+P\]
 
 # Screenshots
 
-![Screenshot](https://gitlab.com/ross-sig/vscode-gembase-dml/raw/master/dml_editor.gif "DML Edior Screenshot")
+![Screenshot](https://camo.githubusercontent.com/af3fb1bafd76a6f20181789af469ebc9c939ff2d/68747470733a2f2f6769746c61622e636f6d2f726f73732d7369672f7673636f64652d67656d626173652d646d6c2f7261772f6d61737465722f646d6c5f656469746f722e676966 "DML Edior Screenshot")
 
 

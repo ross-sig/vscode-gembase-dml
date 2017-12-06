@@ -1,18 +1,18 @@
 {
 	"name": "dml",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"publisher": "litehouse",
 		"engines": {
 		"vscode": "^1.8.1"
 	},
 	"license": "MIT",	
     "bugs": {
-        "url": "https://gitlab.com/ross-sig/vscode-gembase-dml/issues"
+        "url": "https://github.com/ross-sig/vscode-gembase-dml/issues"
     },
-    "homepage": "https://gitlab.com/ross-sig/vscode-gembase-dml",
+    "homepage": "https://github.com/ross-sig/vscode-gembase-dml",
     "repository": {
         "type": "git",
-        "url": "https://gitlab.com/ross-sig/vscode-gembase-dml.git"
+        "url": "https://github.com/ross-sig/vscode-gembase-dml"
     },
 	"displayName": "Gembase DML",
 	"description": "GEMBASE Data Manipulation Language support for Visual Studio Code",	
