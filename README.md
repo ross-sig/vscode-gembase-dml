@@ -1,14 +1,14 @@
 # Gembase DML Editor Extension for Visual Studio Code
 
-This extension provides Syntax highlighting and Snippets for Gembase DML (Data Manipulation Language).
+This extension provides Syntax highlighting and Snippets (basic autocompletion) for Gembase DML (Data Manipulation Language).
 
 # Features
 Syntax highligting and auto-complete using snippets for most DML code blocks, forms, expressions, statements, and functions.  Use the tab key to auto-complete or jump between tab-stops.
 
 Note: Syntax colorization should work on most themes.  It was tested againt the default Visual Studio Code light and dark themes: Dark+ (default dark) and Light+ (Default Light.  Some color themes like "Dark (Visual Studio) and "Light (Visaul Studio)" don't include colorizing for things like variables.  This is intended behavior as it's a design decision by the theme author to leave out colorization for such.
 
-# Warning
-This extension is in alpha.  It may generate bad code that doesn't compile.  Standard precautions apply (use this extension in a test environment before using it in production, make sure you have backups and version control on your code, etc.)
+# Follow Best Practices
+This extension is fairly new, snippets may generate code that doesn't compile (if you encounter any issues please report an issue on GitHub).  Standard precautions apply (use this extension in a test environment before using it in production, make sure you have backups and version control on your code, etc.)
 
 ## Issues and Contributions
 If you find any issues or have feature requests report them here:
@@ -25,9 +25,9 @@ This plugin can be found on the Visual Studio Marketplace:
 
 https://marketplace.visualstudio.com/items?itemName=litehouse.dml
 
-To use it, first install Visual Studio Code: https://code.visualstudio.com/
+To use it, first install Visual Studio Code: https://code.visualstudio.com/ which is a free open source code editor.
 
-Then install the DML extension by opening Visual Studio Code and type \[Ctrl+P\] "ext install dml" \[enter\]
+Open Visual Studio Code, go to the Extensions MarketPlace (The square looking button along the left-hand column, or bring it up with Ctrl+Shift+X).  Search for "Gembase DML" and hit the "Install Button"
 
 # Screenshots
 

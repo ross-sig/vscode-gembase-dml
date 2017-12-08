@@ -3,6 +3,7 @@
 ## v1.0.8
 Add more metadata syntax highlighting
 Added Changelog
+Added Contributing Guide
 
 ## v1.0.7
 Add some metadata syntax highlighting
