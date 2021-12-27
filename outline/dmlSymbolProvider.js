@@ -93,7 +93,7 @@ class DmlDocumentSymbolProvider {
 		if (curFormName != null) {
 			// Do we have a block?
 			if (curBlockName != null) {
-				this.addNode(result,document,curBlockStart,line,curBlockName,blockSymbol,curFormName);
+				this.addNode(result,document,curBlockStart,document.lineCount -1,curBlockName,blockSymbol,curFormName);
 			}
 			this.addNode(result,document,curFormStart,document.lineCount -1,curFormName,formSymbol,'');
 		}
