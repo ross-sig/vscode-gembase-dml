@@ -1,4 +1,6 @@
 # Changelog
+## v1.1.0
+* Add FORMS and BLOCKS to Outline
 
 ## v1.0.8
 * Add more metadata syntax highlighting

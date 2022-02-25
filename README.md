@@ -2,16 +2,15 @@
 
 This extension provides Syntax highlighting and Snippets (basic autocompletion) for Gembase DML (Data Manipulation Language).
 
+Gembase DML is commonly used in conjuction with IAF (Internet Application Framework) and Aptean Ross ERP (Enterprise Resource Manager).
+
 ## Features
-Syntax highligting and auto-complete using snippets for most DML code blocks, forms, expressions, statements, and functions.  Use the tab key to auto-complete or jump between tab-stops.
-
-Note: Syntax colorization should work on most themes.  It was tested againt the default Visual Studio Code light and dark themes: Dark+ (default dark) and Light+ (Default Light.  Some color themes like "Dark (Visual Studio) and "Light (Visaul Studio)" don't include colorizing for things like variables.  This is intended behavior as it's a design decision by the theme author to leave out colorization for such.
-
-## Follow Best Practices
-This extension is fairly new, snippets may generate code that doesn't compile (if you encounter any issues please report an issue on GitHub).  Standard precautions apply (use this extension in a test environment before using it in production, make sure you have backups and version control on your code, etc.)
+* Syntax highligting (colors tested against Dark+ and Light+)
+* Auto-complete using snippets for most DML code blocks, forms, expressions, statements, and functions.  Use the tab key to auto-complete or jump between tab-stops.
+* DML Outline for FORMS and BLOCKS
 
 ## Issues and Contributions
-If you find any issues or have feature requests report them here:
+Issues and Feature Requests:
 
 https://github.com/ross-sig/vscode-gembase-dml/issues
 
@@ -28,6 +27,12 @@ https://marketplace.visualstudio.com/items?itemName=litehouse.dml
 To use it, first install Visual Studio Code: https://code.visualstudio.com/ which is a free open source code editor.
 
 Open Visual Studio Code, go to the Extensions MarketPlace (The square looking button along the left-hand column, or bring it up with Ctrl+Shift+X).  Search for "Gembase DML" and hit the "Install Button"
+
+## Changelog
+See: https://github.com/ross-sig/vscode-gembase-dml/blob/master/CHANGELOG.md
+
+## Modifications
+If you'd like to make your own modifications download and unzip to c:\users\yourname\.vscode\extensions
 
 ## Screenshots
 
