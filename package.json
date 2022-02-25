@@ -27,6 +27,10 @@
 		"ross",
 		"4gl"
 	],
+	"main": "./outline/extension.js",
+	"activationEvents": [
+		"onLanguage:dml"
+	],
 	"contributes": {
 		"snippets": [
 			{
