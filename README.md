@@ -36,6 +36,6 @@ If you'd like to make your own modifications download and unzip to c:\users\your
 
 ## Screenshots
 
-![Screenshot](https://camo.githubusercontent.com/af3fb1bafd76a6f20181789af469ebc9c939ff2d/68747470733a2f2f6769746c61622e636f6d2f726f73732d7369672f7673636f64652d67656d626173652d646d6c2f7261772f6d61737465722f646d6c5f656469746f722e676966 "DML Edior Screenshot")
+![Screenshot](https://github.com/ross-sig/vscode-gembase-dml/blob/master/screenshot.gif?raw=true "DML Edior Screenshot")
 
 
