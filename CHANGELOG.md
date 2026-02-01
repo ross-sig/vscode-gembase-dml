@@ -1,4 +1,7 @@
 # Changelog
+## v1.2.0
+* DML Comment Support
+
 ## v1.1.0
 * Add FORMS and BLOCKS to Outline
 
